@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  creative-engine:
+    build: .
+    container_name: creative-engine
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
