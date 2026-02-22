@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-02-22T15:10:44.173Z",
+  "total": 12,
+  "results": [
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v1_peur_manquer",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v1_peur_manquer_1080x1080.html",
+      "elements": {
+        "headline": "La méthode TikTok que personne ne connaît",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v2_resultat_rapide",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v2_resultat_rapide_1080x1080.html",
+      "elements": {
+        "headline": "Tes premiers clients en 48h sur TikTok",
+        "cta": "Commencer maintenant",
+        "badge": "RÉSULTATS"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v3_preuve_sociale",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v3_preuve_sociale_1080x1080.html",
+      "elements": {
+        "headline": "Rejoins les 500+ media buyers formés",
+        "cta": "Réserver ma place",
+        "badge": "TOP RATED"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v4_facilite",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v4_facilite_1080x1080.html",
+      "elements": {
+        "headline": "TikTok Ads sans se prendre la tête",
+        "cta": "J'accède à la formation",
+        "badge": "DÉBUTANT"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v1_peur_manquer",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v1_peur_manquer_1200x628.html",
+      "elements": {
+        "headline": "La méthode TikTok que personne ne connaît",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v2_resultat_rapide",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v2_resultat_rapide_1200x628.html",
+      "elements": {
+        "headline": "Tes premiers clients en 48h sur TikTok",
+        "cta": "Commencer maintenant",
+        "badge": "RÉSULTATS"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v3_preuve_sociale",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v3_preuve_sociale_1200x628.html",
+      "elements": {
+        "headline": "Rejoins les 500+ media buyers formés",
+        "cta": "Réserver ma place",
+        "badge": "TOP RATED"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v4_facilite",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v4_facilite_1200x628.html",
+      "elements": {
+        "headline": "TikTok Ads sans se prendre la tête",
+        "cta": "J'accède à la formation",
+        "badge": "DÉBUTANT"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v1_peur_manquer",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v1_peur_manquer_1080x1920.html",
+      "elements": {
+        "headline": "La méthode TikTok que personne ne connaît",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v2_resultat_rapide",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v2_resultat_rapide_1080x1920.html",
+      "elements": {
+        "headline": "Tes premiers clients en 48h sur TikTok",
+        "cta": "Commencer maintenant",
+        "badge": "RÉSULTATS"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v3_preuve_sociale",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v3_preuve_sociale_1080x1920.html",
+      "elements": {
+        "headline": "Rejoins les 500+ media buyers formés",
+        "cta": "Réserver ma place",
+        "badge": "TOP RATED"
+      }
+    },
+    {
+      "campaign": "formation_tiktok_ads",
+      "variation": "v4_facilite",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_tiktok_ads/formation_tiktok_ads_v4_facilite_1080x1920.html",
+      "elements": {
+        "headline": "TikTok Ads sans se prendre la tête",
+        "cta": "J'accède à la formation",
+        "badge": "DÉBUTANT"
+      }
+    }
+  ]
+}

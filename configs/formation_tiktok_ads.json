@@ -1,0 +1,75 @@
+{
+  "campaign": "formation_tiktok_ads",
+  "template": "single-product",
+  "formats": [
+    "1080x1080",
+    "1200x628",
+    "1080x1920"
+  ],
+  "base_config": {
+    "font_family": "Poppins",
+    "headline_size": 64,
+    "subheadline_size": 30,
+    "cta_size": 26,
+    "product_width": 400,
+    "product_height": 400
+  },
+  "variations": [
+    {
+      "id": "v1_peur_manquer",
+      "headline": "La méthode TikTok que personne ne connaît",
+      "subheadline": "Déjà 2000+ entrepreneurs l'utilisent en secret",
+      "cta_text": "Découvrir la méthode",
+      "cta_color": "#FE2C55",
+      "cta_text_color": "#FFFFFF",
+      "badge_text": "NOUVEAU",
+      "badge_color": "#25F4EE",
+      "bg_color1": "#0f0f0f",
+      "bg_color2": "#1a1a2e",
+      "text_color": "#FFFFFF",
+      "product_image": "https://via.placeholder.com/400x400/FE2C55/FFFFFF?text=Formation+TikTok"
+    },
+    {
+      "id": "v2_resultat_rapide",
+      "headline": "Tes premiers clients en 48h sur TikTok",
+      "subheadline": "Sans budget, sans followers, sans expérience",
+      "cta_text": "Commencer maintenant",
+      "cta_color": "#25F4EE",
+      "cta_text_color": "#000000",
+      "badge_text": "RÉSULTATS",
+      "badge_color": "#FE2C55",
+      "bg_color1": "#1a1a2e",
+      "bg_color2": "#16213e",
+      "text_color": "#FFFFFF",
+      "product_image": "https://via.placeholder.com/400x400/25F4EE/000000?text=Formation+TikTok"
+    },
+    {
+      "id": "v3_preuve_sociale",
+      "headline": "Rejoins les 500+ media buyers formés",
+      "subheadline": "La méthode validée par les pros de l'Ads",
+      "cta_text": "Réserver ma place",
+      "cta_color": "#FFD700",
+      "cta_text_color": "#000000",
+      "badge_text": "TOP RATED",
+      "badge_color": "#FE2C55",
+      "bg_color1": "#2d1b4e",
+      "bg_color2": "#1a1a2e",
+      "text_color": "#FFFFFF",
+      "product_image": "https://via.placeholder.com/400x400/FFD700/000000?text=Formation+TikTok"
+    },
+    {
+      "id": "v4_facilite",
+      "headline": "TikTok Ads sans se prendre la tête",
+      "subheadline": "La méthode clé-en-main pour débutants",
+      "cta_text": "J'accède à la formation",
+      "cta_color": "#FE2C55",
+      "cta_text_color": "#FFFFFF",
+      "badge_text": "DÉBUTANT",
+      "badge_color": "#25F4EE",
+      "bg_color1": "#16213e",
+      "bg_color2": "#0f0f0f",
+      "text_color": "#FFFFFF",
+      "product_image": "https://via.placeholder.com/400x400/FE2C55/FFFFFF?text=Formation+TikTok"
+    }
+  ]
+}

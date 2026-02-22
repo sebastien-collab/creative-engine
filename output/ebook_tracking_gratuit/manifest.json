@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-02-22T15:23:24.629Z",
+  "total": 12,
+  "results": [
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v1_guide_gratuit",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v1_guide_gratuit_1080x1080.html",
+      "elements": {
+        "cta": "Télécharger le guide",
+        "badge": "PDF 47 PAGES"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v2_checklist",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v2_checklist_1080x1080.html",
+      "elements": {
+        "cta": "Obtenir la checklist",
+        "badge": "CHECKLIST"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v3_erreurs",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v3_erreurs_1080x1080.html",
+      "elements": {
+        "cta": "Recevoir le rapport",
+        "badge": "TOP 5"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v4_calculatrice",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v4_calculatrice_1080x1080.html",
+      "elements": {
+        "cta": "Télécharger l'outil",
+        "badge": "EXCEL GRATUIT"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v1_guide_gratuit",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v1_guide_gratuit_1200x628.html",
+      "elements": {
+        "cta": "Télécharger le guide",
+        "badge": "PDF 47 PAGES"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v2_checklist",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v2_checklist_1200x628.html",
+      "elements": {
+        "cta": "Obtenir la checklist",
+        "badge": "CHECKLIST"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v3_erreurs",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v3_erreurs_1200x628.html",
+      "elements": {
+        "cta": "Recevoir le rapport",
+        "badge": "TOP 5"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v4_calculatrice",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v4_calculatrice_1200x628.html",
+      "elements": {
+        "cta": "Télécharger l'outil",
+        "badge": "EXCEL GRATUIT"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v1_guide_gratuit",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v1_guide_gratuit_1080x1920.html",
+      "elements": {
+        "cta": "Télécharger le guide",
+        "badge": "PDF 47 PAGES"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v2_checklist",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v2_checklist_1080x1920.html",
+      "elements": {
+        "cta": "Obtenir la checklist",
+        "badge": "CHECKLIST"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v3_erreurs",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v3_erreurs_1080x1920.html",
+      "elements": {
+        "cta": "Recevoir le rapport",
+        "badge": "TOP 5"
+      }
+    },
+    {
+      "campaign": "ebook_tracking_gratuit",
+      "variation": "v4_calculatrice",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/ebook_tracking_gratuit/ebook_tracking_gratuit_v4_calculatrice_1080x1920.html",
+      "elements": {
+        "cta": "Télécharger l'outil",
+        "badge": "EXCEL GRATUIT"
+      }
+    }
+  ]
+}
