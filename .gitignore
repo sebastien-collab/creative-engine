@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Output PNGs (on garde les HTML, on ignore les images générées)
+*.png
+*.jpg
+*.jpeg
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
