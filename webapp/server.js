@@ -149,8 +149,8 @@ app.post('/api/generate', upload.single('screenshot'), async (req, res) => {
     
     campaigns.set(campaignId, campaign);
     
-    // Generate HTML files
-    const outputDir = path.join(__dirname, 'output', campaignId);
+    // Generate HTML files (path corrected for Docker structure)
+    const outputDir = path.join(__dirname, '..', 'output', campaignId);
     const generatedFiles = [];
     
     for (const variation of variations) {
@@ -241,7 +241,7 @@ app.get('/preview/:campaignId', (req, res) => {
 // Export to PNG
 app.get('/export/:campaignId/:format', async (req, res) => {
   const { campaignId, format } = req.params;
-  const campaignDir = path.join(__dirname, 'output', campaignId);
+  const campaignDir = path.join(__dirname, '..', 'output', campaignId);
   
   if (!fs.existsSync(campaignDir)) {
     return res.status(404).send('Campagne non trouvée');
@@ -301,9 +301,9 @@ app.get('/export/:campaignId/:format', async (req, res) => {
   }
 });
 
-// Serve output files
-app.use('/output', express.static('output'));
-app.use('/uploads', express.static('uploads'));
+// Serve output files (corrected paths for Docker)
+app.use('/output', express.static(path.join(__dirname, '..', 'output')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Main page
 app.get('/', (req, res) => {
