@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{headline}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .creative {
+      width: 1080px;
+      height: 1920px;
+      background: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding: 48px;
+    }
+    
+    /* Éléments décoratifs - Grille subtile */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .grid-fade {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 20%, #FFFFFF 75%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    /* Orbes & Halos */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .orb-1 {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(26,115,232,0.08), transparent 70%);
+      top: 15%;
+      left: 10%;
+      opacity: 1;
+    }
+    
+    .orb-2 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(26,115,232,0.05), transparent 70%);
+      bottom: 5%;
+      right: 15%;
+      opacity: 1;
+    }
+    
+    /* Conteneur principal */
+    .content {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Header avec label */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #5F6368;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1A73E8;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo span {
+      font-weight: 400;
+      color: #5F6368;
+    }
+    
+    /* Image principale - style screenshot produit */
+    .image-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    
+    .product-image {
+      width: 520px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    
+    /* Carte glass pour l'image */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01));
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    
+    /* Textes */
+    .text-content {
+      text-align: center;
+    }
+    
+    .headline {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: #9AA0A6;
+      margin-bottom: 14px;
+    }
+    
+    .headline-accent {
+      color: #1A73E8;
+    }
+    
+    .subheadline {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #5F6368;
+      margin-bottom: 22px;
+    }
+    
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: #E8F0FE;
+      color: #1A73E8;
+      border: none;
+      margin-bottom: 14px;
+    }
+    
+    /* CTA Button */
+    .cta-container {
+      margin-top: auto;
+      padding-top: 6px;
+    }
+    
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      background: #1A73E8;
+      color: #FFFFFF;
+      border: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    /* Variantes selon le format */
+    {% if format == '1200x628' %}
+    .creative { flex-direction: row; padding: 40px; }
+    .content { justify-content: center; text-align: left; }
+    .image-container { margin-bottom: 0; margin-right: 40px; flex: 0 0 45%; }
+    .text-content { text-align: left; }
+    .headline { font-size: 42px; }
+    .subheadline { font-size: 18px; }
+    {% endif %}
+    
+    {% if format == '1080x1920' %}
+    .headline { font-size: 56px; }
+    .subheadline { font-size: 24px; }
+    .product-image { width: 480px; height: 480px; }
+    {% endif %}
+  </style>
+</head>
+<body>
+  <div class="creative">
+    <!-- Éléments décoratifs -->
+    <div class="grid-overlay"></div>
+    <div class="grid-fade"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <div class="content">
+      <!-- Header -->
+      <div class="header">
+        <div class="label">{{label_text}}</div>
+        <div class="logo">Impulsion<span>.com</span></div>
+      </div>
+      
+      <!-- Image -->
+      <div class="image-container">
+        <img class="product-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop" alt="">
+      </div>
+      
+      <!-- Textes -->
+      <div class="text-content">
+        <div class="badge">DATI IN TEMPO REALE</div>
+        <div class="headline">
+          <span class="headline-accent">Conosci il tuo </span>mercato locale
+        </div>
+        <div class="subheadline">Prezzo al m², tempi di vendita, tendenze. Statistiche affidabili per consigliare i tuoi clienti.</div>
+      </div>
+      
+      <!-- CTA -->
+      <div class="cta-container">
+        <div class="cta">Accedere ai dati →</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

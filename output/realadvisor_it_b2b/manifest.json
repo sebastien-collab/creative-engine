@@ -1,0 +1,458 @@
+{
+  "generatedAt": "2026-02-22T18:15:47.896Z",
+  "total": 30,
+  "results": [
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v1_visibilita",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v1_visibilita_1080x1080.html",
+      "elements": {
+        "cta": "Scopri la piattaforma",
+        "badge": "VISIBILITÀ MASSIMA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v2_qualificazione",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v2_qualificazione_1080x1080.html",
+      "elements": {
+        "cta": "Vedi come funziona",
+        "badge": "LEAD QUALIFICATI"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v3_stima",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v3_stima_1080x1080.html",
+      "elements": {
+        "cta": "Prova la stima",
+        "badge": "STIMA IA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v4_crm",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v4_crm_1080x1080.html",
+      "elements": {
+        "cta": "Guadagnare tempo",
+        "badge": "CRM INTEGRATO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v5_mandati",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v5_mandati_1080x1080.html",
+      "elements": {
+        "cta": "Unirti alla rete",
+        "badge": "CONDIVISIONE ESCLUSIVA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v6_mercato",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v6_mercato_1080x1080.html",
+      "elements": {
+        "cta": "Accedere ai dati",
+        "badge": "DATI IN TEMPO REALE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v7_reputazione",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v7_reputazione_1080x1080.html",
+      "elements": {
+        "cta": "Vedere le recensioni",
+        "badge": "RECENSIONI VERIFICATE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v8_venditori",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v8_venditori_1080x1080.html",
+      "elements": {
+        "cta": "Semplificare il monitoraggio",
+        "badge": "ACCOMPAGNAMENTO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v9_automazione",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v9_automazione_1080x1080.html",
+      "elements": {
+        "cta": "Ottimizzare il mio tempo",
+        "badge": "AUTOMAZIONE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v10_formazione",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v10_formazione_1080x1080.html",
+      "elements": {
+        "cta": "Accedere alle risorse",
+        "badge": "RISORSE ESPERTI"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v1_visibilita",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v1_visibilita_1200x628.html",
+      "elements": {
+        "cta": "Scopri la piattaforma",
+        "badge": "VISIBILITÀ MASSIMA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v2_qualificazione",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v2_qualificazione_1200x628.html",
+      "elements": {
+        "cta": "Vedi come funziona",
+        "badge": "LEAD QUALIFICATI"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v3_stima",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v3_stima_1200x628.html",
+      "elements": {
+        "cta": "Prova la stima",
+        "badge": "STIMA IA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v4_crm",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v4_crm_1200x628.html",
+      "elements": {
+        "cta": "Guadagnare tempo",
+        "badge": "CRM INTEGRATO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v5_mandati",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v5_mandati_1200x628.html",
+      "elements": {
+        "cta": "Unirti alla rete",
+        "badge": "CONDIVISIONE ESCLUSIVA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v6_mercato",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v6_mercato_1200x628.html",
+      "elements": {
+        "cta": "Accedere ai dati",
+        "badge": "DATI IN TEMPO REALE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v7_reputazione",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v7_reputazione_1200x628.html",
+      "elements": {
+        "cta": "Vedere le recensioni",
+        "badge": "RECENSIONI VERIFICATE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v8_venditori",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v8_venditori_1200x628.html",
+      "elements": {
+        "cta": "Semplificare il monitoraggio",
+        "badge": "ACCOMPAGNAMENTO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v9_automazione",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v9_automazione_1200x628.html",
+      "elements": {
+        "cta": "Ottimizzare il mio tempo",
+        "badge": "AUTOMAZIONE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v10_formazione",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v10_formazione_1200x628.html",
+      "elements": {
+        "cta": "Accedere alle risorse",
+        "badge": "RISORSE ESPERTI"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v1_visibilita",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v1_visibilita_1080x1920.html",
+      "elements": {
+        "cta": "Scopri la piattaforma",
+        "badge": "VISIBILITÀ MASSIMA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v2_qualificazione",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v2_qualificazione_1080x1920.html",
+      "elements": {
+        "cta": "Vedi come funziona",
+        "badge": "LEAD QUALIFICATI"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v3_stima",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v3_stima_1080x1920.html",
+      "elements": {
+        "cta": "Prova la stima",
+        "badge": "STIMA IA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v4_crm",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v4_crm_1080x1920.html",
+      "elements": {
+        "cta": "Guadagnare tempo",
+        "badge": "CRM INTEGRATO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v5_mandati",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v5_mandati_1080x1920.html",
+      "elements": {
+        "cta": "Unirti alla rete",
+        "badge": "CONDIVISIONE ESCLUSIVA"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v6_mercato",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v6_mercato_1080x1920.html",
+      "elements": {
+        "cta": "Accedere ai dati",
+        "badge": "DATI IN TEMPO REALE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v7_reputazione",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v7_reputazione_1080x1920.html",
+      "elements": {
+        "cta": "Vedere le recensioni",
+        "badge": "RECENSIONI VERIFICATE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v8_venditori",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v8_venditori_1080x1920.html",
+      "elements": {
+        "cta": "Semplificare il monitoraggio",
+        "badge": "ACCOMPAGNAMENTO"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v9_automazione",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v9_automazione_1080x1920.html",
+      "elements": {
+        "cta": "Ottimizzare il mio tempo",
+        "badge": "AUTOMAZIONE"
+      }
+    },
+    {
+      "campaign": "realadvisor_it_b2b",
+      "variation": "v10_formazione",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/realadvisor_it_b2b/realadvisor_it_b2b_v10_formazione_1080x1920.html",
+      "elements": {
+        "cta": "Accedere alle risorse",
+        "badge": "RISORSE ESPERTI"
+      }
+    }
+  ],
+  "exported_images": [
+    {
+      "filename": "realadvisor_it_b2b_v10_formazione_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v10_formazione_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v10_formazione_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v10_formazione_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v10_formazione_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v10_formazione_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v1_visibilita_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v1_visibilita_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v1_visibilita_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v1_visibilita_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v1_visibilita_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v1_visibilita_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v2_qualificazione_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v2_qualificazione_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v2_qualificazione_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v2_qualificazione_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v2_qualificazione_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v2_qualificazione_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v3_stima_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v3_stima_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v3_stima_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v3_stima_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v3_stima_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v3_stima_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v4_crm_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v4_crm_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v4_crm_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v4_crm_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v4_crm_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v4_crm_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v5_mandati_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v5_mandati_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v5_mandati_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v5_mandati_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v5_mandati_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v5_mandati_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v6_mercato_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v6_mercato_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v6_mercato_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v6_mercato_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v6_mercato_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v6_mercato_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v7_reputazione_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v7_reputazione_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v7_reputazione_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v7_reputazione_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v7_reputazione_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v7_reputazione_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v8_venditori_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v8_venditori_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v8_venditori_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v8_venditori_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v8_venditori_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v8_venditori_1200x628.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v9_automazione_1080x1080.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v9_automazione_1080x1080.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v9_automazione_1080x1920.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v9_automazione_1080x1920.png"
+    },
+    {
+      "filename": "realadvisor_it_b2b_v9_automazione_1200x628.png",
+      "format": "png",
+      "path": "images/realadvisor_it_b2b_v9_automazione_1200x628.png"
+    }
+  ]
+}
