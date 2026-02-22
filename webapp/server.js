@@ -191,7 +191,13 @@ app.get('/preview/:campaignId', (req, res) => {
     return res.status(404).send('Campagne non trouvée');
   }
   
-  const htmlFiles = fs.readdirSync(path.join(__dirname, 'output', campaignId))
+  const outputDir = path.join(__dirname, '..', 'output', campaignId);
+  
+  if (!fs.existsSync(outputDir)) {
+    return res.status(404).send('Dossier de campagne non trouvé');
+  }
+  
+  const htmlFiles = fs.readdirSync(outputDir)
     .filter(f => f.endsWith('.html'));
   
   let previews = htmlFiles.map(file => {

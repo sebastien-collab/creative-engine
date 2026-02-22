@@ -32,7 +32,7 @@ RUN npx playwright install chromium
 COPY . .
 
 # Create necessary directories
-RUN mkdir -p uploads output webapp/uploads webapp/output
+RUN mkdir -p uploads output webapp/uploads && chmod -R 755 uploads output
 
 # Expose port
 EXPOSE 3000
