@@ -122,5 +122,67 @@
         "badge": "EXCEL GRATUIT"
       }
     }
+  ],
+  "exported_images": [
+    {
+      "filename": "ebook_tracking_gratuit_v1_guide_gratuit_1080x1080.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v1_guide_gratuit_1080x1080.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v1_guide_gratuit_1080x1920.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v1_guide_gratuit_1080x1920.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v1_guide_gratuit_1200x628.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v1_guide_gratuit_1200x628.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v2_checklist_1080x1080.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v2_checklist_1080x1080.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v2_checklist_1080x1920.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v2_checklist_1080x1920.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v2_checklist_1200x628.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v2_checklist_1200x628.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v3_erreurs_1080x1080.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v3_erreurs_1080x1080.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v3_erreurs_1080x1920.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v3_erreurs_1080x1920.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v3_erreurs_1200x628.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v3_erreurs_1200x628.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v4_calculatrice_1080x1080.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v4_calculatrice_1080x1080.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v4_calculatrice_1080x1920.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v4_calculatrice_1080x1920.png"
+    },
+    {
+      "filename": "ebook_tracking_gratuit_v4_calculatrice_1200x628.png",
+      "format": "png",
+      "path": "images/ebook_tracking_gratuit_v4_calculatrice_1200x628.png"
+    }
   ]
 }

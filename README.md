@@ -50,6 +50,25 @@ creative-engine/
 
 ---
 
+## 📸 Export vers PNG/JPEG
+
+Convertis tes créatives HTML en images prêtes pour les plateformes ads :
+
+```bash
+# Exporter une campagne en PNG
+node scripts/export.js formation_mediatracking png
+
+# Exporter en JPEG (plus léger pour les ads)
+node scripts/export.js ebook_tracking_gratuit jpeg
+
+# Exporter toutes les campagnes
+node scripts/export.js all png
+```
+
+Voir [EXPORT_GUIDE.md](EXPORT_GUIDE.md) pour le guide complet.
+
+---
+
 ## 💡 Exemple Concret
 
 ### Template HTML (`templates/single-product.html`)

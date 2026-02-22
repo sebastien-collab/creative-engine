@@ -6,6 +6,8 @@
   "scripts": {
     "generate": "node scripts/generate.js generate",
     "export": "node scripts/generate.js export",
+    "export:png": "node scripts/export.js",
+    "export:jpeg": "node scripts/export.js",
     "list": "node scripts/generate.js list",
     "ab:generate": "node scripts/ab_test_generator.js"
   },

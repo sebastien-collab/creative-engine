@@ -182,5 +182,97 @@
         "badge": "GARANTIE"
       }
     }
+  ],
+  "exported_images": [
+    {
+      "filename": "formation_mediatracking_v1_urgence_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v1_urgence_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v1_urgence_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v1_urgence_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v1_urgence_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v1_urgence_1200x628.png"
+    },
+    {
+      "filename": "formation_mediatracking_v2_resultat_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v2_resultat_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v2_resultat_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v2_resultat_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v2_resultat_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v2_resultat_1200x628.png"
+    },
+    {
+      "filename": "formation_mediatracking_v3_preuve_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v3_preuve_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v3_preuve_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v3_preuve_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v3_preuve_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v3_preuve_1200x628.png"
+    },
+    {
+      "filename": "formation_mediatracking_v4_facilite_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v4_facilite_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v4_facilite_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v4_facilite_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v4_facilite_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v4_facilite_1200x628.png"
+    },
+    {
+      "filename": "formation_mediatracking_v5_transformation_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v5_transformation_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v5_transformation_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v5_transformation_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v5_transformation_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v5_transformation_1200x628.png"
+    },
+    {
+      "filename": "formation_mediatracking_v6_garantie_1080x1080.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v6_garantie_1080x1080.png"
+    },
+    {
+      "filename": "formation_mediatracking_v6_garantie_1080x1920.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v6_garantie_1080x1920.png"
+    },
+    {
+      "filename": "formation_mediatracking_v6_garantie_1200x628.png",
+      "format": "png",
+      "path": "images/formation_mediatracking_v6_garantie_1200x628.png"
+    }
   ]
 }
