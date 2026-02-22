@@ -1,0 +1,19 @@
+{
+  "name": "creative-engine",
+  "version": "1.0.0",
+  "description": "Moteur de génération de créatives publicitaires à grande échelle",
+  "main": "scripts/generate.js",
+  "scripts": {
+    "generate": "node scripts/generate.js generate",
+    "export": "node scripts/generate.js export",
+    "list": "node scripts/generate.js list",
+    "ab:generate": "node scripts/ab_test_generator.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {},
+  "keywords": ["creative", "ads", "marketing", "automation", "html-to-image"],
+  "author": "",
+  "license": "MIT"
+}

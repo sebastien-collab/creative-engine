@@ -1,0 +1,402 @@
+{
+  "generatedAt": "2026-02-22T14:19:25.934Z",
+  "total": 36,
+  "results": [
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v1_urgency",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v1_urgency_1080x1080.html",
+      "elements": {
+        "headline": "Derniers jours pour en profiter",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v2_urgency",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v2_urgency_1080x1080.html",
+      "elements": {
+        "headline": "Ça se termine ce soir minuit",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v3_urgency",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v3_urgency_1080x1080.html",
+      "elements": {
+        "headline": "Plus que 48h avant la fin",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v4_scarcity",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v4_scarcity_1080x1080.html",
+      "elements": {
+        "headline": "Seulement 7 places disponibles",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v5_scarcity",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v5_scarcity_1080x1080.html",
+      "elements": {
+        "headline": "Stock limité - Acte vite",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v6_scarcity",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v6_scarcity_1080x1080.html",
+      "elements": {
+        "headline": "Édition limitée - Ne loupe pas ça",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v7_social_proof",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v7_social_proof_1080x1080.html",
+      "elements": {
+        "headline": "Rejoins les +10,000 entrepreneurs",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v8_social_proof",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v8_social_proof_1080x1080.html",
+      "elements": {
+        "headline": "Déjà 500 freelances formés",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v9_social_proof",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v9_social_proof_1080x1080.html",
+      "elements": {
+        "headline": "La méthode qui cartonne en 2026",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v10_result",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v10_result_1080x1080.html",
+      "elements": {
+        "headline": "Tes premiers clients en 7 jours",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v11_result",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v11_result_1080x1080.html",
+      "elements": {
+        "headline": "Résultats garantis ou remboursés",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v12_result",
+      "format": "1080x1080",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v12_result_1080x1080.html",
+      "elements": {
+        "headline": "10x ton CA en 90 jours chrono",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v1_urgency",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v1_urgency_1200x628.html",
+      "elements": {
+        "headline": "Derniers jours pour en profiter",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v2_urgency",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v2_urgency_1200x628.html",
+      "elements": {
+        "headline": "Ça se termine ce soir minuit",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v3_urgency",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v3_urgency_1200x628.html",
+      "elements": {
+        "headline": "Plus que 48h avant la fin",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v4_scarcity",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v4_scarcity_1200x628.html",
+      "elements": {
+        "headline": "Seulement 7 places disponibles",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v5_scarcity",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v5_scarcity_1200x628.html",
+      "elements": {
+        "headline": "Stock limité - Acte vite",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v6_scarcity",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v6_scarcity_1200x628.html",
+      "elements": {
+        "headline": "Édition limitée - Ne loupe pas ça",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v7_social_proof",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v7_social_proof_1200x628.html",
+      "elements": {
+        "headline": "Rejoins les +10,000 entrepreneurs",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v8_social_proof",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v8_social_proof_1200x628.html",
+      "elements": {
+        "headline": "Déjà 500 freelances formés",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v9_social_proof",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v9_social_proof_1200x628.html",
+      "elements": {
+        "headline": "La méthode qui cartonne en 2026",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v10_result",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v10_result_1200x628.html",
+      "elements": {
+        "headline": "Tes premiers clients en 7 jours",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v11_result",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v11_result_1200x628.html",
+      "elements": {
+        "headline": "Résultats garantis ou remboursés",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v12_result",
+      "format": "1200x628",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v12_result_1200x628.html",
+      "elements": {
+        "headline": "10x ton CA en 90 jours chrono",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v1_urgency",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v1_urgency_1080x1920.html",
+      "elements": {
+        "headline": "Derniers jours pour en profiter",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v2_urgency",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v2_urgency_1080x1920.html",
+      "elements": {
+        "headline": "Ça se termine ce soir minuit",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v3_urgency",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v3_urgency_1080x1920.html",
+      "elements": {
+        "headline": "Plus que 48h avant la fin",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v4_scarcity",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v4_scarcity_1080x1920.html",
+      "elements": {
+        "headline": "Seulement 7 places disponibles",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v5_scarcity",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v5_scarcity_1080x1920.html",
+      "elements": {
+        "headline": "Stock limité - Acte vite",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v6_scarcity",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v6_scarcity_1080x1920.html",
+      "elements": {
+        "headline": "Édition limitée - Ne loupe pas ça",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v7_social_proof",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v7_social_proof_1080x1920.html",
+      "elements": {
+        "headline": "Rejoins les +10,000 entrepreneurs",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v8_social_proof",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v8_social_proof_1080x1920.html",
+      "elements": {
+        "headline": "Déjà 500 freelances formés",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v9_social_proof",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v9_social_proof_1080x1920.html",
+      "elements": {
+        "headline": "La méthode qui cartonne en 2026",
+        "cta": "Découvrir la méthode",
+        "badge": "NOUVEAU"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v10_result",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v10_result_1080x1920.html",
+      "elements": {
+        "headline": "Tes premiers clients en 7 jours",
+        "cta": "Réserver ma place",
+        "badge": "TOP VENTES"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v11_result",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v11_result_1080x1920.html",
+      "elements": {
+        "headline": "Résultats garantis ou remboursés",
+        "cta": "Commencer maintenant",
+        "badge": "LIMITÉ"
+      }
+    },
+    {
+      "campaign": "formation_media_buying",
+      "variation": "v12_result",
+      "format": "1080x1920",
+      "htmlPath": "/data/.openclaw/workspace/creative-engine/output/formation_media_buying/formation_media_buying_v12_result_1080x1920.html",
+      "elements": {
+        "headline": "10x ton CA en 90 jours chrono",
+        "cta": "J'en profite →",
+        "badge": "-50%"
+      }
+    }
+  ]
+}

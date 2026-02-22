@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .creative {
+      width: 1080px;
+      height: 1920px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px;
+    }
+    
+    .creative::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .badge {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      background: #2ED573;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: 24px;
+      transform: rotate(8deg);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    
+    .product-img {
+      width: 520px;
+      height: 520px;
+      object-fit: contain;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 25px 50px rgba(0,0,0,0.25));
+      z-index: 5;
+    }
+    
+    .headline {
+      font-size: 64px;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1.15;
+      max-width: 90%;
+      margin-bottom: 20px;
+      z-index: 5;
+    }
+    
+    .subheadline {
+      font-size: 30px;
+      color: #FFFFFF;
+      opacity: 0.95;
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 600;
+      z-index: 5;
+    }
+    
+    .cta {
+      background: #4ECDC4;
+      color: #FFFFFF;
+      padding: 28px 64px;
+      border-radius: 60px;
+      font-size: 28px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+      display: inline-block;
+      z-index: 5;
+    }
+    
+    .decoration {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .decoration-1 {
+      width: 300px;
+      height: 300px;
+      bottom: -100px;
+      left: -100px;
+    }
+    
+    .decoration-2 {
+      width: 200px;
+      height: 200px;
+      top: 100px;
+      right: -50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="creative">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    <div class="badge">NOUVEAU</div>
+    <img class="product-img" src="assets/course_mockup.png" alt="">
+    <div class="headline">Derniers jours pour en profiter</div>
+    <div class="subheadline">Offre valable jusqu'à ce soir minuit</div>
+    <div class="cta">Découvrir la méthode</div>
+  </div>
+</body>
+</html>
