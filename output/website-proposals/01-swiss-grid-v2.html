@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Grid v2 — L'Architecte | Sebastien Rech</title>
+  <meta name="description" content="Media Buyer, Formateur et Expert Google Ads & Meta Ads. Attirez plus de clients grâce à la publicité.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      color: #000;
+      background-color: #FFF;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ========================================
+       GRID BACKGROUND PATTERN
+       12-column grid as subtle background
+       ======================================== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1200px;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        repeating-linear-gradient(
+          to right,
+          transparent,
+          transparent calc((100% / 12) - 1px),
+          rgba(0, 0, 0, 0.03) calc((100% / 12) - 1px),
+          rgba(0, 0, 0, 0.03) calc(100% / 12)
+        );
+    }
+
+    /* ========================================
+       LAYOUT
+       ======================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    section {
+      padding: 120px 0;
+    }
+
+    /* ========================================
+       SECTION SEPARATOR
+       ======================================== */
+    .separator {
+      border: none;
+      border-top: 2px solid #000;
+      margin: 0;
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #999;
+    }
+
+    .label {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: #999;
+      max-width: 600px;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: 2px solid #000;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #FFF;
+    }
+
+    .btn-primary:hover {
+      background: #FFF;
+      color: #000;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #000;
+    }
+
+    .btn-outline:hover {
+      background: #000;
+      color: #FFF;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #999;
+    }
+
+    .nav-cta {
+      padding: 10px 24px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: #000;
+      color: #FFF;
+      border: 2px solid #000;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: #FFF;
+      color: #000;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #000;
+    }
+
+    /* ========================================
+       HERO (v2 — 2-column with portrait)
+       ======================================== */
+    .hero {
+      padding-top: 200px;
+      padding-bottom: 160px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      grid-column: 1 / 8;
+    }
+
+    .hero-portrait {
+      grid-column: 8 / 13;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      transition: filter 0.4s ease;
+    }
+
+    .hero .label {
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      margin-bottom: 40px;
+      max-width: 900px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #999;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ========================================
+       STATS
+       ======================================== */
+    .stats {
+      padding: 100px 0;
+    }
+
+    .stats .grid-12 {
+      align-items: end;
+    }
+
+    .stat-item {
+      grid-column: span 4;
+    }
+
+    .stat-number {
+      font-size: 12rem;
+      font-weight: 700;
+      line-height: 0.85;
+      letter-spacing: -0.06em;
+      display: block;
+    }
+
+    .stat-caption {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 16px;
+    }
+
+    /* ========================================
+       SERVICES
+       ======================================== */
+    .services {
+      padding: 120px 0;
+    }
+
+    .services-header {
+      margin-bottom: 80px;
+    }
+
+    .service-item {
+      grid-column: span 4;
+      padding-top: 40px;
+      border-top: 2px solid #000;
+    }
+
+    .service-number {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .service-desc {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       ABOUT (v2 — with portrait + stats grid)
+       ======================================== */
+    .about {
+      padding: 120px 0;
+    }
+
+    .about-content {
+      grid-column: 1 / 8;
+    }
+
+    .about-content .section-title {
+      margin-bottom: 40px;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #000;
+      margin-bottom: 48px;
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .about-stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .about-stat-label {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+    }
+
+    .about-sidebar {
+      grid-column: 9 / 13;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 16px;
+    }
+
+    .about-sidebar img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      text-align: center;
+      padding: 16px 0;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+
+    /* ========================================
+       TESTIMONIALS
+       ======================================== */
+    .testimonials {
+      padding: 120px 0;
+    }
+
+    .testimonials-header {
+      margin-bottom: 80px;
+    }
+
+    .testimonial-item {
+      grid-column: span 4;
+      padding-top: 40px;
+      border-top: 2px solid #000;
+    }
+
+    .testimonial-quote {
+      font-size: 1.0625rem;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      color: #000;
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      display: block;
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 0.8;
+      margin-bottom: 16px;
+      color: #999;
+    }
+
+    .testimonial-author {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ========================================
+       BLOG
+       ======================================== */
+    .blog {
+      padding: 120px 0;
+    }
+
+    .blog-header {
+      margin-bottom: 80px;
+    }
+
+    .blog-item {
+      grid-column: span 6;
+      padding-top: 32px;
+      border-top: 2px solid #000;
+      margin-bottom: 24px;
+    }
+
+    .blog-number {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .blog-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      transition: color 0.2s ease;
+    }
+
+    .blog-title:hover {
+      color: #999;
+    }
+
+    .blog-link {
+      display: block;
+    }
+
+    /* ========================================
+       YOUTUBE VIDEOS (v2 — new section)
+       ======================================== */
+    .videos {
+      padding: 120px 0;
+    }
+
+    .videos-header {
+      margin-bottom: 80px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .video-card {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      transition: color 0.2s ease;
+    }
+
+    .video-card:hover {
+      color: #000;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+
+    .video-card:hover .video-thumbnail img {
+      filter: grayscale(0%);
+    }
+
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .video-card:hover .video-play {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-play::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #000;
+      margin-left: 3px;
+    }
+
+    .video-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .video-card:hover .video-title {
+      color: #999;
+    }
+
+    .video-date {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.04em;
+    }
+
+    .videos-more {
+      margin-top: 56px;
+      text-align: center;
+    }
+
+    .videos-more a {
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000;
+      transition: color 0.2s ease;
+    }
+
+    .videos-more a:hover {
+      color: #999;
+    }
+
+    /* ========================================
+       CTA
+       ======================================== */
+    .cta {
+      padding: 160px 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .cta p {
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: #999;
+      margin-bottom: 56px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      padding: 80px 0 40px;
+    }
+
+    .footer-top {
+      margin-bottom: 80px;
+    }
+
+    .footer-brand {
+      grid-column: 1 / 5;
+    }
+
+    .footer-brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-full {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .footer-social a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      transition: color 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      color: #000;
+    }
+
+    .footer-col {
+      grid-column: span 2;
+    }
+
+    .footer-col:nth-child(2) {
+      grid-column: 6 / 8;
+    }
+
+    .footer-col-title {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 24px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: #999;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #000;
+    }
+
+    .footer-bottom {
+      padding-top: 40px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: #999;
+    }
+
+    /* ========================================
+       RESPONSIVE — TABLET
+       ======================================== */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 32px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-portrait img {
+        height: 440px;
+      }
+
+      .stat-number {
+        font-size: 8rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .cta h2 {
+        font-size: 3rem;
+      }
+
+      .about-content {
+        grid-column: 1 / 8;
+      }
+
+      .about-sidebar {
+        grid-column: 9 / 13;
+      }
+
+      .about-sidebar img {
+        height: 320px;
+      }
+
+      .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .video-title {
+        font-size: 0.9375rem;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE — MOBILE
+       ======================================== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+
+      .grid-12 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Nav mobile */
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #FFF;
+        flex-direction: column;
+        padding: 40px 24px;
+        gap: 24px;
+        border-bottom: 2px solid #000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      /* Hero mobile */
+      .hero {
+        padding-top: 140px;
+        padding-bottom: 100px;
+        min-height: auto;
+      }
+
+      .hero-content {
+        grid-column: 1 / -1;
+        order: 2;
+      }
+
+      .hero-portrait {
+        grid-column: 1 / -1;
+        order: 1;
+        margin-bottom: 48px;
+      }
+
+      .hero-portrait img {
+        height: 400px;
+        max-width: 320px;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+        margin-bottom: 32px;
+      }
+
+      .hero .label {
+        margin-bottom: 24px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.0625rem;
+        margin-bottom: 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        text-align: center;
+      }
+
+      /* Stats mobile */
+      section.stats {
+        padding: 80px 0;
+      }
+
+      .stat-item {
+        grid-column: 1 / -1;
+        margin-bottom: 56px;
+      }
+
+      .stat-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .stat-number {
+        font-size: 7rem;
+      }
+
+      /* Services mobile */
+      .services {
+        padding: 80px 0;
+      }
+
+      .service-item {
+        grid-column: 1 / -1;
+        margin-bottom: 48px;
+      }
+
+      .service-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* About mobile */
+      .about {
+        padding: 80px 0;
+      }
+
+      .about-content {
+        grid-column: 1 / -1;
+        margin-bottom: 48px;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .about-sidebar {
+        grid-column: 1 / -1;
+      }
+
+      .about-sidebar img {
+        height: 360px;
+        max-width: 320px;
+      }
+
+      .about-stat-number {
+        font-size: 2.5rem;
+      }
+
+      /* Testimonials mobile */
+      .testimonials {
+        padding: 80px 0;
+      }
+
+      .testimonial-item {
+        grid-column: 1 / -1;
+        margin-bottom: 48px;
+      }
+
+      .testimonial-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Blog mobile */
+      .blog {
+        padding: 80px 0;
+      }
+
+      .blog-item {
+        grid-column: 1 / -1;
+      }
+
+      .blog-title {
+        font-size: 1.125rem;
+      }
+
+      /* Videos mobile */
+      .videos {
+        padding: 80px 0;
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .video-play {
+        width: 56px;
+        height: 56px;
+      }
+
+      .video-play::after {
+        border-width: 8px 0 8px 14px;
+      }
+
+      /* CTA mobile */
+      .cta {
+        padding: 100px 0;
+      }
+
+      .cta h2 {
+        font-size: 2.25rem;
+      }
+
+      /* Footer mobile */
+      .footer-brand {
+        grid-column: 1 / -1;
+        margin-bottom: 48px;
+      }
+
+      .footer-col {
+        grid-column: 1 / -1;
+        margin-bottom: 32px;
+      }
+
+      .footer-col:nth-child(2) {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE — SMALL MOBILE
+       ======================================== */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.125rem;
+      }
+
+      .hero-portrait img {
+        height: 320px;
+        max-width: 280px;
+      }
+
+      .stat-number {
+        font-size: 5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 1.875rem;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-sidebar img {
+        height: 300px;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">SR</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#formation">Formation</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO (v2 — 2-column with portrait)
+       ============================================ -->
+  <section class="hero" id="accueil">
+    <div class="container">
+      <div class="grid-12">
+        <div class="hero-content">
+          <p class="label">Media Buyer | Expert Google Ads &amp; Meta Ads</p>
+          <h1>Attirez plus de clients gr&acirc;ce &agrave; la publicit&eacute;</h1>
+          <p class="hero-subtitle">Confiez-moi la gestion de vos campagnes publicitaires. Strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting &mdash; pour que vous puissiez vous concentrer sur votre activit&eacute;.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Me contacter</a>
+            <a href="#services" class="btn btn-outline">D&eacute;couvrir mes services</a>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <img src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="Sebastien Rech — Media Buyer & Formateur">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       STATS
+       ============================================ -->
+  <section class="stats">
+    <div class="container">
+      <div class="grid-12">
+        <div class="stat-item">
+          <span class="stat-number">9+</span>
+          <p class="stat-caption">Ans d'exp&eacute;rience</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">200+</span>
+          <p class="stat-caption">Clients</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3M&euro;+</span>
+          <p class="stat-caption">Budget g&eacute;r&eacute;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       SERVICES
+       ============================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <h2 class="section-title">Mes services</h2>
+        <p class="section-subtitle">Des solutions adapt&eacute;es &agrave; vos objectifs pour d&eacute;velopper votre activit&eacute; en ligne.</p>
+      </div>
+      <div class="grid-12">
+        <div class="service-item">
+          <p class="service-number">01</p>
+          <h3 class="service-title">Gestion de campagnes</h3>
+          <p class="service-desc">Je m'occupe de tout : strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting pour maximiser votre ROI sur Google Ads et Meta Ads.</p>
+        </div>
+        <div class="service-item">
+          <p class="service-number">02</p>
+          <h3 class="service-title">Formation Media Buying</h3>
+          <p class="service-desc">Apprenez le m&eacute;tier de Media Buyer et lancez-vous en freelance. Je partage mes m&eacute;thodes pour trouver des clients et g&eacute;n&eacute;rer des r&eacute;sultats.</p>
+        </div>
+        <div class="service-item" id="formation">
+          <p class="service-number">03</p>
+          <h3 class="service-title">Coaching en publicit&eacute;</h3>
+          <p class="service-desc">Vous connaissez d&eacute;j&agrave; les bases mais souhaitez aller plus loin ? Je vous accompagne pour approfondir vos connaissances et optimiser vos campagnes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       ABOUT (v2 — portrait + stats grid)
+       ============================================ -->
+  <section class="about">
+    <div class="container">
+      <div class="grid-12">
+        <div class="about-content">
+          <h2 class="section-title">Qui suis-je ?</h2>
+          <p class="about-text">Depuis 2015, j'aide les entreprises &agrave; attirer plus de clients en ligne. Mon parcours a d&eacute;but&eacute; dans une startup e-commerce g&eacute;n&eacute;rant 30 millions d'euros de chiffre d'affaires, avant de travailler pour plusieurs marques et agences marketing &agrave; Londres, Paris et &agrave; l'&Icirc;le Maurice. Apr&egrave;s avoir accompagn&eacute; plus de 200 clients (entrepreneurs, artisans, PME et grandes marques), j'ai lanc&eacute; mon activit&eacute; de freelance en janvier 2022.</p>
+          <div class="about-stats-grid">
+            <div class="about-stat-item">
+              <p class="about-stat-number">9</p>
+              <p class="about-stat-label">Ans d'exp&eacute;rience</p>
+            </div>
+            <div class="about-stat-item">
+              <p class="about-stat-number">200</p>
+              <p class="about-stat-label">Entreprises accompagn&eacute;es</p>
+            </div>
+            <div class="about-stat-item">
+              <p class="about-stat-number">500</p>
+              <p class="about-stat-label">Personnes form&eacute;es</p>
+            </div>
+            <div class="about-stat-item">
+              <p class="about-stat-number">3M&euro;</p>
+              <p class="about-stat-label">De budget annuel</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-sidebar">
+          <img src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="Sebastien Rech">
+          <p class="about-badge">Google Partner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       TESTIMONIALS
+       ============================================ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <h2 class="section-title">Ce que disent mes clients</h2>
+      </div>
+      <div class="grid-12">
+        <div class="testimonial-item">
+          <p class="testimonial-quote">Juste parfait. S&eacute;bastien et son &eacute;quipe sont aux petits soins, disponibles, humains et tirent les apprenants vers le haut.</p>
+          <p class="testimonial-author">Anthony Bizarro</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">impulsion.com est LA r&eacute;f&eacute;rence dans le domaine du Media Buying. L'exp&eacute;rience des formateurs est incroyable.</p>
+          <p class="testimonial-author">Alexis Sevrin</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">Je ne peux que vous la recommander pour lancer votre carri&egrave;re de media buyer !</p>
+          <p class="testimonial-author">Charline Bazin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       BLOG
+       ============================================ -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="blog-header">
+        <h2 class="section-title">Derniers articles</h2>
+      </div>
+      <div class="grid-12">
+        <div class="blog-item">
+          <p class="blog-number">01</p>
+          <a href="#" class="blog-link">
+            <h3 class="blog-title">Formation Claude Code pour Media Buyer : Boostez vos Performances avec l'IA</h3>
+          </a>
+        </div>
+        <div class="blog-item">
+          <p class="blog-number">02</p>
+          <a href="#" class="blog-link">
+            <h3 class="blog-title">Comment Devenir Media Buyer : Le Guide Complet du M&eacute;tier</h3>
+          </a>
+        </div>
+        <div class="blog-item">
+          <p class="blog-number">03</p>
+          <a href="#" class="blog-link">
+            <h3 class="blog-title">Formation Meta Ads : Guide Complet Facebook et Instagram Ads</h3>
+          </a>
+        </div>
+        <div class="blog-item">
+          <p class="blog-number">04</p>
+          <a href="#" class="blog-link">
+            <h3 class="blog-title">Formation Google Ads : Le Guide Complet pour Ma&icirc;triser vos Campagnes</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       YOUTUBE VIDEOS (v2 — new section)
+       ============================================ -->
+  <section class="videos" id="videos">
+    <div class="container">
+      <div class="videos-header">
+        <h2 class="section-title">Mes derni&egrave;res vid&eacute;os</h2>
+        <p class="section-subtitle">Retrouvez mes conseils en publicit&eacute; en ligne, media buying et marketing digital.</p>
+      </div>
+      <div class="videos-grid">
+        <a href="https://www.youtube.com/watch?v=1pFx0Pc2hOA" class="video-card" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/1pFx0Pc2hOA/maxresdefault.jpg" alt="Formation n8n : Apprendre l'automation n8n a partir de zero">
+            <div class="video-play"></div>
+          </div>
+          <h3 class="video-title">Formation n8n : Apprendre l'automation n8n &agrave; partir de z&eacute;ro</h3>
+          <p class="video-date">18 F&eacute;v 2026</p>
+        </a>
+        <a href="https://www.youtube.com/watch?v=9ZpY-ulKg-k" class="video-card" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/9ZpY-ulKg-k/maxresdefault.jpg" alt="Comment relancer automatiquement ses prospects sur WhatsApp">
+            <div class="video-play"></div>
+          </div>
+          <h3 class="video-title">Comment relancer automatiquement ses prospects sur WhatsApp ?</h3>
+          <p class="video-date">30 Jan 2026</p>
+        </a>
+        <a href="https://www.youtube.com/watch?v=opJ8cuQzpnY" class="video-card" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/opJ8cuQzpnY/maxresdefault.jpg" alt="Comprendre le metier de Media Buyer en 15 minutes">
+            <div class="video-play"></div>
+          </div>
+          <h3 class="video-title">Comprendre le m&eacute;tier de Media Buyer en 15 minutes</h3>
+          <p class="video-date">21 Jan 2026</p>
+        </a>
+      </div>
+      <div class="videos-more">
+        <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener noreferrer">Voir toutes mes vid&eacute;os &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       CTA
+       ============================================ -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Pr&ecirc;t &agrave; d&eacute;velopper votre activit&eacute; ?</h2>
+      <p>Contactez-moi d&egrave;s aujourd'hui pour parler de votre projet et de vos objectifs.</p>
+      <a href="mailto:contact@sebastienrech.com" class="btn btn-primary">Me contacter</a>
+    </div>
+  </section>
+
+  <hr class="separator">
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="grid-12">
+          <div class="footer-brand">
+            <p class="footer-brand-name">SR</p>
+            <p class="footer-brand-full">Sebastien Rech</p>
+            <p class="footer-brand-desc">Media Buyer, Formateur et Expert Google Ads &amp; Meta Ads.</p>
+            <div class="footer-social">
+              <a href="#">YouTube</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">TikTok</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Navigation</p>
+            <ul>
+              <li><a href="#accueil">Accueil</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#formation">Formation</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Services</p>
+            <ul>
+              <li><a href="#">Gestion de campagnes</a></li>
+              <li><a href="#">Formation Media Buying</a></li>
+              <li><a href="#">Coaching en publicit&eacute;</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">L&eacute;gal</p>
+            <ul>
+              <li><a href="#">Mentions l&eacute;gales</a></li>
+              <li><a href="#">Politique de confidentialit&eacute;</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 sebastienrech.com &mdash; Tous droits r&eacute;serv&eacute;s</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

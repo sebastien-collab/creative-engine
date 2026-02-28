@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic Type — Le Performer | Sebastien Rech</title>
+    <meta name="description" content="Media Buyer expert Google Ads & Meta Ads. Attirez plus de clients grâce à la publicité en ligne.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 300;
+            color: #000;
+            background-color: #FFF;
+            line-height: 1.4;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        ::selection {
+            background-color: #000;
+            color: #FFF;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: none;
+        }
+
+        /* ========================================
+           CUSTOM CURSOR
+           ======================================== */
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+            will-change: transform;
+        }
+
+        .cursor--hover {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+        }
+
+        /* ========================================
+           LAYOUT UTILITIES
+           ======================================== */
+        .section {
+            padding: 160px 60px;
+            position: relative;
+        }
+
+        .section--full {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ========================================
+           TYPOGRAPHY UTILITIES
+           ======================================== */
+        .w300 { font-weight: 300; }
+        .w400 { font-weight: 400; }
+        .w500 { font-weight: 500; }
+        .w600 { font-weight: 600; }
+        .w700 { font-weight: 700; }
+        .italic { font-style: italic; }
+        .gray { color: #888; }
+
+        /* ========================================
+           SCROLL REVEAL ANIMATIONS
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-word--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-line {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-line--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale--visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ========================================
+           FIXED BOTTOM NAVIGATION
+           ======================================== */
+        .nav-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-bottom__logo {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-bottom__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-bottom__link {
+            position: relative;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-bottom__link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #000;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-bottom__link:hover::after {
+            width: 100%;
+        }
+
+        .nav-bottom__cta {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+
+        .nav-bottom__cta:hover {
+            gap: 12px;
+        }
+
+        .nav-bottom__cta-arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-bottom__cta:hover .nav-bottom__cta-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 60px 180px;
+        }
+
+        .hero__line {
+            overflow: hidden;
+        }
+
+        .hero__word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            animation: heroWordReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes heroWordReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero__line:nth-child(1) .hero__word {
+            font-size: clamp(80px, 14vw, 200px);
+            font-weight: 300;
+            line-height: 1;
+            animation-delay: 0.2s;
+        }
+
+        .hero__line:nth-child(2) .hero__word {
+            font-size: clamp(40px, 6vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            animation-delay: 0.4s;
+        }
+
+        .hero__line:nth-child(3) .hero__word {
+            font-size: clamp(30px, 4.5vw, 60px);
+            font-weight: 300;
+            line-height: 1.2;
+            color: #888;
+            animation-delay: 0.6s;
+        }
+
+        .hero__line:nth-child(4) .hero__word {
+            font-size: clamp(80px, 14vw, 200px);
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1;
+            animation-delay: 0.8s;
+        }
+
+        .hero__subtitle {
+            margin-top: 60px;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* ========================================
+           TRANSITION TEXT
+           ======================================== */
+        .transition-text {
+            padding: 200px 60px;
+        }
+
+        .transition-text__line {
+            font-size: clamp(28px, 4vw, 56px);
+            font-weight: 300;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        .transition-text__line .w600 {
+            font-weight: 600;
+        }
+
+        .transition-text__line--secondary {
+            color: #888;
+            font-size: clamp(20px, 2.5vw, 36px);
+            margin-top: 8px;
+        }
+
+        /* ========================================
+           STATS SECTION
+           ======================================== */
+        .stats {
+            padding: 200px 60px;
+        }
+
+        .stats__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .stats__item {
+            text-align: left;
+        }
+
+        .stats__number {
+            font-size: clamp(120px, 20vw, 300px);
+            font-weight: 300;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            display: block;
+        }
+
+        .stats__suffix {
+            font-weight: 300;
+            font-size: clamp(60px, 10vw, 120px);
+        }
+
+        .stats__label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services__heading {
+            margin-bottom: 80px;
+        }
+
+        .services__heading-light {
+            font-size: clamp(36px, 4.5vw, 60px);
+            font-weight: 300;
+        }
+
+        .services__heading-bold {
+            font-size: clamp(60px, 9vw, 120px);
+            font-weight: 700;
+            display: inline;
+        }
+
+        .service-row {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 40px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-row:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .service-row__number {
+            font-size: 14px;
+            font-weight: 500;
+            color: #888;
+            min-width: 30px;
+            padding-top: 4px;
+        }
+
+        .service-row__content {
+            flex: 1;
+        }
+
+        .service-row__title {
+            font-size: clamp(24px, 3vw, 40px);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-row:hover .service-row__title {
+            transform: translateX(20px);
+        }
+
+        .service-row__arrow {
+            font-size: 24px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .service-row:hover .service-row__arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .service-row__desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: #888;
+            margin-top: 12px;
+            max-width: 600px;
+            line-height: 1.6;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-row:hover .service-row__desc {
+            transform: translateX(20px);
+        }
+
+        .service-row__underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #000;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-row:hover .service-row__underline {
+            width: 100%;
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about__heading {
+            margin-bottom: 60px;
+        }
+
+        .about__heading-light {
+            font-size: clamp(36px, 4.5vw, 60px);
+            font-weight: 300;
+        }
+
+        .about__heading-bold {
+            font-size: clamp(60px, 9vw, 120px);
+            font-weight: 700;
+        }
+
+        .about__text {
+            font-size: clamp(20px, 2.5vw, 32px);
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 900px;
+            color: #000;
+        }
+
+        .about__text-line {
+            display: block;
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+           ======================================== */
+        .testimonials__heading {
+            margin-bottom: 80px;
+            font-size: clamp(36px, 5vw, 72px);
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .testimonial {
+            position: relative;
+        }
+
+        .testimonial__quote-mark {
+            font-size: clamp(80px, 10vw, 160px);
+            font-weight: 700;
+            line-height: 0.6;
+            color: rgba(0, 0, 0, 0.06);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            transition: color 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .testimonial:hover .testimonial__quote-mark {
+            color: rgba(0, 0, 0, 0.15);
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .testimonial__text {
+            font-size: clamp(24px, 3vw, 40px);
+            font-weight: 600;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+            padding-top: 20px;
+        }
+
+        .testimonial__author {
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+            margin-top: 24px;
+            letter-spacing: 0.05em;
+        }
+
+        .testimonial__author-dash {
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background-color: #888;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ========================================
+           BLOG SECTION
+           ======================================== */
+        .blog__heading {
+            margin-bottom: 60px;
+        }
+
+        .blog__heading-light {
+            font-size: clamp(36px, 4.5vw, 60px);
+            font-weight: 300;
+        }
+
+        .blog__heading-bold {
+            font-size: clamp(60px, 9vw, 120px);
+            font-weight: 700;
+            display: inline;
+        }
+
+        .blog-row {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-row:last-child {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-row__title {
+            font-size: clamp(20px, 2.5vw, 32px);
+            font-weight: 500;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-row:hover .blog-row__title {
+            transform: translateX(20px);
+        }
+
+        .blog-row__arrow {
+            font-size: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .blog-row:hover .blog-row__arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .blog-row__underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #000;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-row:hover .blog-row__underline {
+            width: 100%;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 160px 60px;
+        }
+
+        .cta__title {
+            font-size: clamp(100px, 16vw, 240px);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+        }
+
+        .cta__subtitle {
+            font-size: clamp(24px, 3vw, 44px);
+            font-weight: 300;
+            color: #888;
+            margin-top: 24px;
+        }
+
+        .cta__link {
+            display: inline-block;
+            margin-top: 60px;
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .cta__link-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta__link:hover .cta__link-underline {
+            transform: scaleX(1);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            padding: 60px 60px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 0.03em;
+        }
+
+        .footer__name {
+            font-weight: 500;
+            color: #000;
+        }
+
+        .footer__socials {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer__social-link {
+            color: #888;
+            transition: color 0.3s ease;
+        }
+
+        .footer__social-link:hover {
+            color: #000;
+        }
+
+        .footer__copyright {
+            color: #888;
+        }
+
+        /* ========================================
+           DIVIDER / SPACER
+           ======================================== */
+        .spacer {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
+            margin: 0 60px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .stats__grid {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .section {
+                padding: 120px 40px;
+            }
+
+            .hero {
+                padding: 100px 40px 160px;
+            }
+
+            .transition-text {
+                padding: 150px 40px;
+            }
+
+            .stats {
+                padding: 150px 40px;
+            }
+
+            .footer {
+                padding: 40px 40px 100px;
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                cursor: auto;
+            }
+
+            .cursor {
+                display: none;
+            }
+
+            .section {
+                padding: 100px 24px;
+            }
+
+            .hero {
+                padding: 80px 24px 140px;
+            }
+
+            .transition-text {
+                padding: 120px 24px;
+            }
+
+            .stats {
+                padding: 120px 24px;
+            }
+
+            .nav-bottom {
+                padding: 0 20px;
+                height: 54px;
+            }
+
+            .nav-bottom__links {
+                display: none;
+            }
+
+            .nav-bottom__cta {
+                font-size: 13px;
+            }
+
+            .service-row {
+                flex-direction: column;
+                gap: 8px;
+                padding: 28px 0;
+            }
+
+            .blog-row {
+                padding: 24px 0;
+            }
+
+            .footer {
+                padding: 40px 24px 80px;
+            }
+
+            .cta {
+                padding: 120px 24px;
+            }
+
+            .spacer {
+                margin: 0 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats__number {
+                font-size: 100px;
+            }
+
+            .stats__suffix {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- ========================================
+         FIXED BOTTOM NAVIGATION
+         ======================================== -->
+    <nav class="nav-bottom">
+        <a href="#" class="nav-bottom__logo" data-hover>SR</a>
+        <ul class="nav-bottom__links">
+            <li><a href="#hero" class="nav-bottom__link" data-hover>Accueil</a></li>
+            <li><a href="#services" class="nav-bottom__link" data-hover>Services</a></li>
+            <li><a href="#blog" class="nav-bottom__link" data-hover>Formation</a></li>
+            <li><a href="#blog" class="nav-bottom__link" data-hover>Blog</a></li>
+            <li><a href="#cta" class="nav-bottom__link" data-hover>Contact</a></li>
+        </ul>
+        <a href="#cta" class="nav-bottom__cta" data-hover>
+            Me contacter <span class="nav-bottom__cta-arrow">&rarr;</span>
+        </a>
+    </nav>
+
+    <!-- ========================================
+         HERO
+         ======================================== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__line">
+                <span class="hero__word">Attirez</span>
+            </div>
+            <div class="hero__line">
+                <span class="hero__word">plus de clients</span>
+            </div>
+            <div class="hero__line">
+                <span class="hero__word">grâce à la</span>
+            </div>
+            <div class="hero__line">
+                <span class="hero__word">publicité</span>
+            </div>
+            <p class="hero__subtitle">Media Buyer — Expert Google Ads &amp; Meta Ads</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TRANSITION TEXT
+         ======================================== -->
+    <section class="transition-text" id="transition">
+        <div class="container">
+            <div class="transition-text__line reveal-line" data-delay="0">
+                Confiez-moi la gestion
+            </div>
+            <div class="transition-text__line reveal-line" data-delay="100">
+                de vos campagnes publicitaires.
+            </div>
+            <div class="transition-text__line transition-text__line--secondary reveal-line" data-delay="200">
+                Stratégie. <span class="w600">Tracking.</span> Création.
+            </div>
+            <div class="transition-text__line transition-text__line--secondary reveal-line" data-delay="300">
+                <span class="w600">Optimisation.</span> Reporting.
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         STATS
+         ======================================== -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stats__item reveal-scale">
+                    <span class="stats__number">
+                        <span class="counter" data-target="9">0</span><span class="stats__suffix">+</span>
+                    </span>
+                    <span class="stats__label">ans d'expérience</span>
+                </div>
+                <div class="stats__item reveal-scale" style="transition-delay: 0.15s;">
+                    <span class="stats__number">
+                        <span class="counter" data-target="200">0</span><span class="stats__suffix">+</span>
+                    </span>
+                    <span class="stats__label">clients</span>
+                </div>
+                <div class="stats__item reveal-scale" style="transition-delay: 0.3s;">
+                    <span class="stats__number">
+                        <span class="counter" data-target="3" data-suffix="M€">0</span><span class="stats__suffix">+</span>
+                    </span>
+                    <span class="stats__label">budget géré</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         SERVICES
+         ======================================== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="services__heading reveal">
+                <span class="services__heading-light">Mes </span>
+                <span class="services__heading-bold">services</span>
+            </div>
+
+            <a href="#" class="service-row reveal" data-hover>
+                <span class="service-row__number">01</span>
+                <div class="service-row__content">
+                    <div class="service-row__title">
+                        Gestion de campagnes
+                        <span class="service-row__arrow">&rarr;</span>
+                    </div>
+                    <p class="service-row__desc">
+                        Je m'occupe de tout : stratégie, tracking, création, optimisation et reporting.
+                    </p>
+                </div>
+                <div class="service-row__underline"></div>
+            </a>
+
+            <a href="#" class="service-row reveal" data-hover>
+                <span class="service-row__number">02</span>
+                <div class="service-row__content">
+                    <div class="service-row__title">
+                        Formation Media Buying
+                        <span class="service-row__arrow">&rarr;</span>
+                    </div>
+                    <p class="service-row__desc">
+                        Apprenez le métier de Media Buyer et lancez-vous en freelance.
+                    </p>
+                </div>
+                <div class="service-row__underline"></div>
+            </a>
+
+            <a href="#" class="service-row reveal" data-hover>
+                <span class="service-row__number">03</span>
+                <div class="service-row__content">
+                    <div class="service-row__title">
+                        Coaching en publicité
+                        <span class="service-row__arrow">&rarr;</span>
+                    </div>
+                    <p class="service-row__desc">
+                        Je vous accompagne pour approfondir vos connaissances.
+                    </p>
+                </div>
+                <div class="service-row__underline"></div>
+            </a>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         ABOUT
+         ======================================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about__heading reveal">
+                <span class="about__heading-light">Qui </span>
+                <span class="about__heading-bold">suis-je ?</span>
+            </div>
+
+            <div class="about__text">
+                <span class="about__text-line reveal-line" data-delay="0">
+                    Depuis 2015, j'aide les entreprises
+                </span>
+                <span class="about__text-line reveal-line" data-delay="100">
+                    à attirer plus de clients en ligne
+                </span>
+                <span class="about__text-line reveal-line" data-delay="200">
+                    grâce à la publicité sur Google
+                </span>
+                <span class="about__text-line reveal-line" data-delay="300">
+                    et les réseaux sociaux.
+                </span>
+                <span class="about__text-line reveal-line" data-delay="400" style="margin-top: 24px; display: block;">
+                    <span class="gray">Stratégie, créativité et données</span>
+                </span>
+                <span class="about__text-line reveal-line" data-delay="500">
+                    <span class="gray">au service de votre croissance.</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         TESTIMONIALS
+         ======================================== -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="testimonials__heading reveal">
+                <span class="w300">Ce que </span><span class="w700">disent </span><span class="w300">mes clients</span>
+            </div>
+
+            <div class="testimonials__grid">
+                <div class="testimonial reveal" data-hover>
+                    <span class="testimonial__quote-mark">&ldquo;</span>
+                    <p class="testimonial__text">Juste parfait.</p>
+                    <p class="testimonial__author">
+                        <span class="testimonial__author-dash"></span>Anthony Bizarro
+                    </p>
+                </div>
+
+                <div class="testimonial reveal" style="transition-delay: 0.15s;" data-hover>
+                    <span class="testimonial__quote-mark">&ldquo;</span>
+                    <p class="testimonial__text">LA référence.</p>
+                    <p class="testimonial__author">
+                        <span class="testimonial__author-dash"></span>Alexis Sevrin
+                    </p>
+                </div>
+
+                <div class="testimonial reveal" style="transition-delay: 0.3s;" data-hover>
+                    <span class="testimonial__quote-mark">&ldquo;</span>
+                    <p class="testimonial__text">Je recommande.</p>
+                    <p class="testimonial__author">
+                        <span class="testimonial__author-dash"></span>Charline Bazin
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         BLOG
+         ======================================== -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="blog__heading reveal">
+                <span class="blog__heading-light">Derniers </span>
+                <span class="blog__heading-bold">articles</span>
+            </div>
+
+            <a href="#" class="blog-row reveal" data-hover>
+                <span class="blog-row__title">Formation Claude Code pour Media Buyer</span>
+                <span class="blog-row__arrow">&rarr;</span>
+                <div class="blog-row__underline"></div>
+            </a>
+
+            <a href="#" class="blog-row reveal" data-hover>
+                <span class="blog-row__title">Comment Devenir Media Buyer</span>
+                <span class="blog-row__arrow">&rarr;</span>
+                <div class="blog-row__underline"></div>
+            </a>
+
+            <a href="#" class="blog-row reveal" data-hover>
+                <span class="blog-row__title">Formation Meta Ads</span>
+                <span class="blog-row__arrow">&rarr;</span>
+                <div class="blog-row__underline"></div>
+            </a>
+
+            <a href="#" class="blog-row reveal" data-hover>
+                <span class="blog-row__title">Formation Google Ads</span>
+                <span class="blog-row__arrow">&rarr;</span>
+                <div class="blog-row__underline"></div>
+            </a>
+        </div>
+    </section>
+
+    <div class="spacer"></div>
+
+    <!-- ========================================
+         CTA
+         ======================================== -->
+    <section class="cta" id="cta">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="cta__title reveal-scale">Prêt ?</div>
+            <div class="cta__subtitle reveal" style="transition-delay: 0.2s;">Parlons de votre projet.</div>
+            <a href="#" class="cta__link reveal" style="transition-delay: 0.4s;" data-hover>
+                Me contacter &rarr;
+                <span class="cta__link-underline"></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <span class="footer__name">Sebastien Rech</span>
+        <div class="footer__socials">
+            <a href="#" class="footer__social-link" data-hover>YouTube</a>
+            <a href="#" class="footer__social-link" data-hover>LinkedIn</a>
+            <a href="#" class="footer__social-link" data-hover>TikTok</a>
+        </div>
+        <span class="footer__copyright">&copy; 2026</span>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ========================================
+           CUSTOM CURSOR
+           ======================================== */
+        const cursor = document.getElementById('cursor');
+        let mouseX = -100;
+        let mouseY = -100;
+        let cursorX = -100;
+        let cursorY = -100;
+        const ease = 0.15;
+
+        // Only enable custom cursor on non-touch devices
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if (!isTouchDevice && window.innerWidth > 768) {
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // Hover expansion for interactive elements
+            const hoverElements = document.querySelectorAll('[data-hover], a, button');
+            hoverElements.forEach(function(el) {
+                el.addEventListener('mouseenter', function() {
+                    cursor.classList.add('cursor--hover');
+                });
+                el.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('cursor--hover');
+                });
+            });
+
+            // Cursor animation loop
+            function animateCursor() {
+                cursorX += (mouseX - cursorX) * ease;
+                cursorY += (mouseY - cursorY) * ease;
+                cursor.style.transform = 'translate(' + (cursorX - 10) + 'px, ' + (cursorY - 10) + 'px)';
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+        } else {
+            cursor.style.display = 'none';
+        }
+
+        /* ========================================
+           INTERSECTION OBSERVER — SCROLL REVEALS
+           ======================================== */
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -80px 0px',
+            threshold: 0.1
+        };
+
+        // Generic reveal elements
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal--visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Line-by-line reveals with staggered delays
+        const lineObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+                    setTimeout(function() {
+                        entry.target.classList.add('reveal-line--visible');
+                    }, delay);
+                    lineObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-line').forEach(function(el) {
+            lineObserver.observe(el);
+        });
+
+        // Scale reveals (stats, CTA)
+        const scaleObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-scale--visible');
+                    scaleObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal-scale').forEach(function(el) {
+            scaleObserver.observe(el);
+        });
+
+        /* ========================================
+           NUMBER COUNTER ANIMATION
+           ======================================== */
+        const counters = document.querySelectorAll('.counter');
+        let countersAnimated = false;
+
+        const counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        // Observe the stats section
+        const statsSection = document.getElementById('stats');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+
+        function animateCounters() {
+            counters.forEach(function(counter) {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Ease out cubic
+                    const easedProgress = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.round(easedProgress * target);
+
+                    counter.textContent = current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + suffix;
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        /* ========================================
+           SMOOTH SCROLL FOR NAV LINKS
+           ======================================== */
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        /* ========================================
+           NAV BOTTOM VISIBILITY ON SCROLL
+           ======================================== */
+        const navBottom = document.querySelector('.nav-bottom');
+        let lastScrollY = 0;
+        let navVisible = true;
+
+        window.addEventListener('scroll', function() {
+            const currentScrollY = window.scrollY;
+
+            // Show nav when scrolling up or at top, hide when scrolling down fast
+            if (currentScrollY < lastScrollY || currentScrollY < 100) {
+                if (!navVisible) {
+                    navBottom.style.transform = 'translateY(0)';
+                    navBottom.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                    navVisible = true;
+                }
+            } else if (currentScrollY > lastScrollY + 5) {
+                if (navVisible && currentScrollY > 300) {
+                    navBottom.style.transform = 'translateY(100%)';
+                    navBottom.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                    navVisible = false;
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+    })();
+    </script>
+
+</body>
+</html>

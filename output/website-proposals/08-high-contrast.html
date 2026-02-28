@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Contrast — Le Manifeste | Sebastien Rech</title>
+    <meta name="description" content="Sébastien Rech — Media Buyer freelance spécialisé Google Ads & Meta Ads. Stratégie, tracking, création, optimisation et reporting.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================
+           RESET & BASE
+           ========================================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #FFF;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        ::selection {
+            background: #FFF;
+            color: #000;
+        }
+
+        /* =========================================
+           TYPOGRAPHY
+           ========================================= */
+        .headline {
+            font-family: 'Anton', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+        }
+
+        .headline--mega {
+            font-size: clamp(80px, 15vw, 200px);
+        }
+
+        .headline--xl {
+            font-size: clamp(48px, 8vw, 120px);
+        }
+
+        .headline--lg {
+            font-size: clamp(36px, 5vw, 72px);
+        }
+
+        .headline--md {
+            font-size: clamp(28px, 4vw, 56px);
+        }
+
+        .headline--sm {
+            font-size: clamp(20px, 3vw, 36px);
+        }
+
+        .body-text {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 1.8vw, 20px);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .body-text--bold {
+            font-weight: 700;
+        }
+
+        .caps {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================================
+           DIVIDERS
+           ========================================= */
+        .divider {
+            width: 100%;
+            height: 4px;
+            background: #FFF;
+        }
+
+        .divider--thin {
+            height: 2px;
+        }
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 18px 40px;
+            border: 2px solid #FFF;
+            background: #FFF;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #FFF;
+        }
+
+        .btn--outline {
+            background: transparent;
+            color: #FFF;
+        }
+
+        .btn--outline:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        .btn--large {
+            font-size: 16px;
+            padding: 22px 56px;
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #000;
+            border-bottom: 4px solid #FFF;
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 72px;
+        }
+
+        .nav__logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #FFF;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav__link {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #FFF;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .nav__link:hover {
+            opacity: 0.7;
+        }
+
+        .nav__cta {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #FFF;
+            text-decoration: none;
+            padding: 10px 24px;
+            border: 2px solid #FFF;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav__cta:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        /* Mobile menu toggle */
+        .nav__toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav__toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: #FFF;
+            margin: 6px 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 40px 80px;
+        }
+
+        .hero__title {
+            margin-bottom: 8px;
+        }
+
+        .hero__subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(18px, 3vw, 32px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+        }
+
+        .hero__statement {
+            margin-top: 40px;
+            margin-bottom: 24px;
+        }
+
+        .hero__body {
+            margin-bottom: 48px;
+            max-width: 700px;
+        }
+
+        .hero__actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           MARQUEE / STATS TICKER
+           ========================================= */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee {
+            border-top: 4px solid #FFF;
+            border-bottom: 4px solid #FFF;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 24px 0;
+        }
+
+        .marquee__track {
+            display: inline-flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .marquee__content {
+            display: inline-block;
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(24px, 4vw, 48px);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding-right: 0;
+            white-space: nowrap;
+        }
+
+        .marquee__content span {
+            padding: 0 24px;
+        }
+
+        .marquee:hover .marquee__track {
+            animation-play-state: paused;
+        }
+
+        /* =========================================
+           SECTIONS
+           ========================================= */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section__title {
+            margin-bottom: 64px;
+        }
+
+        /* =========================================
+           SERVICES
+           ========================================= */
+        .service {
+            padding: 40px 0;
+        }
+
+        .service + .service {
+            border-top: 2px solid #FFF;
+        }
+
+        .service__number {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(48px, 6vw, 96px);
+            line-height: 1;
+            opacity: 0.3;
+            margin-bottom: 16px;
+        }
+
+        .service__title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(28px, 4vw, 56px);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .service__desc {
+            max-width: 700px;
+        }
+
+        /* =========================================
+           ABOUT
+           ========================================= */
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .about__portrait {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portrait-circle {
+            width: clamp(180px, 20vw, 280px);
+            height: clamp(180px, 20vw, 280px);
+            border-radius: 50%;
+            background: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portrait-circle__initials {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(60px, 8vw, 100px);
+            color: #000;
+            line-height: 1;
+        }
+
+        .about__text {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .about__stats {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat__number {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat__label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* =========================================
+           TESTIMONIALS
+           ========================================= */
+        .testimonial {
+            padding: 48px 0;
+        }
+
+        .testimonial + .testimonial {
+            border-top: 2px solid #FFF;
+        }
+
+        .testimonial__quote {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(32px, 5vw, 72px);
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .testimonial__quote::before {
+            content: "\201C";
+        }
+
+        .testimonial__quote::after {
+            content: "\201D";
+        }
+
+        .testimonial__author {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .testimonial__author::before {
+            content: "— ";
+        }
+
+        /* =========================================
+           BLOG / ARTICLES
+           ========================================= */
+        .article-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding: 32px 0;
+            border-bottom: 2px solid #FFF;
+            cursor: pointer;
+            transition: padding-left 0.3s;
+        }
+
+        .article-row:first-child {
+            border-top: 2px solid #FFF;
+        }
+
+        .article-row:hover {
+            padding-left: 24px;
+        }
+
+        .article-row__number {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(20px, 3vw, 36px);
+            margin-right: 24px;
+            flex-shrink: 0;
+        }
+
+        .article-row__title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(20px, 3vw, 36px);
+            text-transform: uppercase;
+            flex: 1;
+        }
+
+        .article-row__arrow {
+            font-size: clamp(24px, 3vw, 40px);
+            margin-left: 24px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .article-row:hover .article-row__arrow {
+            transform: translateX(8px);
+        }
+
+        /* =========================================
+           CTA SECTION
+           ========================================= */
+        .cta-section {
+            padding: 120px 40px;
+            text-align: center;
+        }
+
+        .cta-section__title {
+            margin-bottom: 48px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .footer {
+            padding: 48px 40px;
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer__brand {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer__logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 28px;
+        }
+
+        .footer__desc {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .footer__links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer__link {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            transition: opacity 0.2s;
+        }
+
+        .footer__link:hover {
+            opacity: 0.7;
+        }
+
+        .footer__copy {
+            width: 100%;
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 2px solid #FFF;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 1024px) {
+            .about__grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about__portrait {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav__links {
+                display: none;
+                position: fixed;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background: #000;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px;
+                gap: 24px;
+                border-bottom: 4px solid #FFF;
+            }
+
+            .nav__links.is-open {
+                display: flex;
+            }
+
+            .nav__toggle {
+                display: block;
+            }
+
+            .nav__inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .cta-section {
+                padding: 80px 20px;
+            }
+
+            .footer {
+                padding: 40px 20px;
+            }
+
+            .hero__actions {
+                flex-direction: column;
+            }
+
+            .hero__actions .btn {
+                text-align: center;
+            }
+
+            .about__stats {
+                gap: 32px;
+            }
+
+            .article-row {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .footer__inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer__brand {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .service__number {
+                opacity: 0.2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 16px 32px;
+                font-size: 13px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn--large {
+                padding: 18px 40px;
+                font-size: 14px;
+            }
+
+            .marquee__content span {
+                padding: 0 16px;
+            }
+
+            .about__stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .testimonial {
+                padding: 32px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">SR</a>
+            <div class="nav__links" id="navLinks">
+                <a href="#" class="nav__link">ACCUEIL</a>
+                <a href="#services" class="nav__link">SERVICES</a>
+                <a href="#" class="nav__link">FORMATION</a>
+                <a href="#articles" class="nav__link">BLOG</a>
+                <a href="#contact" class="nav__link">CONTACT</a>
+                <a href="#contact" class="nav__cta">ME CONTACTER</a>
+            </div>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('is-open')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+    <section class="hero">
+        <h1 class="headline headline--mega hero__title">MEDIA BUYER</h1>
+        <p class="hero__subtitle">EXPERT GOOGLE ADS &amp; META ADS</p>
+        <div class="divider"></div>
+        <h2 class="headline headline--lg hero__statement">ATTIREZ PLUS DE CLIENTS GR&Acirc;CE &Agrave; LA PUBLICIT&Eacute;</h2>
+        <p class="body-text hero__body">Confiez-moi la gestion de vos campagnes publicitaires. Stratégie, création, optimisation et reporting — je m'occupe de tout pour maximiser votre retour sur investissement.</p>
+        <div class="hero__actions">
+            <a href="#contact" class="btn">ME CONTACTER</a>
+            <a href="#services" class="btn btn--outline">MES SERVICES</a>
+        </div>
+    </section>
+
+    <!-- =========================================
+         STATS MARQUEE
+         ========================================= -->
+    <div class="marquee">
+        <div class="marquee__track">
+            <div class="marquee__content">
+                <span>9+ ANS D'EXPÉRIENCE</span>
+                <span>—</span>
+                <span>200+ CLIENTS</span>
+                <span>—</span>
+                <span>3M€+ BUDGET GÉRÉ</span>
+                <span>—</span>
+                <span>500+ PERSONNES FORMÉES</span>
+                <span>—</span>
+                <span>9+ ANS D'EXPÉRIENCE</span>
+                <span>—</span>
+                <span>200+ CLIENTS</span>
+                <span>—</span>
+                <span>3M€+ BUDGET GÉRÉ</span>
+                <span>—</span>
+                <span>500+ PERSONNES FORMÉES</span>
+                <span>—</span>
+            </div>
+            <div class="marquee__content" aria-hidden="true">
+                <span>9+ ANS D'EXPÉRIENCE</span>
+                <span>—</span>
+                <span>200+ CLIENTS</span>
+                <span>—</span>
+                <span>3M€+ BUDGET GÉRÉ</span>
+                <span>—</span>
+                <span>500+ PERSONNES FORMÉES</span>
+                <span>—</span>
+                <span>9+ ANS D'EXPÉRIENCE</span>
+                <span>—</span>
+                <span>200+ CLIENTS</span>
+                <span>—</span>
+                <span>3M€+ BUDGET GÉRÉ</span>
+                <span>—</span>
+                <span>500+ PERSONNES FORMÉES</span>
+                <span>—</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         SERVICES
+         ========================================= -->
+    <section class="section" id="services">
+        <div class="divider"></div>
+        <h2 class="headline headline--xl section__title" style="margin-top: 64px;">SERVICES</h2>
+
+        <div class="service">
+            <div class="service__number">01</div>
+            <h3 class="service__title">GESTION DE CAMPAGNES</h3>
+            <p class="body-text service__desc">Prise en charge complète de vos campagnes Google Ads et Meta Ads. De la stratégie à l'optimisation quotidienne, en passant par la création des annonces et le suivi des conversions. Objectif : maximiser chaque euro investi.</p>
+        </div>
+
+        <div class="service">
+            <div class="service__number">02</div>
+            <h3 class="service__title">FORMATION MEDIA BUYING</h3>
+            <p class="body-text service__desc">Formations complètes pour maîtriser Google Ads et Meta Ads. Programmes adaptés aux débutants comme aux profils avancés. Apprenez à créer, gérer et optimiser vos propres campagnes publicitaires.</p>
+        </div>
+
+        <div class="service">
+            <div class="service__number">03</div>
+            <h3 class="service__title">COACHING EN PUBLICITÉ</h3>
+            <p class="body-text service__desc">Accompagnement personnalisé pour développer vos compétences en publicité digitale. Sessions individuelles, audit de vos campagnes existantes et plan d'action concret pour atteindre vos objectifs.</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         ABOUT
+         ========================================= -->
+    <section class="section" id="about">
+        <div class="divider"></div>
+        <h2 class="headline headline--xl section__title" style="margin-top: 64px;">QUI SUIS-JE</h2>
+
+        <div class="about__grid">
+            <div class="about__portrait">
+                <div class="portrait-circle">
+                    <span class="portrait-circle__initials">SR</span>
+                </div>
+            </div>
+            <div class="about__text">
+                <p class="body-text">Depuis 2015, j'aide les entreprises à développer leur visibilité et leurs ventes grâce à la publicité en ligne. Spécialisé en Google Ads et Meta Ads, j'ai accompagné plus de 200 clients dans des secteurs variés : e-commerce, SaaS, services, formation.</p>
+                <p class="body-text">Mon approche est simple : des campagnes rentables, un suivi rigoureux, et une transparence totale sur les résultats. Chaque euro dépensé doit avoir un impact mesurable.</p>
+                <div class="about__stats">
+                    <div class="stat">
+                        <span class="stat__number">9+</span>
+                        <span class="stat__label">ANS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">200+</span>
+                        <span class="stat__label">CLIENTS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">500+</span>
+                        <span class="stat__label">FORMÉS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">3M€</span>
+                        <span class="stat__label">BUDGET GÉRÉ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         TESTIMONIALS
+         ========================================= -->
+    <section class="section" id="testimonials">
+        <div class="divider"></div>
+        <h2 class="headline headline--xl section__title" style="margin-top: 64px;">TÉMOIGNAGES</h2>
+
+        <div class="testimonial">
+            <p class="testimonial__quote">JUSTE PARFAIT.</p>
+            <p class="testimonial__author">ANTHONY BIZARRO</p>
+        </div>
+
+        <div class="testimonial">
+            <p class="testimonial__quote">LA RÉFÉRENCE DU MEDIA BUYING.</p>
+            <p class="testimonial__author">ALEXIS SEVRIN</p>
+        </div>
+
+        <div class="testimonial">
+            <p class="testimonial__quote">JE RECOMMANDE.</p>
+            <p class="testimonial__author">CHARLINE BAZIN</p>
+        </div>
+    </section>
+
+    <!-- =========================================
+         BLOG / ARTICLES
+         ========================================= -->
+    <section class="section" id="articles">
+        <div class="divider"></div>
+        <h2 class="headline headline--xl section__title" style="margin-top: 64px;">ARTICLES</h2>
+
+        <div>
+            <a href="#" class="article-row">
+                <span class="article-row__number">01</span>
+                <span class="article-row__title">FORMATION CLAUDE CODE POUR MEDIA BUYER</span>
+                <span class="article-row__arrow">&rarr;</span>
+            </a>
+            <a href="#" class="article-row">
+                <span class="article-row__number">02</span>
+                <span class="article-row__title">COMMENT DEVENIR MEDIA BUYER</span>
+                <span class="article-row__arrow">&rarr;</span>
+            </a>
+            <a href="#" class="article-row">
+                <span class="article-row__number">03</span>
+                <span class="article-row__title">FORMATION META ADS</span>
+                <span class="article-row__arrow">&rarr;</span>
+            </a>
+            <a href="#" class="article-row">
+                <span class="article-row__number">04</span>
+                <span class="article-row__title">FORMATION GOOGLE ADS</span>
+                <span class="article-row__arrow">&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- =========================================
+         CTA
+         ========================================= -->
+    <section class="cta-section" id="contact">
+        <div class="divider" style="margin-bottom: 80px;"></div>
+        <h2 class="headline headline--lg cta-section__title">PRÊT À DÉVELOPPER VOTRE ACTIVITÉ ?</h2>
+        <a href="#" class="btn btn--large">ME CONTACTER</a>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="footer">
+        <div class="divider" style="margin-bottom: 48px;"></div>
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__logo">SR</span>
+                <span class="footer__desc">MEDIA BUYER — GOOGLE ADS &amp; META ADS</span>
+            </div>
+            <div class="footer__links">
+                <a href="#" class="footer__link">LINKEDIN</a>
+                <a href="#" class="footer__link">YOUTUBE</a>
+                <a href="#" class="footer__link">TWITTER</a>
+                <a href="#" class="footer__link">INSTAGRAM</a>
+            </div>
+        </div>
+        <p class="footer__copy">&copy; 2026 SEBASTIENRECH.COM</p>
+    </footer>
+
+</body>
+</html>

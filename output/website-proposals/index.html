@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sebastienrech.com — 10 Propositions de Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 60px 80px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .date {
+            font-size: 13px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .header h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #888;
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+            margin-top: 1px;
+        }
+
+        .card {
+            background: #000;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 340px;
+            position: relative;
+            transition: background 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .card:hover {
+            background: #0A0A0A;
+        }
+
+        .card:hover .card-arrow {
+            transform: translate(4px, -4px);
+            opacity: 1;
+        }
+
+        .card:hover .card-number {
+            color: #fff;
+        }
+
+        .card:hover .card-title {
+            letter-spacing: -1px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-number {
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+            letter-spacing: 1px;
+            font-variant-numeric: tabular-nums;
+            transition: color 0.4s ease;
+        }
+
+        .card-arrow {
+            font-size: 20px;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .card-bottom {
+            margin-top: auto;
+        }
+
+        .card-title {
+            font-size: clamp(28px, 3vw, 40px);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+            transition: letter-spacing 0.4s ease;
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .card-description {
+            font-size: 15px;
+            color: #777;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 460px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #888;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Alternating dark shades for visual rhythm */
+        .card:nth-child(even) {
+            background: #050505;
+        }
+        .card:nth-child(even):hover {
+            background: #0F0F0F;
+        }
+
+        .footer {
+            padding: 40px 80px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .footer-right {
+            font-size: 13px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                padding: 40px 32px 32px;
+            }
+            .card {
+                padding: 40px 32px;
+                min-height: 280px;
+            }
+            .footer {
+                padding: 32px;
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 32px 20px 24px;
+            }
+            .card {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">Sebastien Rech</div>
+            <div class="date">Propositions de design — Fevrier 2026</div>
+        </div>
+        <h1>10 directions<br>pour sebastienrech.com</h1>
+        <p>Exploration de 10 univers visuels en noir & blanc pour affirmer un positionnement premium de Media Buyer & Expert Google Ads.</p>
+    </header>
+
+    <div style="padding: 40px 80px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; background: #fff; color: #000;">V2</span>
+            <span style="font-size: 14px; font-weight: 500; color: #888;">Propositions ameliorees — Photos, YouTube, couleur</span>
+        </div>
+        <p style="font-size: 15px; color: #555; font-weight: 300; margin-bottom: 24px;">Les 3 favoris revisite avec plus de vie : portrait, miniatures YouTube, temoignages enrichis.</p>
+    </div>
+
+    <div class="grid" style="margin-top: 0;">
+
+        <a href="01-swiss-grid-v2.html" class="card" style="border-left: 3px solid #fff;">
+            <div class="card-top">
+                <span class="card-number">01 v2</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">L'Architecte — Ameliore</div>
+                <div class="card-title">Swiss Grid v2</div>
+                <div class="card-description">Grille 12 colonnes + portrait photo dans le hero + section videos YouTube.</div>
+                <div class="card-tags">
+                    <span class="tag">Portrait</span>
+                    <span class="tag">YouTube</span>
+                    <span class="tag">Grille</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="02-neo-brutalist-v2.html" class="card" style="border-left: 3px solid #fff;">
+            <div class="card-top">
+                <span class="card-number">02 v2</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Franc-tireur — Ameliore</div>
+                <div class="card-title">Neo-Brutalist v2</div>
+                <div class="card-description">Brutalist + photo couleur, temoignages Trustpilot, previews YouTube. La vie dans le brut.</div>
+                <div class="card-tags">
+                    <span class="tag">Couleur</span>
+                    <span class="tag">Trustpilot</span>
+                    <span class="tag">YouTube</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="04-dark-saas-v2.html" class="card" style="border-left: 3px solid #fff; grid-column: 1 / -1;">
+            <div class="card-top">
+                <span class="card-number">04 v2</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Technologue — Ameliore</div>
+                <div class="card-title">Dark SaaS v2</div>
+                <div class="card-description">Dark premium + portrait avec gradient mask + videos YouTube en glass cards + temoignages enrichis. Le meilleur des deux mondes.</div>
+                <div class="card-tags">
+                    <span class="tag">Portrait</span>
+                    <span class="tag">Glass</span>
+                    <span class="tag">YouTube</span>
+                    <span class="tag">Glow</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <div style="padding: 40px 80px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-top: 40px;">
+        <span style="font-size: 14px; font-weight: 500; color: #555;">Les 10 propositions originales</span>
+    </div>
+
+    <main class="grid" style="margin-top: 0;">
+
+        <a href="01-swiss-grid.html" class="card">
+            <div class="card-top">
+                <span class="card-number">01</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">L'Architecte</div>
+                <div class="card-title">Swiss Grid</div>
+                <div class="card-description">Grille 12 colonnes, Inter, hierarchie par la taille. Precision mathematique et rigueur suisse.</div>
+                <div class="card-tags">
+                    <span class="tag">Grille</span>
+                    <span class="tag">Inter</span>
+                    <span class="tag">Minimal</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="02-neo-brutalist.html" class="card">
+            <div class="card-top">
+                <span class="card-number">02</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Franc-tireur</div>
+                <div class="card-title">Neo-Brutalist</div>
+                <div class="card-description">Bordures epaisses, ombres decalees, monospace. Anti-design brut et memorable.</div>
+                <div class="card-tags">
+                    <span class="tag">Brut</span>
+                    <span class="tag">Monospace</span>
+                    <span class="tag">Offset Shadow</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="03-editorial.html" class="card">
+            <div class="card-top">
+                <span class="card-number">03</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Redacteur en Chef</div>
+                <div class="card-title">Editorial</div>
+                <div class="card-description">Serif, lettrines, mise en page magazine. Autorite et storytelling editorial.</div>
+                <div class="card-tags">
+                    <span class="tag">Serif</span>
+                    <span class="tag">Magazine</span>
+                    <span class="tag">Lettrine</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="04-dark-saas.html" class="card">
+            <div class="card-top">
+                <span class="card-number">04</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Technologue</div>
+                <div class="card-title">Dark SaaS</div>
+                <div class="card-description">Fond noir, glassmorphism, grain, glow. L'esthetique Vercel/Linear pour un positionnement tech.</div>
+                <div class="card-tags">
+                    <span class="tag">Dark</span>
+                    <span class="tag">Glass</span>
+                    <span class="tag">Glow</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="05-typographic-pure.html" class="card">
+            <div class="card-top">
+                <span class="card-number">05</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">L'Essentiel</div>
+                <div class="card-title">Typographic Pure</div>
+                <div class="card-description">Zero image, zero icone. Tout repose sur la typographie et le whitespace. Minimalisme absolu.</div>
+                <div class="card-tags">
+                    <span class="tag">Type Only</span>
+                    <span class="tag">Syne</span>
+                    <span class="tag">Whitespace</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="06-bauhaus.html" class="card">
+            <div class="card-top">
+                <span class="card-number">06</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Geometre</div>
+                <div class="card-title">Bauhaus</div>
+                <div class="card-description">Formes geometriques, cercles, diagonales. Sections alternees noir/blanc. Structure constructiviste.</div>
+                <div class="card-tags">
+                    <span class="tag">Geometrique</span>
+                    <span class="tag">Constructiviste</span>
+                    <span class="tag">Bold</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="07-zen-minimal.html" class="card">
+            <div class="card-top">
+                <span class="card-number">07</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Stratege Zen</div>
+                <div class="card-title">Zen Minimal</div>
+                <div class="card-description">70% de whitespace, typographie legere, respiration. Design japonais wabi-sabi.</div>
+                <div class="card-tags">
+                    <span class="tag">Zen</span>
+                    <span class="tag">Wabi-sabi</span>
+                    <span class="tag">Whitespace</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="08-high-contrast.html" class="card">
+            <div class="card-top">
+                <span class="card-number">08</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Manifeste</div>
+                <div class="card-title">High Contrast</div>
+                <div class="card-description">Noir pur, blanc pur, zero gris. Typographie condensee ultra-bold. Texte defilant. Manifeste visuel.</div>
+                <div class="card-tags">
+                    <span class="tag">Bold</span>
+                    <span class="tag">Marquee</span>
+                    <span class="tag">Majuscules</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="09-newspaper.html" class="card">
+            <div class="card-top">
+                <span class="card-number">09</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Quotidien</div>
+                <div class="card-title">Newspaper</div>
+                <div class="card-description">Multi-colonnes, serif, manchette. Credibilite et gravitas d'un journal papier.</div>
+                <div class="card-tags">
+                    <span class="tag">Colonnes</span>
+                    <span class="tag">Serif</span>
+                    <span class="tag">Journal</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="10-kinetic-type.html" class="card">
+            <div class="card-top">
+                <span class="card-number">10</span>
+                <span class="card-arrow">&nearr;</span>
+            </div>
+            <div class="card-bottom">
+                <div class="card-subtitle">Le Performer</div>
+                <div class="card-title">Kinetic Type</div>
+                <div class="card-description">Typographie animee, scroll-triggered, curseur custom. Dynamisme et creativite en mouvement.</div>
+                <div class="card-tags">
+                    <span class="tag">Animation</span>
+                    <span class="tag">Scroll</span>
+                    <span class="tag">Interactif</span>
+                </div>
+            </div>
+        </a>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">sebastienrech.com — Propositions de redesign</div>
+        <div class="footer-right">10 directions en noir & blanc</div>
+    </footer>
+
+</body>
+</html>

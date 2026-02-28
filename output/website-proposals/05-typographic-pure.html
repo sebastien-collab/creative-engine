@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastien Rech — Media Buyer & Formateur</title>
+    <meta name="description" content="Media Buyer expert Google Ads & Meta Ads. Attirez plus de clients grâce à la publicité en ligne.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Syne', sans-serif;
+            font-weight: 300;
+            color: #000;
+            background-color: #FFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: #000;
+            color: #FFF;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ========================================
+           VERTICAL NAVIGATION — DESKTOP
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            z-index: 100;
+        }
+
+        .nav__logo {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 2px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        .nav__separator {
+            width: 1px;
+            height: 40px;
+            background-color: #000;
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        .nav__links a {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav__links a:hover {
+            opacity: 0.4;
+        }
+
+        /* ========================================
+           MAIN CONTENT LAYOUT
+           ======================================== */
+        .main {
+            margin-left: 80px;
+            width: calc(100% - 80px);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container--wide {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+           ======================================== */
+        .headline {
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 800;
+            letter-spacing: -5px;
+            line-height: 0.92;
+        }
+
+        .headline--section {
+            font-size: clamp(48px, 8vw, 120px);
+            font-weight: 800;
+            letter-spacing: -4px;
+            line-height: 0.95;
+        }
+
+        .stat-number {
+            font-size: clamp(100px, 15vw, 200px);
+            font-weight: 800;
+            letter-spacing: -6px;
+            line-height: 0.85;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .body-text {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #000;
+        }
+
+        .body-text--muted {
+            color: #888;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px 0 80px;
+        }
+
+        .hero__top {
+            padding-top: 40px;
+        }
+
+        .hero__tagline {
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .hero__headline {
+            margin-top: 80px;
+        }
+
+        .hero__bottom {
+            max-width: 400px;
+        }
+
+        .hero__cta-text {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        /* ========================================
+           STATS SECTION
+           ======================================== */
+        .stats {
+            padding: 120px 0;
+        }
+
+        .stat {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+        }
+
+        .stat + .stat {
+            border-top: none;
+        }
+
+        .stat__label {
+            margin-top: 16px;
+        }
+
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services {
+            padding: 200px 0 120px;
+        }
+
+        .services__header {
+            margin-bottom: 160px;
+        }
+
+        .service {
+            padding: 80px 0;
+            border-top: 1px solid #000;
+        }
+
+        .service:last-child {
+            border-bottom: 1px solid #000;
+        }
+
+        .service__number {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .service__title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .service__desc {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #888;
+            max-width: 480px;
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about {
+            padding: 200px 0;
+        }
+
+        .about__header {
+            margin-bottom: 100px;
+        }
+
+        .about__text {
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 2;
+            color: #000;
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+           ======================================== */
+        .testimonials {
+            padding: 200px 0 120px;
+        }
+
+        .testimonials__header {
+            margin-bottom: 160px;
+        }
+
+        .testimonial {
+            padding: 60px 0;
+            border-top: 1px solid #000;
+        }
+
+        .testimonial:last-child {
+            border-bottom: 1px solid #000;
+        }
+
+        .testimonial__quote {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 300;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 32px;
+            color: #000;
+        }
+
+        .testimonial__author {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        /* ========================================
+           BLOG SECTION
+           ======================================== */
+        .blog {
+            padding: 200px 0 120px;
+        }
+
+        .blog__header {
+            margin-bottom: 120px;
+        }
+
+        .blog__list {
+            list-style: none;
+        }
+
+        .blog__item {
+            border-top: 1px solid #000;
+        }
+
+        .blog__item:last-child {
+            border-bottom: 1px solid #000;
+        }
+
+        .blog__link {
+            display: block;
+            padding: 40px 0;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 300;
+            line-height: 1.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog__link:hover {
+            opacity: 0.4;
+        }
+
+        .blog__number {
+            font-size: 13px;
+            color: #888;
+            font-weight: 400;
+            margin-right: 16px;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta {
+            padding: 200px 0;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cta__headline {
+            max-width: 900px;
+            margin-bottom: 80px;
+        }
+
+        .cta__link {
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta__link:hover {
+            opacity: 0.4;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            padding: 80px 0 60px;
+            border-top: 1px solid #000;
+        }
+
+        .footer__name {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            color: #000;
+        }
+
+        .footer__socials {
+            font-size: 13px;
+            font-weight: 300;
+            color: #888;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer__socials a {
+            transition: opacity 0.3s ease;
+            color: #888;
+        }
+
+        .footer__socials a:hover {
+            opacity: 0.4;
+        }
+
+        .footer__copy {
+            font-size: 12px;
+            font-weight: 300;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================
+           RESPONSIVE — TABLET
+           ======================================== */
+        @media (max-width: 1024px) {
+            .nav {
+                width: 60px;
+            }
+
+            .main {
+                margin-left: 60px;
+                width: calc(100% - 60px);
+            }
+
+            .headline {
+                letter-spacing: -3px;
+            }
+
+            .stat-number {
+                letter-spacing: -4px;
+            }
+
+            .services,
+            .about,
+            .testimonials,
+            .blog,
+            .cta {
+                padding: 140px 0 80px;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE — MOBILE
+           ======================================== */
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                padding: 20px 24px;
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            .nav__logo {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 16px;
+            }
+
+            .nav__separator {
+                width: 24px;
+                height: 1px;
+                display: none;
+            }
+
+            .nav__links {
+                writing-mode: horizontal-tb;
+                transform: none;
+                flex-direction: row;
+                gap: 16px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav__links a {
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            .main {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: 100svh;
+            }
+
+            .hero__tagline {
+                font-size: 11px;
+            }
+
+            .hero__headline {
+                margin-top: 48px;
+            }
+
+            .headline {
+                letter-spacing: -2px;
+            }
+
+            .headline--section {
+                letter-spacing: -2px;
+            }
+
+            .stat-number {
+                letter-spacing: -3px;
+            }
+
+            .stat {
+                min-height: 40vh;
+                padding: 60px 0;
+            }
+
+            .services,
+            .about,
+            .testimonials,
+            .blog {
+                padding: 120px 0 80px;
+            }
+
+            .services__header,
+            .testimonials__header,
+            .blog__header {
+                margin-bottom: 80px;
+            }
+
+            .about__header {
+                margin-bottom: 60px;
+            }
+
+            .service {
+                padding: 48px 0;
+            }
+
+            .service__desc {
+                font-size: 15px;
+            }
+
+            .about__text {
+                font-size: 17px;
+                line-height: 1.9;
+            }
+
+            .testimonial {
+                padding: 40px 0;
+            }
+
+            .blog__link {
+                padding: 28px 0;
+            }
+
+            .cta {
+                padding: 120px 0;
+                min-height: 60vh;
+            }
+
+            .cta__headline {
+                margin-bottom: 48px;
+            }
+
+            .footer {
+                padding: 60px 0 40px;
+            }
+
+            .footer__socials {
+                gap: 16px;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE — SMALL MOBILE
+           ======================================== */
+        @media (max-width: 480px) {
+            .container,
+            .container--wide {
+                padding: 0 20px;
+            }
+
+            .nav__links {
+                gap: 12px;
+            }
+
+            .nav__links a {
+                font-size: 10px;
+            }
+
+            .hero__headline {
+                margin-top: 32px;
+            }
+
+            .service__title {
+                font-size: 24px;
+            }
+
+            .blog__link {
+                font-size: 16px;
+            }
+
+            .cta__link {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         NAVIGATION
+         ======================================== -->
+    <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <a href="#accueil" class="nav__logo">SR</a>
+        <span class="nav__separator" aria-hidden="true"></span>
+        <ul class="nav__links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========================================
+         MAIN CONTENT
+         ======================================== -->
+    <main class="main">
+
+        <!-- HERO -->
+        <section class="hero" id="accueil">
+            <div class="container">
+                <div class="hero__top">
+                    <p class="hero__tagline">Media Buyer — Expert Google Ads & Meta Ads</p>
+                </div>
+                <div class="hero__headline">
+                    <h1 class="headline">Attirez plus de clients gr&acirc;ce &agrave; la publicit&eacute;</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero__bottom">
+                    <p class="hero__cta-text">Confiez-moi la gestion de vos campagnes publicitaires.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats" aria-label="Chiffres cl&eacute;s">
+            <div class="container">
+
+                <div class="stat">
+                    <span class="stat-number">9+</span>
+                    <span class="label stat__label">Ans d'exp&eacute;rience</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="label stat__label">Clients</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">3M&euro;+</span>
+                    <span class="label stat__label">Budget g&eacute;r&eacute;</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="services__header">
+                    <h2 class="headline--section">Services</h2>
+                </div>
+
+                <article class="service">
+                    <p class="service__number">01</p>
+                    <h3 class="service__title">Gestion de campagnes</h3>
+                    <p class="service__desc">Je m'occupe de tout : strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting pour maximiser votre ROI.</p>
+                </article>
+
+                <article class="service" id="formation">
+                    <p class="service__number">02</p>
+                    <h3 class="service__title">Formation Media Buying</h3>
+                    <p class="service__desc">Apprenez le m&eacute;tier de Media Buyer et lancez-vous en freelance.</p>
+                </article>
+
+                <article class="service">
+                    <p class="service__number">03</p>
+                    <h3 class="service__title">Coaching en publicit&eacute;</h3>
+                    <p class="service__desc">Je vous accompagne pour approfondir vos connaissances et optimiser vos campagnes.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about">
+            <div class="container">
+                <div class="about__header">
+                    <h2 class="headline--section">&Agrave; propos</h2>
+                </div>
+                <p class="about__text">Depuis 2015, j'aide les entreprises &agrave; attirer plus de clients en ligne. Sp&eacute;cialis&eacute; en Google Ads et Meta Ads, j'ai accompagn&eacute; plus de 200 entreprises dans la gestion et l'optimisation de leurs campagnes publicitaires. Mon approche est fond&eacute;e sur la transparence, la rigueur et une obsession pour la performance. Chaque euro investi doit g&eacute;n&eacute;rer un retour mesurable. En parall&egrave;le, je forme la prochaine g&eacute;n&eacute;ration de Media Buyers &agrave; travers des programmes complets, pragmatiques et ancr&eacute;s dans la r&eacute;alit&eacute; du terrain.</p>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="testimonials__header">
+                    <h2 class="headline--section">Clients</h2>
+                </div>
+
+                <article class="testimonial">
+                    <p class="testimonial__quote">&laquo; Un accompagnement d'une qualit&eacute; exceptionnelle. Les r&eacute;sultats ont d&eacute;pass&eacute; toutes mes attentes. &raquo;</p>
+                    <p class="testimonial__author">Anthony Bizarro</p>
+                </article>
+
+                <article class="testimonial">
+                    <p class="testimonial__quote">&laquo; Sebastien ma&icirc;trise parfaitement son sujet. Professionnel, r&eacute;actif et toujours de bon conseil. &raquo;</p>
+                    <p class="testimonial__author">Alexis Sevrin</p>
+                </article>
+
+                <article class="testimonial">
+                    <p class="testimonial__quote">&laquo; Gr&acirc;ce &agrave; son expertise, nos campagnes ont atteint un niveau de performance in&eacute;dit. &raquo;</p>
+                    <p class="testimonial__author">Charline Bazin</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section class="blog" id="blog">
+            <div class="container">
+                <div class="blog__header">
+                    <h2 class="headline--section">Articles</h2>
+                </div>
+
+                <ul class="blog__list">
+                    <li class="blog__item">
+                        <a href="#" class="blog__link">
+                            <span class="blog__number">01</span>Formation Claude Code pour Media Buyer
+                        </a>
+                    </li>
+                    <li class="blog__item">
+                        <a href="#" class="blog__link">
+                            <span class="blog__number">02</span>Comment Devenir Media Buyer
+                        </a>
+                    </li>
+                    <li class="blog__item">
+                        <a href="#" class="blog__link">
+                            <span class="blog__number">03</span>Formation Meta Ads
+                        </a>
+                    </li>
+                    <li class="blog__item">
+                        <a href="#" class="blog__link">
+                            <span class="blog__number">04</span>Formation Google Ads
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="contact">
+            <div class="container--wide">
+                <h2 class="headline cta__headline">Parlons de votre projet.</h2>
+                <a href="mailto:contact@sebastienrech.com" class="cta__link">Me contacter &rarr;</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__name">Sebastien Rech — Media Buyer & Formateur</p>
+                <div class="footer__socials">
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">TikTok</a>
+                </div>
+                <p class="footer__copy">&copy; 2026</p>
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+</html>

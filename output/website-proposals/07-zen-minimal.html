@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Minimal — Le Stratège Zen | Sebastien Rech</title>
+  <meta name="description" content="Media Buyer, Formateur et Expert Google Ads & Meta Ads. Attirez plus de clients grâce à la publicité.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      color: #333;
+      background-color: #FAFAFA;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-weight: 300;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      transition: opacity 0.4s ease;
+    }
+
+    a:hover {
+      opacity: 0.5;
+    }
+
+    /* ========================================
+       CSS-ONLY SCROLL ANIMATIONS
+       ======================================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .fade-in-d1 { animation-delay: 0.3s; }
+    .fade-in-d2 { animation-delay: 0.6s; }
+    .fade-in-d3 { animation-delay: 0.9s; }
+    .fade-in-d4 { animation-delay: 1.2s; }
+    .fade-in-d5 { animation-delay: 1.5s; }
+    .fade-in-d6 { animation-delay: 1.8s; }
+    .fade-in-d7 { animation-delay: 2.1s; }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes brushDraw {
+      0% {
+        stroke-dashoffset: 800;
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.08;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 0.08;
+      }
+    }
+
+    /* Scroll-driven animations for supporting browsers */
+    @supports (animation-timeline: view()) {
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: scrollFadeIn ease both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+      }
+
+      @keyframes scrollFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    /* Fallback for browsers without scroll-driven animations */
+    @supports not (animation-timeline: view()) {
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+      }
+
+      .scroll-reveal.sr-d1 { animation-delay: 0.2s; }
+      .scroll-reveal.sr-d2 { animation-delay: 0.4s; }
+      .scroll-reveal.sr-d3 { animation-delay: 0.6s; }
+      .scroll-reveal.sr-d4 { animation-delay: 0.8s; }
+      .scroll-reveal.sr-d5 { animation-delay: 1.0s; }
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 48px;
+      background-color: rgba(250, 250, 250, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: #999;
+      transition: color 0.4s ease;
+    }
+
+    .nav-links a:hover {
+      color: #333;
+      opacity: 1;
+    }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      width: 24px;
+      height: 16px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 0.5px;
+      background: #999;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle span:first-child { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 50%; }
+    .nav-toggle span:last-child { bottom: 0; }
+
+    /* ========================================
+       SECTION LAYOUT
+       ======================================== */
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 160px 48px;
+      position: relative;
+    }
+
+    .section-narrow {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 80px;
+    }
+
+    /* ========================================
+       THIN LINE SEPARATOR
+       ======================================== */
+    .thin-line {
+      width: 40px;
+      height: 0;
+      border: none;
+      border-top: 0.5px solid #ddd;
+      margin: 60px auto;
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-brush {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-35%, -55%);
+      width: 500px;
+      height: 500px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-brush path {
+      fill: none;
+      stroke: #333;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation: brushDraw 3s ease-out 0.5s forwards;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.25;
+      max-width: 600px;
+      color: #333;
+      margin-bottom: 32px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: gentlePulse 3s ease-in-out infinite;
+    }
+
+    .scroll-indicator-line {
+      width: 0.5px;
+      height: 40px;
+      background: #ccc;
+    }
+
+    /* ========================================
+       PHILOSOPHY
+       ======================================== */
+    .philosophy {
+      min-height: 100vh;
+    }
+
+    .philosophy p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      font-weight: 300;
+      line-height: 2;
+      color: #555;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    /* ========================================
+       STATS
+       ======================================== */
+    .stats {
+      min-height: auto;
+      padding: 200px 48px;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+      align-items: center;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #aaa;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-separator {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: #ddd;
+      margin: 0 12px;
+    }
+
+    /* ========================================
+       SERVICES
+       ======================================== */
+    .services {
+      min-height: auto;
+      padding: 200px 48px;
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .service-item h3 {
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .service-item p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       ABOUT
+       ======================================== */
+    .about p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 2;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    /* ========================================
+       TESTIMONIALS
+       ======================================== */
+    .testimonials {
+      min-height: auto;
+      padding: 200px 48px;
+    }
+
+    .testimonials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      max-width: 500px;
+      align-items: center;
+    }
+
+    .testimonial-item {
+      text-align: center;
+    }
+
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      color: #555;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: #bbb;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ========================================
+       ARTICLES
+       ======================================== */
+    .articles {
+      min-height: auto;
+      padding: 200px 48px;
+    }
+
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 400px;
+      align-items: center;
+    }
+
+    .articles-list a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #666;
+      text-align: center;
+      line-height: 1.5;
+      padding: 8px 0;
+      border-bottom: 0.5px solid transparent;
+      transition: color 0.4s ease, border-color 0.4s ease;
+    }
+
+    .articles-list a:hover {
+      color: #333;
+      border-bottom-color: #ddd;
+      opacity: 1;
+    }
+
+    /* ========================================
+       CTA
+       ======================================== */
+    .cta {
+      min-height: 100vh;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      color: #333;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .cta-link {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #999;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.4s ease, gap 0.4s ease;
+    }
+
+    .cta-link:hover {
+      color: #333;
+      gap: 14px;
+      opacity: 1;
+    }
+
+    .cta-link span {
+      font-size: 1rem;
+      transition: transform 0.4s ease;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ccc;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    .footer-social a {
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: #ccc;
+      letter-spacing: 0.05em;
+      transition: color 0.4s ease;
+    }
+
+    .footer-social a:hover {
+      color: #999;
+      opacity: 1;
+    }
+
+    .footer-copy {
+      font-size: 0.65rem;
+      color: #ddd;
+      letter-spacing: 0.05em;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 768px) {
+      .nav {
+        padding: 24px 28px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding: 0 28px;
+      }
+
+      .hero-brush {
+        width: 320px;
+        height: 320px;
+        transform: translate(-40%, -55%);
+      }
+
+      .section {
+        padding: 120px 28px;
+      }
+
+      .stats {
+        padding: 120px 28px;
+      }
+
+      .stats-grid {
+        gap: 100px;
+      }
+
+      .services {
+        padding: 120px 28px;
+      }
+
+      .services-list {
+        gap: 80px;
+      }
+
+      .testimonials {
+        padding: 120px 28px;
+      }
+
+      .testimonials-list {
+        gap: 60px;
+      }
+
+      .articles {
+        padding: 120px 28px;
+      }
+
+      .footer {
+        padding: 60px 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav {
+        padding: 20px 20px;
+      }
+
+      .nav-brand {
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        padding: 0 20px;
+      }
+
+      .hero-brush {
+        width: 260px;
+        height: 260px;
+      }
+
+      .section {
+        padding: 100px 20px;
+      }
+
+      .stats {
+        padding: 100px 20px;
+      }
+
+      .services {
+        padding: 100px 20px;
+      }
+
+      .testimonials {
+        padding: 100px 20px;
+      }
+
+      .articles {
+        padding: 100px 20px;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+      }
+
+      .section-label {
+        margin-bottom: 60px;
+      }
+
+      .scroll-indicator {
+        bottom: 32px;
+      }
+    }
+
+    /* ========================================
+       SELECTION STYLING
+       ======================================== */
+    ::selection {
+      background: rgba(51, 51, 51, 0.08);
+      color: #333;
+    }
+
+    /* ========================================
+       SCROLLBAR (minimal)
+       ======================================== */
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">Sebastien Rech</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#articles">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" role="button" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO
+       ======================================== -->
+  <section class="hero">
+
+    <!-- Brush stroke SVG — abstract enso circle, not closed -->
+    <svg class="hero-brush" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="
+        M 310 120
+        C 380 100, 440 160, 430 240
+        C 420 320, 360 390, 280 400
+        C 200 410, 130 370, 100 300
+        C 70 230, 90 160, 140 120
+        C 180 88, 230 95, 260 110
+      " />
+    </svg>
+
+    <div class="hero-content">
+      <h1 class="fade-in fade-in-d1">Attirez plus de clients grâce à la publicité</h1>
+      <p class="hero-subtitle fade-in fade-in-d3">Media Buyer — Expert Google Ads &amp; Meta Ads</p>
+    </div>
+
+    <div class="scroll-indicator fade-in fade-in-d7">
+      <div class="scroll-indicator-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PHILOSOPHY
+       ======================================== -->
+  <section class="section philosophy">
+    <div class="section-narrow scroll-reveal">
+      <p>Confiez-moi la gestion de vos campagnes publicitaires. Stratégie, tracking, création, optimisation et reporting — pour que vous puissiez vous concentrer sur votre activité.</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       STATS
+       ======================================== -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item scroll-reveal">
+        <div class="stat-number">9</div>
+        <div class="stat-label">ans d'expérience</div>
+      </div>
+      <div class="stat-item scroll-reveal sr-d2">
+        <div class="stat-number">200</div>
+        <div class="stat-label">clients accompagnés</div>
+      </div>
+      <div class="stat-item scroll-reveal sr-d4">
+        <div class="stat-number">3M€</div>
+        <div class="stat-label">de budget géré</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SERVICES
+       ======================================== -->
+  <section class="section services" id="services">
+    <div class="section-label scroll-reveal">Services</div>
+    <div class="services-list">
+      <div class="service-item scroll-reveal">
+        <h3>Gestion de campagnes</h3>
+        <p>Je m'occupe de tout : stratégie, tracking, création, optimisation et reporting.</p>
+      </div>
+
+      <hr class="thin-line scroll-reveal">
+
+      <div class="service-item scroll-reveal sr-d2">
+        <h3>Formation Media Buying</h3>
+        <p>Apprenez le métier de Media Buyer et lancez-vous en freelance.</p>
+      </div>
+
+      <hr class="thin-line scroll-reveal">
+
+      <div class="service-item scroll-reveal sr-d4">
+        <h3>Coaching en publicité</h3>
+        <p>Je vous accompagne pour approfondir vos connaissances.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ABOUT
+       ======================================== -->
+  <section class="section about">
+    <div class="section-narrow">
+      <div class="section-label scroll-reveal">À propos</div>
+      <p class="scroll-reveal sr-d1">Depuis 2015, j'aide les entreprises à attirer plus de clients en ligne. Fort de 9 ans d'expérience et plus de 200 clients accompagnés, je mets mon expertise au service de votre croissance avec rigueur, transparence et passion.</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS
+       ======================================== -->
+  <section class="testimonials">
+    <div class="section-label scroll-reveal" style="text-align: center; width: 100%;">Témoignages</div>
+    <div class="testimonials-list">
+      <div class="testimonial-item scroll-reveal">
+        <div class="testimonial-quote">"Juste parfait."</div>
+        <div class="testimonial-author">Anthony Bizarro</div>
+      </div>
+
+      <hr class="thin-line scroll-reveal">
+
+      <div class="testimonial-item scroll-reveal sr-d2">
+        <div class="testimonial-quote">"LA référence dans le domaine."</div>
+        <div class="testimonial-author">Alexis Sevrin</div>
+      </div>
+
+      <hr class="thin-line scroll-reveal">
+
+      <div class="testimonial-item scroll-reveal sr-d4">
+        <div class="testimonial-quote">"Je ne peux que recommander."</div>
+        <div class="testimonial-author">Charline Bazin</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ARTICLES
+       ======================================== -->
+  <section class="section articles" id="articles">
+    <div class="section-label scroll-reveal">Articles</div>
+    <div class="articles-list">
+      <a href="#" class="scroll-reveal">Formation Claude Code pour Media Buyer</a>
+      <a href="#" class="scroll-reveal sr-d1">Comment Devenir Media Buyer</a>
+      <a href="#" class="scroll-reveal sr-d2">Formation Meta Ads</a>
+      <a href="#" class="scroll-reveal sr-d3">Formation Google Ads</a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CTA
+       ======================================== -->
+  <section class="section cta" id="contact">
+    <h2 class="scroll-reveal">Parlons de votre projet.</h2>
+    <a href="mailto:contact@sebastienrech.com" class="cta-link scroll-reveal sr-d1">Me contacter <span>&rarr;</span></a>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer-name">Sebastien Rech</div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/sebastienrech/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.tiktok.com/@sebastienrech" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <div class="footer-copy">&copy; 2026</div>
+  </footer>
+
+</body>
+</html>

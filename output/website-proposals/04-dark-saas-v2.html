@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sébastien Rech — Expert Google Ads & Meta Ads (v2)</title>
+  <meta name="description" content="Confiez-moi la gestion de vos campagnes publicitaires. Stratégie, tracking, création, optimisation et reporting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       GRAIN TEXTURE OVERLAY
+       ======================================== */
+    .grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+    }
+
+    /* ========================================
+       GRID / DOT PATTERN BACKGROUND
+       ======================================== */
+    .grid-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    /* ========================================
+       RADIAL GRADIENT — CENTER GLOW
+       ======================================== */
+    .radial-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, #111111 0%, #000000 100%);
+    }
+
+    /* ========================================
+       UTILITY
+       ======================================== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: #888888;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========================================
+       GLASS CARD
+       ======================================== */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.04);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .btn-primary:hover {
+      background: #e0e0e0;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0 24px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .navbar-logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .navbar-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #888888;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-links a:hover {
+      color: #ffffff;
+    }
+
+    .navbar-cta .btn {
+      padding: 10px 24px;
+      font-size: 14px;
+    }
+
+    .navbar-cta .btn-outline {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .navbar-cta .btn-outline:hover {
+      border-color: #ffffff;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       HERO — V2: Two-column with portrait
+       ======================================== */
+    .hero {
+      padding: 180px 0 120px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -60%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.06) 0%, rgba(0, 212, 255, 0.02) 30%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-text {
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 13px;
+      font-weight: 500;
+      color: #cccccc;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00D4FF;
+      box-shadow: 0 0 10px #00D4FF, 0 0 20px rgba(0, 212, 255, 0.3);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 10px #00D4FF, 0 0 20px rgba(0, 212, 255, 0.3); }
+      50% { opacity: 0.6; box-shadow: 0 0 6px #00D4FF, 0 0 12px rgba(0, 212, 255, 0.15); }
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #888888;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 48px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Portrait */
+    .hero-portrait-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-portrait-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.03) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 20px;
+    }
+
+    .hero-portrait-card {
+      position: relative;
+      z-index: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 80px rgba(0, 212, 255, 0.1), 0 24px 64px rgba(0, 0, 0, 0.5);
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .hero-portrait-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    }
+
+    /* ========================================
+       STATS ROW
+       ======================================== */
+    .stats {
+      padding: 0 0 120px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      color: #888888;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       SERVICES
+       ======================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .service-card {
+      padding: 40px 32px;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #888888;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease, color 0.3s ease;
+    }
+
+    .service-link:hover {
+      gap: 10px;
+      color: #00D4FF;
+    }
+
+    /* ========================================
+       ABOUT — V2: Portrait instead of stats
+       ======================================== */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: #cccccc;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-portrait-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .about-portrait-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0, 212, 255, 0.08), 0 16px 48px rgba(0, 0, 0, 0.4);
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .about-portrait-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      aspect-ratio: 3 / 4;
+      object-position: top center;
+    }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .about-badge-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-badge-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #cccccc;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========================================
+       TESTIMONIALS — V2: Improved avatars + Trustpilot
+       ======================================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .testimonial-card {
+      padding: 36px 32px;
+    }
+
+    .testimonial-stars-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-stars {
+      font-size: 16px;
+      color: #FFB800;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-trustpilot {
+      font-size: 11px;
+      font-weight: 500;
+      color: #666666;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonial-quote {
+      font-size: 15px;
+      color: #cccccc;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      font-style: normal;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .testimonial-avatar--ab {
+      background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.3);
+    }
+
+    .testimonial-avatar--as {
+      background: linear-gradient(135deg, #8b5cf6, #a855f7);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+    }
+
+    .testimonial-avatar--cb {
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      box-shadow: 0 0 16px rgba(249, 115, 22, 0.3);
+    }
+
+    .testimonial-name {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .testimonial-role {
+      font-size: 13px;
+      color: #666666;
+      margin-top: 2px;
+    }
+
+    /* ========================================
+       YOUTUBE SECTION — V2: NEW
+       ======================================== */
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .youtube-card {
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .youtube-card:hover {
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.08);
+    }
+
+    .youtube-thumb-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .youtube-thumb-wrapper img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .youtube-card:hover .youtube-thumb-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .youtube-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .youtube-play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 3px;
+    }
+
+    .youtube-card:hover .youtube-play-btn {
+      background: rgba(0, 212, 255, 0.3);
+      border-color: rgba(0, 212, 255, 0.5);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .youtube-card-body {
+      padding: 24px;
+    }
+
+    .youtube-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .youtube-card:hover .youtube-card-title {
+      color: #00D4FF;
+    }
+
+    .youtube-card-date {
+      font-size: 13px;
+      color: #888888;
+      font-weight: 500;
+    }
+
+    .youtube-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      transition: gap 0.3s ease, color 0.3s ease;
+    }
+
+    .youtube-more:hover {
+      gap: 10px;
+      color: #00D4FF;
+    }
+
+    /* ========================================
+       BLOG
+       ======================================== */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .blog-card {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 16px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    .blog-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
+    }
+
+    .blog-card:hover h3 {
+      color: #00D4FF;
+    }
+
+    .blog-card p {
+      font-size: 15px;
+      color: #888888;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .blog-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+
+    .blog-link:hover {
+      gap: 10px;
+    }
+
+    /* ========================================
+       CTA
+       ======================================== */
+    .cta-section {
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: #888888;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-section .btn-primary {
+      padding: 16px 40px;
+      font-size: 16px;
+    }
+
+    .cta-section .btn-primary:hover {
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #0A0A0A;
+      padding: 80px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 64px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.8;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #888888;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: #666666;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: #444444;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 13px;
+      color: #444444;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #888888;
+    }
+
+    /* ========================================
+       DIVIDER
+       ======================================== */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 50%, transparent);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-text {
+        order: 2;
+        text-align: center;
+      }
+
+      .hero-portrait-wrapper {
+        order: 1;
+      }
+
+      .hero-portrait-card {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .services-grid,
+      .testimonials-grid,
+      .youtube-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .about-portrait-wrapper {
+        order: -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        padding: 140px 0 80px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .testimonials-grid,
+      .blog-grid,
+      .youtube-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar-links {
+        display: none;
+      }
+
+      .navbar-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .hero-portrait-card {
+        max-width: 260px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .stat-number {
+        font-size: 36px;
+      }
+
+      .hero-portrait-card {
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GRAIN TEXTURE OVERLAY -->
+  <svg class="grain-overlay" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain)"/>
+  </svg>
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="radial-glow"></div>
+  <div class="grid-bg"></div>
+
+  <!-- =============================================
+       NAVIGATION
+       ============================================= -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">SR</a>
+      <ul class="navbar-links">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Formation</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO — V2: Two-column with portrait
+       ============================================= -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">Expert Google Ads & Meta Ads</div>
+        <h1>Attirez plus de clients gr&acirc;ce &agrave; la publicit&eacute;</h1>
+        <p class="hero-subtitle">Confiez-moi la gestion de vos campagnes publicitaires. Strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Me contacter</a>
+          <a href="#services" class="btn btn-outline">D&eacute;couvrir mes services</a>
+        </div>
+      </div>
+      <div class="hero-portrait-wrapper">
+        <div class="hero-portrait-glow"></div>
+        <div class="glass-card hero-portrait-card">
+          <img src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="S&eacute;bastien Rech — Expert Google Ads & Meta Ads" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       STATS
+       ============================================= -->
+  <div class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="glass-card stat-card">
+          <div class="stat-number">9+</div>
+          <div class="stat-label">Ans d'exp&eacute;rience</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Clients accompagn&eacute;s</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-number">3M&euro;+</div>
+          <div class="stat-label">Budget publicitaire g&eacute;r&eacute;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       SERVICES
+       ============================================= -->
+  <section id="services">
+    <div class="container">
+      <div class="section-label">Ce que je fais</div>
+      <h2 class="section-title">Mes services</h2>
+      <p class="section-subtitle">Des solutions sur mesure pour d&eacute;velopper votre acquisition en ligne et maximiser votre retour sur investissement publicitaire.</p>
+
+      <div class="services-grid">
+        <div class="glass-card service-card">
+          <div class="service-icon">&#9889;</div>
+          <h3>Gestion de campagnes</h3>
+          <p>Cr&eacute;ation et optimisation de vos campagnes Google Ads et Meta Ads. De la strat&eacute;gie au reporting, je prends en charge l'int&eacute;gralit&eacute; de vos campagnes publicitaires pour maximiser votre ROI.</p>
+          <a href="#" class="service-link">En savoir plus &#8594;</a>
+        </div>
+        <div class="glass-card service-card">
+          <div class="service-icon">&#128218;</div>
+          <h3>Formation Media Buying</h3>
+          <p>Apprenez &agrave; ma&icirc;triser Google Ads et Meta Ads gr&acirc;ce &agrave; mes formations compl&egrave;tes. Des programmes adapt&eacute;s &agrave; tous les niveaux, du d&eacute;butant au media buyer confirm&eacute;.</p>
+          <a href="#" class="service-link">En savoir plus &#8594;</a>
+        </div>
+        <div class="glass-card service-card">
+          <div class="service-icon">&#127919;</div>
+          <h3>Coaching en publicit&eacute;</h3>
+          <p>Un accompagnement personnalis&eacute; pour d&eacute;velopper vos comp&eacute;tences en acquisition payante. Sessions individuelles ou en groupe pour acc&eacute;l&eacute;rer votre apprentissage.</p>
+          <a href="#" class="service-link">En savoir plus &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       ABOUT — V2: Portrait photo instead of stat grid
+       ============================================= -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label">&Agrave; propos</div>
+      <h2 class="section-title">Qui suis-je ?</h2>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>Depuis 2015, j'aide les entreprises &agrave; d&eacute;velopper leur acquisition en ligne gr&acirc;ce &agrave; la publicit&eacute; digitale. Sp&eacute;cialis&eacute; en Google Ads et Meta Ads, j'ai accompagn&eacute; plus de 200 clients dans des secteurs vari&eacute;s : e-commerce, SaaS, lead generation, formation en ligne.</p>
+          <p>Mon approche est bas&eacute;e sur la data et l'optimisation continue. Chaque euro investi doit &ecirc;tre un euro rentabilis&eacute;. Je combine expertise technique, cr&eacute;ativit&eacute; et analyse pour obtenir les meilleurs r&eacute;sultats possibles.</p>
+          <p>Ancien consultant en agence, je travaille aujourd'hui en ind&eacute;pendant pour offrir un accompagnement plus personnalis&eacute; et r&eacute;actif &agrave; mes clients.</p>
+        </div>
+
+        <div class="about-portrait-wrapper">
+          <div class="glass-card about-portrait-card">
+            <img src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="S&eacute;bastien Rech" loading="lazy">
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L14.09 8.26L20.18 8.63L15.54 12.74L16.82 19.02L12 15.77L7.18 19.02L8.46 12.74L3.82 8.63L9.91 8.26L12 2Z" fill="#FFB800" stroke="#FFB800" stroke-width="1"/>
+              </svg>
+            </div>
+            <span class="about-badge-text">Google Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       TESTIMONIALS — V2: Real quotes + gradient avatars + Trustpilot
+       ============================================= -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-label">T&eacute;moignages</div>
+      <h2 class="section-title">Ce que disent mes clients</h2>
+      <p class="section-subtitle">Des r&eacute;sultats concrets et des collaborations qui durent dans le temps.</p>
+
+      <div class="testimonials-grid">
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars-row">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="testimonial-trustpilot">via Trustpilot</span>
+          </div>
+          <blockquote class="testimonial-quote">"Juste parfait. S&eacute;bastien et son &eacute;quipe sont aux petits soins, disponibles, humains et tirent les apprenants vers le haut."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar testimonial-avatar--ab">AB</div>
+            <div>
+              <div class="testimonial-name">Anthony Bizarro</div>
+              <div class="testimonial-role">Apprenant</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars-row">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="testimonial-trustpilot">via Trustpilot</span>
+          </div>
+          <blockquote class="testimonial-quote">"impulsion.com est LA r&eacute;f&eacute;rence dans le domaine du Media Buying. L'exp&eacute;rience des formateurs est incroyable."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar testimonial-avatar--as">AS</div>
+            <div>
+              <div class="testimonial-name">Alexis Sevrin</div>
+              <div class="testimonial-role">Media Buyer Freelance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars-row">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="testimonial-trustpilot">via Trustpilot</span>
+          </div>
+          <blockquote class="testimonial-quote">"Je ne peux que vous la recommander pour lancer votre carri&egrave;re de media buyer !"</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar testimonial-avatar--cb">CB</div>
+            <div>
+              <div class="testimonial-name">Charline Bazin</div>
+              <div class="testimonial-role">Media Buyer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       YOUTUBE — V2: NEW SECTION
+       ============================================= -->
+  <section id="youtube">
+    <div class="container">
+      <div class="section-label">YouTube</div>
+      <h2 class="section-title">Mes derni&egrave;res vid&eacute;os</h2>
+      <p class="section-subtitle">Retrouvez mes conseils en publicit&eacute; en ligne et marketing digital.</p>
+
+      <div class="youtube-grid">
+        <a href="https://www.youtube.com/watch?v=1pFx0Pc2hOA" target="_blank" rel="noopener" class="glass-card youtube-card">
+          <div class="youtube-thumb-wrapper">
+            <img src="https://img.youtube.com/vi/1pFx0Pc2hOA/maxresdefault.jpg" alt="Formation n8n : Apprendre l'automation n8n &agrave; partir de z&eacute;ro" loading="lazy">
+            <div class="youtube-play-btn"></div>
+          </div>
+          <div class="youtube-card-body">
+            <div class="youtube-card-title">Formation n8n : Apprendre l'automation n8n &agrave; partir de z&eacute;ro</div>
+            <div class="youtube-card-date">18 F&eacute;v 2026</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=9ZpY-ulKg-k" target="_blank" rel="noopener" class="glass-card youtube-card">
+          <div class="youtube-thumb-wrapper">
+            <img src="https://img.youtube.com/vi/9ZpY-ulKg-k/maxresdefault.jpg" alt="Comment relancer automatiquement ses prospects sur WhatsApp ?" loading="lazy">
+            <div class="youtube-play-btn"></div>
+          </div>
+          <div class="youtube-card-body">
+            <div class="youtube-card-title">Comment relancer automatiquement ses prospects sur WhatsApp ?</div>
+            <div class="youtube-card-date">30 Jan 2026</div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=opJ8cuQzpnY" target="_blank" rel="noopener" class="glass-card youtube-card">
+          <div class="youtube-thumb-wrapper">
+            <img src="https://img.youtube.com/vi/opJ8cuQzpnY/maxresdefault.jpg" alt="Comprendre le m&eacute;tier de Media Buyer en 15 minutes" loading="lazy">
+            <div class="youtube-play-btn"></div>
+          </div>
+          <div class="youtube-card-body">
+            <div class="youtube-card-title">Comprendre le m&eacute;tier de Media Buyer en 15 minutes</div>
+            <div class="youtube-card-date">21 Jan 2026</div>
+          </div>
+        </a>
+      </div>
+
+      <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener" class="youtube-more">Voir toutes mes vid&eacute;os &#8594;</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       BLOG
+       ============================================= -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-label">Blog & Ressources</div>
+      <h2 class="section-title">Derniers articles</h2>
+      <p class="section-subtitle">Guides, formations et ressources pour ma&icirc;triser la publicit&eacute; en ligne.</p>
+
+      <div class="blog-grid">
+        <a href="#" class="glass-card blog-card">
+          <span class="blog-tag">Nouveau</span>
+          <h3>Formation Claude Code pour Media Buyer</h3>
+          <p>D&eacute;couvrez comment l'intelligence artificielle et Claude Code peuvent r&eacute;volutionner votre workflow de media buying. Automatisation, analyse et optimisation.</p>
+          <span class="blog-link">Lire l'article &#8594;</span>
+        </a>
+
+        <a href="#" class="glass-card blog-card">
+          <span class="blog-tag">Guide</span>
+          <h3>Comment Devenir Media Buyer</h3>
+          <p>Le guide complet pour devenir media buyer en 2026 : comp&eacute;tences requises, formations, outils indispensables et conseils pour lancer votre carri&egrave;re.</p>
+          <span class="blog-link">Lire l'article &#8594;</span>
+        </a>
+
+        <a href="#" class="glass-card blog-card">
+          <span class="blog-tag">Formation</span>
+          <h3>Formation Meta Ads</h3>
+          <p>Ma&icirc;trisez Facebook Ads et Instagram Ads de A &agrave; Z. Ciblage, cr&eacute;ations publicitaires, optimisation des conversions et scaling de vos campagnes.</p>
+          <span class="blog-link">Lire l'article &#8594;</span>
+        </a>
+
+        <a href="#" class="glass-card blog-card">
+          <span class="blog-tag">Formation</span>
+          <h3>Formation Google Ads</h3>
+          <p>Apprenez &agrave; cr&eacute;er et optimiser des campagnes Google Ads performantes : Search, Display, Shopping, YouTube et Performance Max.</p>
+          <span class="blog-link">Lire l'article &#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- =============================================
+       CTA
+       ============================================= -->
+  <section class="cta-section" id="contact">
+    <div class="cta-glow"></div>
+    <div class="container cta-content">
+      <h2>Pr&ecirc;t &agrave; d&eacute;velopper<br>votre activit&eacute; ?</h2>
+      <p>Discutons de votre projet et voyons comment je peux vous aider &agrave; atteindre vos objectifs d'acquisition.</p>
+      <a href="mailto:contact@sebastienrech.com" class="btn btn-primary">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="navbar-logo">SR</a>
+          <p>Expert en publicit&eacute; digitale, j'accompagne les entreprises dans leur strat&eacute;gie d'acquisition en ligne depuis 2015. Google Ads, Meta Ads, formation et coaching.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/sebastienrech/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://twitter.com/SebastienRech" target="_blank" rel="noopener" aria-label="X / Twitter">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">&Agrave; propos</a></li>
+            <li><a href="#testimonials">T&eacute;moignages</a></li>
+            <li><a href="#youtube">YouTube</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Google Ads</a></li>
+            <li><a href="#">Meta Ads</a></li>
+            <li><a href="#">Formation</a></li>
+            <li><a href="#">Coaching</a></li>
+            <li><a href="#">Audit gratuit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Guides gratuits</a></li>
+            <li><a href="#">&Eacute;tudes de cas</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 S&eacute;bastien Rech. Tous droits r&eacute;serv&eacute;s.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Mentions l&eacute;gales</a>
+          <a href="#">Politique de confidentialit&eacute;</a>
+          <a href="#">CGV</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       MINIMAL SCRIPT — Sticky nav transparency
+       ============================================= -->
+  <script>
+    (function() {
+      var navbar = document.getElementById('navbar');
+      var scrollThreshold = 50;
+
+      function onScroll() {
+        if (window.scrollY > scrollThreshold) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>

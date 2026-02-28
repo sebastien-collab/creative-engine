@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sébastien Rech — Expert Google Ads & Meta Ads</title>
+  <meta name="description" content="Attirez plus de clients grâce à la publicité en ligne. Sébastien Rech, expert Google Ads & Meta Ads depuis 2015.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================================
+       03 — Editorial / Le Rédacteur en Chef
+       Inspiration: NYT, Bloomberg, luxury magazines
+       ======================================================== */
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000000;
+      --white: #FFFFFF;
+      --gray: #666666;
+      --rule: #E5E5E5;
+      --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--black);
+      background-color: var(--white);
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.25s ease;
+    }
+
+    a:hover {
+      opacity: 0.55;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* --------------------------------------------------------
+       Layout
+       -------------------------------------------------------- */
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .container--wide {
+      max-width: 1080px;
+    }
+
+    /* --------------------------------------------------------
+       Utilities
+       -------------------------------------------------------- */
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 0.5px solid var(--rule);
+      margin: 0;
+    }
+
+    .section-number {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--rule);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--gray);
+      margin-bottom: 48px;
+    }
+
+    /* --------------------------------------------------------
+       Header
+       -------------------------------------------------------- */
+
+    .site-header {
+      padding: 40px 0 0;
+      text-align: center;
+    }
+
+    .site-header__name {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .site-header__rule {
+      border: none;
+      border-top: 1px solid var(--black);
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .site-nav {
+      padding: 0 0 20px;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .site-header__rule-bottom {
+      border: none;
+      border-top: 0.5px solid var(--rule);
+    }
+
+    /* --------------------------------------------------------
+       Hero
+       -------------------------------------------------------- */
+
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .hero__label {
+      margin-bottom: 28px;
+    }
+
+    .hero__headline {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 3.5rem;
+      line-height: 1.15;
+      max-width: 780px;
+      margin: 0 auto 28px;
+    }
+
+    .hero__byline {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .hero__rule {
+      border: none;
+      border-top: 0.5px solid var(--rule);
+      max-width: 120px;
+      margin: 0 auto 36px;
+    }
+
+    .hero__intro {
+      font-family: var(--font-body);
+      font-size: 1.1875rem;
+      line-height: 1.85;
+      color: var(--black);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* --------------------------------------------------------
+       Stats bar
+       -------------------------------------------------------- */
+
+    .stats-bar {
+      padding: 40px 0;
+    }
+
+    .stats-bar__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .stats-bar__item {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 8px 36px;
+      white-space: nowrap;
+    }
+
+    .stats-bar__item:not(:last-child) {
+      border-right: 1px solid var(--rule);
+    }
+
+    .stats-bar__number {
+      font-weight: 700;
+    }
+
+    /* --------------------------------------------------------
+       Section: Services (01)
+       -------------------------------------------------------- */
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section--services .section-header {
+      margin-bottom: 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 40px 0;
+      border-top: 0.5px solid var(--rule);
+    }
+
+    .service-item:last-child {
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    .service-item__header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .service-item__index {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      color: var(--gray);
+      flex-shrink: 0;
+    }
+
+    .service-item__name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.375rem;
+      line-height: 1.3;
+    }
+
+    .service-item__desc {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--gray);
+      max-width: 640px;
+      padding-left: 0;
+    }
+
+    /* --------------------------------------------------------
+       Section: Parcours (02) — asymmetric 2-col
+       -------------------------------------------------------- */
+
+    .parcours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .parcours-main {
+      grid-column: 1 / 2;
+    }
+
+    .parcours-main__text {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      color: #333;
+    }
+
+    .parcours-main__text:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-weight: 700;
+      float: left;
+      font-size: 5rem;
+      line-height: 0.78;
+      padding-right: 14px;
+      padding-top: 6px;
+      color: var(--black);
+    }
+
+    .parcours-main__text + .parcours-main__text {
+      margin-top: 20px;
+    }
+
+    .parcours-sidebar {
+      grid-column: 2 / 3;
+      border-left: 0.5px solid var(--rule);
+      padding-left: 40px;
+    }
+
+    .parcours-portrait {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      max-width: 260px;
+      background-color: #D8D8D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      filter: grayscale(1);
+    }
+
+    .parcours-portrait__initials {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 4px;
+    }
+
+    .sidebar-stat {
+      padding: 20px 0;
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    .sidebar-stat:first-of-type {
+      border-top: 0.5px solid var(--rule);
+    }
+
+    .sidebar-stat__number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .sidebar-stat__label {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--gray);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* --------------------------------------------------------
+       Section: Temoignages (03)
+       -------------------------------------------------------- */
+
+    .testimonials-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .testimonial {
+      padding: 48px 0;
+      border-top: 0.5px solid var(--rule);
+      position: relative;
+    }
+
+    .testimonial:last-child {
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    .testimonial__mark {
+      font-family: var(--font-display);
+      font-size: 6rem;
+      line-height: 0.6;
+      color: var(--rule);
+      position: absolute;
+      top: 48px;
+      left: -8px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .testimonial__quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.55;
+      max-width: 680px;
+      padding-left: 52px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial__author {
+      padding-left: 52px;
+    }
+
+    .testimonial__author-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* --------------------------------------------------------
+       Section: Journal (04)
+       -------------------------------------------------------- */
+
+    .articles-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .article-entry {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      padding: 28px 0;
+      border-top: 0.5px solid var(--rule);
+    }
+
+    .article-entry:last-child {
+      border-bottom: 0.5px solid var(--rule);
+    }
+
+    .article-entry__index {
+      font-family: var(--font-display);
+      font-size: 0.875rem;
+      color: var(--gray);
+      padding-top: 3px;
+    }
+
+    .article-entry__title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.375rem;
+      line-height: 1.4;
+    }
+
+    .article-entry__title a {
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease, opacity 0.25s ease;
+    }
+
+    .article-entry__title a:hover {
+      border-bottom-color: var(--black);
+      opacity: 1;
+    }
+
+    .article-entry__meta {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+
+    /* --------------------------------------------------------
+       CTA
+       -------------------------------------------------------- */
+
+    .cta-section {
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .cta-section__headline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .cta-section__sub {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding: 16px 48px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #333;
+      opacity: 1;
+    }
+
+    /* --------------------------------------------------------
+       Footer
+       -------------------------------------------------------- */
+
+    .site-footer {
+      padding: 64px 0 40px;
+      text-align: center;
+    }
+
+    .site-footer__name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .site-footer__social {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .site-footer__social a {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .site-footer__social a:hover {
+      color: var(--black);
+      opacity: 1;
+    }
+
+    .site-footer__legal {
+      margin-top: 24px;
+    }
+
+    .site-footer__legal-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .site-footer__legal-links a {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+    }
+
+    .site-footer__copyright {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    /* --------------------------------------------------------
+       Responsive
+       -------------------------------------------------------- */
+
+    @media (max-width: 768px) {
+      .hero__headline {
+        font-size: 2.25rem;
+      }
+
+      .hero__intro {
+        font-size: 1.0625rem;
+      }
+
+      .stats-bar__item {
+        padding: 8px 20px;
+        font-size: 0.875rem;
+      }
+
+      .section-number {
+        font-size: 3.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .parcours-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .parcours-main {
+        grid-column: 1;
+      }
+
+      .parcours-sidebar {
+        grid-column: 1;
+        border-left: none;
+        padding-left: 0;
+        border-top: 0.5px solid var(--rule);
+        padding-top: 40px;
+      }
+
+      .parcours-portrait {
+        max-width: 180px;
+      }
+
+      .testimonial__mark {
+        font-size: 4rem;
+        left: -4px;
+      }
+
+      .testimonial__quote {
+        font-size: 1.25rem;
+        padding-left: 40px;
+      }
+
+      .testimonial__author {
+        padding-left: 40px;
+      }
+
+      .article-entry {
+        grid-template-columns: 40px 1fr;
+        gap: 16px;
+      }
+
+      .article-entry__title {
+        font-size: 1.125rem;
+      }
+
+      .cta-section__headline {
+        font-size: 1.875rem;
+      }
+
+      .site-nav ul {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header__name {
+        font-size: 1.625rem;
+      }
+
+      .hero {
+        padding: 48px 0 40px;
+      }
+
+      .hero__headline {
+        font-size: 1.75rem;
+      }
+
+      .hero__intro {
+        font-size: 1rem;
+      }
+
+      .stats-bar__inner {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .stats-bar__item {
+        padding: 10px 0;
+        border-right: none !important;
+        border-bottom: 0.5px solid var(--rule);
+        width: 100%;
+        text-align: center;
+      }
+
+      .stats-bar__item:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+
+      .section-number {
+        font-size: 2.75rem;
+      }
+
+      .testimonial__quote {
+        font-size: 1.125rem;
+        padding-left: 32px;
+      }
+
+      .testimonial__author {
+        padding-left: 32px;
+      }
+
+      .testimonial__mark {
+        font-size: 3rem;
+      }
+
+      .cta-section {
+        padding: 64px 0;
+      }
+
+      .cta-section__headline {
+        font-size: 1.5rem;
+      }
+
+      .cta-button {
+        padding: 14px 36px;
+        font-size: 0.875rem;
+      }
+
+      .parcours-main__text:first-of-type::first-letter {
+        font-size: 3.75rem;
+        padding-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================
+       Header
+       ====================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-header__name">Sébastien Rech</h1>
+      <hr class="site-header__rule">
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#parcours">Formation</a></li>
+          <li><a href="#journal">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class="site-header__rule-bottom">
+  </header>
+
+  <!-- ======================================================
+       Hero
+       ====================================================== -->
+  <section class="hero" id="accueil">
+    <div class="container">
+      <p class="label hero__label">Media Buying &amp; Publicité en Ligne</p>
+      <h2 class="hero__headline">Attirez plus de clients grâce à la publicité</h2>
+      <p class="hero__byline">Par Sébastien Rech — Expert Google Ads &amp; Meta Ads</p>
+      <hr class="hero__rule">
+      <p class="hero__intro">
+        Confiez-moi la gestion de vos campagnes publicitaires. Stratégie, tracking, création, optimisation et reporting — pour que vous puissiez vous concentrer sur votre activité.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       Stats bar
+       ====================================================== -->
+  <hr class="section-rule">
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__inner">
+        <span class="stats-bar__item"><span class="stats-bar__number">9+</span> ans d'expérience</span>
+        <span class="stats-bar__item"><span class="stats-bar__number">200+</span> clients accompagnés</span>
+        <span class="stats-bar__item"><span class="stats-bar__number">3M€+</span> de budget géré</span>
+      </div>
+    </div>
+  </div>
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       01 — Services
+       ====================================================== -->
+  <section class="section section--services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">Des solutions adaptées à vos objectifs</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__index">I.</span>
+            <h3 class="service-item__name">Gestion de campagnes</h3>
+          </div>
+          <p class="service-item__desc">
+            Je prends en charge l'intégralité de vos campagnes publicitaires sur Google Ads, Meta Ads (Facebook &amp; Instagram), TikTok Ads et LinkedIn Ads. De la stratégie à l'optimisation quotidienne, en passant par le tracking et le reporting, je m'assure que chaque euro investi génère un maximum de résultats pour votre entreprise.
+          </p>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__index">II.</span>
+            <h3 class="service-item__name">Formation Media Buying</h3>
+          </div>
+          <p class="service-item__desc">
+            Apprenez à maîtriser la publicité en ligne avec une formation complète et actionnable. Au programme : Google Ads, Meta Ads, TikTok Ads, tracking, analytics et stratégie d'acquisition. Que vous soyez débutant ou professionnel souhaitant monter en compétences, la formation s'adapte à votre niveau et à vos objectifs.
+          </p>
+        </article>
+
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__index">III.</span>
+            <h3 class="service-item__name">Coaching en publicité</h3>
+          </div>
+          <p class="service-item__desc">
+            Un accompagnement personnalisé pour les entrepreneurs et les équipes marketing qui souhaitent gagner en autonomie. Sessions individuelles en visioconférence, audit de vos comptes publicitaires, recommandations stratégiques sur-mesure et suivi régulier pour vous aider à atteindre vos objectifs de croissance.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       02 — Parcours
+       ====================================================== -->
+  <section class="section section--parcours" id="parcours">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 56px;">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Parcours</h2>
+      </div>
+
+      <div class="parcours-grid">
+        <div class="parcours-main">
+          <p class="parcours-main__text">
+            Depuis 2015, j'aide les entreprises à attirer plus de clients grâce à la publicité en ligne. Après plusieurs années en agence et en freelance, j'ai accompagné plus de 200 entreprises dans leur stratégie d'acquisition digitale, gérant plus de 3 millions d'euros de budget publicitaire sur Google, Meta, TikTok et LinkedIn.
+          </p>
+          <p class="parcours-main__text">
+            Passionné par le media buying et la transmission, j'ai fondé impulsion.com, une plateforme de formation dédiée aux métiers de la publicité en ligne. Ma mission : rendre le media buying accessible à tous et former la prochaine génération de professionnels du marketing digital.
+          </p>
+          <p class="parcours-main__text">
+            Mon approche repose sur la transparence, la rigueur et l'obsession du résultat. Chaque campagne est pensée comme un levier de croissance, chaque euro investi doit contribuer à vos objectifs business.
+          </p>
+        </div>
+
+        <aside class="parcours-sidebar">
+          <div class="parcours-portrait" aria-label="Portrait de Sébastien Rech">
+            <span class="parcours-portrait__initials">SR</span>
+          </div>
+
+          <div class="sidebar-stat">
+            <span class="sidebar-stat__number">2015</span>
+            <span class="sidebar-stat__label">Début de carrière</span>
+          </div>
+          <div class="sidebar-stat">
+            <span class="sidebar-stat__number">200+</span>
+            <span class="sidebar-stat__label">Clients accompagnés</span>
+          </div>
+          <div class="sidebar-stat">
+            <span class="sidebar-stat__number">3M€+</span>
+            <span class="sidebar-stat__label">Budget publicitaire géré</span>
+          </div>
+          <div class="sidebar-stat">
+            <span class="sidebar-stat__number">9+</span>
+            <span class="sidebar-stat__label">Années d'expérience</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       03 — Témoignages
+       ====================================================== -->
+  <section class="section section--temoignages" id="temoignages">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 56px;">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Témoignages</h2>
+      </div>
+
+      <div class="testimonials-list">
+        <blockquote class="testimonial">
+          <span class="testimonial__mark" aria-hidden="true">&laquo;</span>
+          <p class="testimonial__quote">
+            Juste parfait. Sébastien et son équipe sont aux petits soins, disponibles, humains et tirent les apprenants vers le haut.
+          </p>
+          <footer class="testimonial__author">
+            <cite class="testimonial__author-name">Anthony Bizarro</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <span class="testimonial__mark" aria-hidden="true">&laquo;</span>
+          <p class="testimonial__quote">
+            impulsion.com est LA référence dans le domaine du Media Buying.
+          </p>
+          <footer class="testimonial__author">
+            <cite class="testimonial__author-name">Alexis Sevrin</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <span class="testimonial__mark" aria-hidden="true">&laquo;</span>
+          <p class="testimonial__quote">
+            Je ne peux que vous la recommander pour lancer votre carrière de media buyer&nbsp;!
+          </p>
+          <footer class="testimonial__author">
+            <cite class="testimonial__author-name">Charline Bazin</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       04 — Journal / Derniers articles
+       ====================================================== -->
+  <section class="section section--journal" id="journal">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 56px;">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Derniers articles</h2>
+      </div>
+
+      <div class="articles-list">
+        <article class="article-entry">
+          <span class="article-entry__index">I.</span>
+          <div>
+            <h3 class="article-entry__title">
+              <a href="#">Formation Claude Code pour Media Buyer : Boostez vos Performances avec l'IA</a>
+            </h3>
+            <p class="article-entry__meta">Intelligence Artificielle &middot; Media Buying</p>
+          </div>
+        </article>
+
+        <article class="article-entry">
+          <span class="article-entry__index">II.</span>
+          <div>
+            <h3 class="article-entry__title">
+              <a href="#">Comment Devenir Media Buyer : Le Guide Complet du Métier</a>
+            </h3>
+            <p class="article-entry__meta">Carrière &middot; Media Buying</p>
+          </div>
+        </article>
+
+        <article class="article-entry">
+          <span class="article-entry__index">III.</span>
+          <div>
+            <h3 class="article-entry__title">
+              <a href="#">Formation Meta Ads : Guide Complet Facebook et Instagram Ads</a>
+            </h3>
+            <p class="article-entry__meta">Formation &middot; Meta Ads</p>
+          </div>
+        </article>
+
+        <article class="article-entry">
+          <span class="article-entry__index">IV.</span>
+          <div>
+            <h3 class="article-entry__title">
+              <a href="#">Formation Google Ads : Le Guide Complet pour Maîtriser vos Campagnes</a>
+            </h3>
+            <p class="article-entry__meta">Formation &middot; Google Ads</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       CTA
+       ====================================================== -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2 class="cta-section__headline">Prêt à développer votre activité&nbsp;?</h2>
+      <p class="cta-section__sub">Contactez-moi dès aujourd'hui pour parler de votre projet.</p>
+      <a href="mailto:contact@sebastienrech.com" class="cta-button">Me contacter</a>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ======================================================
+       Footer
+       ====================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__name">Sébastien Rech</p>
+      <ul class="site-footer__social">
+        <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+      </ul>
+      <hr class="section-rule" style="max-width: 200px; margin: 0 auto 24px;">
+      <div class="site-footer__legal">
+        <ul class="site-footer__legal-links">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">CGV</a></li>
+        </ul>
+        <p class="site-footer__copyright">&copy; 2026 sebastienrech.com — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Sébastien Rech — Media Buying & Publicité en Ligne</title>
+  <meta name="description" content="Attirez plus de clients grâce à la publicité en ligne. Sébastien Rech, expert Google Ads & Meta Ads depuis 2015.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================================
+       09 — Newspaper / Le Quotidien
+       Inspiration: The Guardian, Le Monde, broadsheets
+       Mood: Credibility, information, gravitas
+       ======================================================== */
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #111111;
+      --white: #FFFFFF;
+      --cream: #FAFAF7;
+      --gray: #999999;
+      --gray-light: #DDDDDD;
+      --gray-dark: #555555;
+      --rule-thin: 1px solid #CCCCCC;
+      --rule-thick: 2px solid var(--black);
+      --rule-column: 1px solid var(--gray-light);
+      --font-headline: 'Oswald', 'Arial Narrow', Helvetica, sans-serif;
+      --font-body: 'Merriweather', Georgia, 'Times New Roman', serif;
+      --max-width: 1200px;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.9375rem;
+      color: var(--black);
+      background-color: var(--cream);
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    /* --------------------------------------------------------
+       Wrapper — newspaper "page"
+       -------------------------------------------------------- */
+
+    .newspaper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background-color: var(--white);
+      box-shadow: 0 0 40px rgba(0,0,0,0.06);
+    }
+
+    .newspaper-inner {
+      padding: 0 40px;
+    }
+
+    /* --------------------------------------------------------
+       Section Headers (ALL CAPS, letter-spacing, rules)
+       -------------------------------------------------------- */
+
+    .section-header {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+      padding-top: 8px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-top: 3px solid var(--black);
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: var(--gray-light);
+    }
+
+    /* --------------------------------------------------------
+       Masthead
+       -------------------------------------------------------- */
+
+    .masthead {
+      text-align: center;
+      padding: 16px 40px 0;
+    }
+
+    .masthead-rule-top {
+      border: none;
+      border-top: 1px solid var(--black);
+      margin: 0;
+    }
+
+    .masthead-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 4.5rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin: 20px 0 6px;
+      color: var(--black);
+    }
+
+    .masthead-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-style: italic;
+      color: var(--gray-dark);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .masthead-date {
+      font-family: var(--font-headline);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .masthead-rule-thick {
+      border: none;
+      border-top: 2px solid var(--black);
+      margin: 0;
+    }
+
+    .masthead-rule-thin {
+      border: none;
+      border-top: 1px solid var(--black);
+      margin: 3px 0 0;
+    }
+
+    /* --------------------------------------------------------
+       Navigation
+       -------------------------------------------------------- */
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .nav a {
+      font-family: var(--font-headline);
+      font-size: 0.6875rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin: 0 14px;
+      display: inline-block;
+    }
+
+    .nav-separator {
+      color: var(--gray-light);
+      font-size: 0.75rem;
+      user-select: none;
+    }
+
+    /* --------------------------------------------------------
+       Lead Story (Hero)
+       -------------------------------------------------------- */
+
+    .lead-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+      padding-top: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .lead-main {
+      padding-right: 28px;
+      border-right: var(--rule-column);
+    }
+
+    .lead-headline {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 2.75rem;
+      line-height: 1.15;
+      text-transform: none;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+
+    .lead-subheadline {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--gray-dark);
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--gray-light);
+      padding-bottom: 16px;
+    }
+
+    .lead-body {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      text-align: justify;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .lead-body::first-letter {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.85;
+      margin-right: 8px;
+      margin-top: 4px;
+      color: var(--black);
+    }
+
+    .byline {
+      font-family: var(--font-headline);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* --------------------------------------------------------
+       Sidebar — En Bref
+       -------------------------------------------------------- */
+
+    .sidebar {
+      padding-left: 28px;
+    }
+
+    .sidebar .section-header {
+      margin-bottom: 16px;
+    }
+
+    .brief-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .brief-item {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-light);
+      color: var(--black);
+    }
+
+    .brief-item:last-child {
+      border-bottom: none;
+    }
+
+    .brief-number {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--black);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .brief-label {
+      font-size: 0.8125rem;
+      color: var(--gray-dark);
+    }
+
+    /* --------------------------------------------------------
+       Services (3-column newspaper layout)
+       -------------------------------------------------------- */
+
+    .services-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .services-columns {
+      column-count: 3;
+      column-gap: 28px;
+      column-rule: var(--rule-column);
+    }
+
+    .service-article {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      margin-bottom: 20px;
+    }
+
+    .service-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      color: var(--black);
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--gray-light);
+      padding-bottom: 8px;
+    }
+
+    .service-body {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      line-height: 1.75;
+      text-align: justify;
+      color: var(--black);
+    }
+
+    .service-body p {
+      margin-bottom: 10px;
+    }
+
+    .service-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* --------------------------------------------------------
+       Parcours (2-column with boxed sidebar)
+       -------------------------------------------------------- */
+
+    .parcours-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .parcours-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+
+    .parcours-main {
+      padding-right: 28px;
+      border-right: var(--rule-column);
+    }
+
+    .parcours-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .parcours-body {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .parcours-body p {
+      margin-bottom: 14px;
+    }
+
+    .parcours-sidebar {
+      padding-left: 28px;
+    }
+
+    .chiffres-box {
+      border: 3px double var(--black);
+      padding: 20px;
+    }
+
+    .chiffres-box .section-header {
+      border-top: none;
+      padding-top: 0;
+      margin-bottom: 14px;
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+    }
+
+    .chiffres-box .section-header::after {
+      display: none;
+    }
+
+    .chiffres-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .chiffre-item {
+      text-align: center;
+    }
+
+    .chiffre-value {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: var(--black);
+      display: block;
+    }
+
+    .chiffre-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--gray-dark);
+      line-height: 1.4;
+    }
+
+    /* --------------------------------------------------------
+       Tribune Libre (Testimonials)
+       -------------------------------------------------------- */
+
+    .tribune-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .tribune-columns {
+      column-count: 3;
+      column-gap: 28px;
+      column-rule: var(--rule-column);
+    }
+
+    .tribune-item {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      margin-bottom: 20px;
+      border: 1px solid var(--gray-light);
+      padding: 18px 16px;
+      background-color: var(--cream);
+    }
+
+    .tribune-quote {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-style: italic;
+      line-height: 1.7;
+      text-align: justify;
+      color: var(--black);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 0;
+    }
+
+    .tribune-quote::before {
+      content: '\201C';
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-style: normal;
+      color: var(--gray-light);
+      line-height: 0.8;
+      position: absolute;
+      left: -4px;
+      top: -4px;
+    }
+
+    .tribune-quote p {
+      padding-left: 20px;
+    }
+
+    .tribune-author {
+      font-family: var(--font-headline);
+      font-size: 0.6875rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-align: right;
+      border-top: 1px solid var(--gray-light);
+      padding-top: 8px;
+    }
+
+    /* --------------------------------------------------------
+       Publications (Blog — 4 articles in columns)
+       -------------------------------------------------------- */
+
+    .blog-section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .blog-article {
+      padding: 0 16px;
+      border-right: var(--rule-column);
+    }
+
+    .blog-article:first-child {
+      padding-left: 0;
+    }
+
+    .blog-article:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .blog-category {
+      font-family: var(--font-headline);
+      font-size: 0.625rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+
+    .blog-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      line-height: 1.3;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .blog-excerpt {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      text-align: justify;
+      color: var(--gray-dark);
+      margin-bottom: 10px;
+    }
+
+    .blog-link {
+      font-family: var(--font-headline);
+      font-size: 0.6875rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      display: inline-block;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 1px;
+    }
+
+    .blog-link:hover {
+      opacity: 0.5;
+    }
+
+    /* --------------------------------------------------------
+       CTA Section
+       -------------------------------------------------------- */
+
+    .cta-section {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .cta-rule {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+
+    .cta-headline {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--black);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      background-color: var(--black);
+      padding: 14px 40px;
+      text-decoration: none;
+      border: 2px solid var(--black);
+      transition: all 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--white);
+      color: var(--black);
+      opacity: 1;
+    }
+
+    .cta-rule-bottom {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      max-width: 400px;
+      margin: 24px auto 0;
+    }
+
+    /* --------------------------------------------------------
+       Pagination
+       -------------------------------------------------------- */
+
+    .pagination {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .pagination span {
+      font-family: var(--font-headline);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: inline-block;
+      margin: 0 6px;
+    }
+
+    .pagination .page-active {
+      color: var(--black);
+      font-weight: 700;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 2px;
+    }
+
+    .pagination .page-arrow {
+      color: var(--black);
+      cursor: pointer;
+    }
+
+    /* --------------------------------------------------------
+       Footer (Colophon)
+       -------------------------------------------------------- */
+
+    .footer {
+      padding: 24px 40px;
+      text-align: center;
+    }
+
+    .footer-rule {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      margin: 0 0 16px;
+    }
+
+    .footer-main {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--gray-dark);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .footer-social {
+      font-family: var(--font-headline);
+      font-size: 0.6875rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .footer-social a {
+      color: var(--black);
+      margin: 0 10px;
+    }
+
+    .footer-rule-bottom {
+      border: none;
+      border-top: 1px solid var(--gray-light);
+      margin: 0 0 12px;
+    }
+
+    .footer-legal {
+      font-family: var(--font-body);
+      font-size: 0.6875rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .footer-legal p {
+      margin-bottom: 2px;
+    }
+
+    /* --------------------------------------------------------
+       Drop Cap Utility
+       -------------------------------------------------------- */
+
+    .drop-cap::first-letter {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 3.25rem;
+      float: left;
+      line-height: 0.85;
+      margin-right: 6px;
+      margin-top: 5px;
+      color: var(--black);
+    }
+
+    /* --------------------------------------------------------
+       Ornamental flourish separator
+       -------------------------------------------------------- */
+
+    .flourish {
+      text-align: center;
+      padding: 12px 0;
+      color: var(--gray);
+      font-size: 1.25rem;
+      letter-spacing: 8px;
+      user-select: none;
+    }
+
+    /* --------------------------------------------------------
+       Responsive
+       -------------------------------------------------------- */
+
+    @media (max-width: 900px) {
+      .masthead-title {
+        font-size: 3rem;
+        letter-spacing: 4px;
+      }
+
+      .lead-section {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-main {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 24px;
+        border-bottom: var(--rule-column);
+        margin-bottom: 24px;
+      }
+
+      .sidebar {
+        padding-left: 0;
+      }
+
+      .services-columns {
+        column-count: 2;
+      }
+
+      .parcours-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .parcours-main {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 24px;
+        border-bottom: var(--rule-column);
+        margin-bottom: 24px;
+      }
+
+      .parcours-sidebar {
+        padding-left: 0;
+      }
+
+      .tribune-columns {
+        column-count: 2;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 0;
+      }
+
+      .blog-article:nth-child(2) {
+        border-right: none;
+      }
+
+      .blog-article:nth-child(3) {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .newspaper-inner {
+        padding: 0 20px;
+      }
+
+      .masthead {
+        padding: 12px 20px 0;
+      }
+
+      .masthead-title {
+        font-size: 2.25rem;
+        letter-spacing: 2px;
+      }
+
+      .masthead-subtitle {
+        font-size: 0.75rem;
+      }
+
+      .nav a {
+        margin: 0 8px;
+        font-size: 0.625rem;
+        letter-spacing: 2px;
+      }
+
+      .lead-headline {
+        font-size: 1.875rem;
+      }
+
+      .lead-body::first-letter {
+        font-size: 2.75rem;
+      }
+
+      .services-columns {
+        column-count: 1;
+      }
+
+      .tribune-columns {
+        column-count: 1;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 16px 0;
+      }
+
+      .blog-article {
+        padding: 0;
+        border-right: none;
+        border-bottom: var(--rule-column);
+        padding-bottom: 16px;
+      }
+
+      .blog-article:last-child {
+        border-bottom: none;
+      }
+
+      .footer {
+        padding: 20px;
+      }
+
+      .chiffres-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .cta-headline {
+        font-size: 1.125rem;
+      }
+    }
+
+    /* --------------------------------------------------------
+       Print Styles
+       -------------------------------------------------------- */
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .newspaper {
+        box-shadow: none;
+      }
+
+      .cta-button {
+        border: 1px solid var(--black);
+        background: white;
+        color: var(--black);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="newspaper">
+
+    <!-- =====================================================
+         MASTHEAD
+         ===================================================== -->
+    <header class="masthead">
+      <hr class="masthead-rule-top">
+
+      <h1 class="masthead-title">Le S&eacute;bastien Rech</h1>
+      <p class="masthead-subtitle">Media Buying &amp; Publicit&eacute; en Ligne &middot; Depuis 2015</p>
+      <p class="masthead-date">Samedi 28 F&eacute;vrier 2026</p>
+
+      <hr class="masthead-rule-thick">
+      <hr class="masthead-rule-thin">
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#accueil">Accueil</a>
+      <span class="nav-separator">|</span>
+      <a href="#services">Services</a>
+      <span class="nav-separator">|</span>
+      <a href="#parcours">Parcours</a>
+      <span class="nav-separator">|</span>
+      <a href="#tribune">T&eacute;moignages</a>
+      <span class="nav-separator">|</span>
+      <a href="#blog">Blog</a>
+      <span class="nav-separator">|</span>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="newspaper-inner">
+
+      <!-- =====================================================
+           LEAD STORY + SIDEBAR
+           ===================================================== -->
+      <section id="accueil" class="lead-section">
+
+        <article class="lead-main">
+          <h2 class="lead-headline">Attirez plus de clients gr&acirc;ce &agrave; la publicit&eacute; en ligne</h2>
+          <p class="lead-subheadline">Expert Google Ads &amp; Meta Ads, S&eacute;bastien Rech accompagne les entreprises dans leur strat&eacute;gie d'acquisition digitale</p>
+          <p class="lead-body">Confiez-moi la gestion de vos campagnes publicitaires. Strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting &mdash; pour que vous puissiez vous concentrer sur votre activit&eacute;. Chaque euro investi en publicit&eacute; doit travailler pour vous. Mon approche repose sur l'analyse des donn&eacute;es, le test permanent et l'optimisation continue. Que vous soyez une start-up cherchant ses premiers clients ou une entreprise &eacute;tablie souhaitant &eacute;chelonner sa croissance, la publicit&eacute; en ligne reste le levier le plus mesurable et le plus rapide pour g&eacute;n&eacute;rer du chiffre d'affaires.</p>
+          <p class="byline">Par S&eacute;bastien Rech</p>
+        </article>
+
+        <aside class="sidebar">
+          <div class="section-header">En Bref</div>
+          <ul class="brief-list">
+            <li class="brief-item">
+              <span class="brief-number">9+</span>
+              <span class="brief-label">ans d'exp&eacute;rience en publicit&eacute; digitale</span>
+            </li>
+            <li class="brief-item">
+              <span class="brief-number">200+</span>
+              <span class="brief-label">clients accompagn&eacute;s</span>
+            </li>
+            <li class="brief-item">
+              <span class="brief-number">3M&euro;+</span>
+              <span class="brief-label">de budget publicitaire g&eacute;r&eacute; annuellement</span>
+            </li>
+            <li class="brief-item">
+              <span class="brief-number">500+</span>
+              <span class="brief-label">personnes form&eacute;es au media buying</span>
+            </li>
+          </ul>
+        </aside>
+
+      </section>
+
+      <!-- =====================================================
+           SERVICES
+           ===================================================== -->
+      <section id="services" class="services-section">
+        <div class="section-header">Services</div>
+        <div class="services-columns">
+
+          <article class="service-article">
+            <h3 class="service-title">Gestion de campagnes publicitaires</h3>
+            <div class="service-body">
+              <p>Vous souhaitez d&eacute;l&eacute;guer la gestion de vos campagnes Google Ads, Meta Ads ou TikTok Ads&nbsp;? Je prends en charge l'int&eacute;gralit&eacute; de votre strat&eacute;gie d'acquisition payante, de la d&eacute;finition des objectifs &agrave; l'optimisation quotidienne des performances.</p>
+              <p>Audit de compte, mise en place du tracking, cr&eacute;ation des campagnes, r&eacute;daction des annonces, gestion des budgets et reporting mensuel d&eacute;taill&eacute;. Chaque d&eacute;cision est guid&eacute;e par les donn&eacute;es pour maximiser votre retour sur investissement.</p>
+            </div>
+          </article>
+
+          <article class="service-article">
+            <h3 class="service-title">Formation Media Buying</h3>
+            <div class="service-body">
+              <p>Apprenez &agrave; ma&icirc;triser la publicit&eacute; en ligne par vous-m&ecirc;me. Mes formations couvrent Google Ads, Meta Ads et TikTok Ads, du niveau d&eacute;butant &agrave; avanc&eacute;. Plus de 500 personnes ont d&eacute;j&agrave; &eacute;t&eacute; form&eacute;es.</p>
+              <p>Chaque module allie th&eacute;orie et pratique avec des exercices concrets sur de vrais comptes publicitaires. Vous repartirez avec les comp&eacute;tences n&eacute;cessaires pour lancer, g&eacute;rer et optimiser vos propres campagnes de mani&egrave;re autonome.</p>
+            </div>
+          </article>
+
+          <article class="service-article">
+            <h3 class="service-title">Coaching en publicit&eacute;</h3>
+            <div class="service-body">
+              <p>Un accompagnement personnalis&eacute; pour les entrepreneurs et les &eacute;quipes marketing qui souhaitent monter en comp&eacute;tence. En sessions individuelles ou en petit groupe, nous travaillons directement sur votre compte publicitaire.</p>
+              <p>Analyse de vos campagnes existantes, identification des leviers d'am&eacute;lioration et mise en place d'un plan d'action concret. Le coaching est adapt&eacute; &agrave; votre secteur d'activit&eacute;, vos objectifs et votre niveau d'exp&eacute;rience.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PARCOURS
+           ===================================================== -->
+      <section id="parcours" class="parcours-section">
+        <div class="section-header">Parcours</div>
+        <div class="parcours-grid">
+
+          <article class="parcours-main">
+            <h3 class="parcours-title">Qui suis-je&nbsp;?</h3>
+            <div class="parcours-body">
+              <p>Depuis 2015, j'aide les entreprises &agrave; attirer plus de clients en ligne. Mon parcours a d&eacute;but&eacute; dans une startup e-commerce g&eacute;n&eacute;rant 30 millions d'euros de chiffre d'affaires, avant de travailler pour plusieurs marques et agences marketing &agrave; Londres, Paris et &agrave; l'&Icirc;le Maurice.</p>
+              <p>Au fil des ann&eacute;es, j'ai g&eacute;r&eacute; plus de 3 millions d'euros de budgets publicitaires annuels, accompagn&eacute; plus de 200 clients dans des secteurs vari&eacute;s &mdash; e-commerce, SaaS, services, immobilier, tourisme &mdash; et form&eacute; plus de 500 professionnels au media buying.</p>
+              <p>Ma philosophie est simple&nbsp;: la publicit&eacute; en ligne n'est pas une d&eacute;pense, c'est un investissement. Chaque campagne doit &ecirc;tre mesurable, rentable et au service de la croissance de votre entreprise. Je combine expertise technique, cr&eacute;ativit&eacute; et rigueur analytique pour d&eacute;livrer des r&eacute;sultats concrets.</p>
+            </div>
+          </article>
+
+          <aside class="parcours-sidebar">
+            <div class="chiffres-box">
+              <div class="section-header">Chiffres Cl&eacute;s</div>
+              <div class="chiffres-grid">
+                <div class="chiffre-item">
+                  <span class="chiffre-value">9 ans</span>
+                  <span class="chiffre-label">d'exp&eacute;rience</span>
+                </div>
+                <div class="chiffre-item">
+                  <span class="chiffre-value">200</span>
+                  <span class="chiffre-label">clients</span>
+                </div>
+                <div class="chiffre-item">
+                  <span class="chiffre-value">500</span>
+                  <span class="chiffre-label">form&eacute;s</span>
+                </div>
+                <div class="chiffre-item">
+                  <span class="chiffre-value">3M&euro;</span>
+                  <span class="chiffre-label">budget</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           TRIBUNE LIBRE (Testimonials)
+           ===================================================== -->
+      <section id="tribune" class="tribune-section">
+        <div class="section-header">Tribune Libre</div>
+        <div class="tribune-columns">
+
+          <div class="tribune-item">
+            <blockquote class="tribune-quote">
+              <p>Collaborer avec S&eacute;bastien a &eacute;t&eacute; un v&eacute;ritable acc&eacute;l&eacute;rateur pour notre acquisition. Sa ma&icirc;trise des plateformes publicitaires et sa capacit&eacute; &agrave; optimiser nos campagnes nous ont permis de r&eacute;duire notre co&ucirc;t par acquisition de 40&nbsp;% en trois mois. Un expert qui va droit au but.</p>
+            </blockquote>
+            <p class="tribune-author">&mdash; Anthony Bizarro</p>
+          </div>
+
+          <div class="tribune-item">
+            <blockquote class="tribune-quote">
+              <p>La formation de S&eacute;bastien m'a permis de passer d'un niveau d&eacute;butant &agrave; la gestion autonome de mes campagnes Google Ads. Les explications sont claires, les exercices pratiques, et le suivi apr&egrave;s la formation est un vrai plus. Je recommande sans h&eacute;siter.</p>
+            </blockquote>
+            <p class="tribune-author">&mdash; Alexis Sevrin</p>
+          </div>
+
+          <div class="tribune-item">
+            <blockquote class="tribune-quote">
+              <p>S&eacute;bastien a pris en main nos campagnes Meta Ads et les r&eacute;sultats ont &eacute;t&eacute; imm&eacute;diats. Son approche structur&eacute;e, sa r&eacute;activit&eacute; et sa transparence dans le reporting font de lui un partenaire de confiance. Notre ROAS a doubl&eacute; en deux mois.</p>
+            </blockquote>
+            <p class="tribune-author">&mdash; Charline Bazin</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           DERNIERES PUBLICATIONS (Blog)
+           ===================================================== -->
+      <section id="blog" class="blog-section">
+        <div class="section-header">Derni&egrave;res Publications</div>
+        <div class="blog-grid">
+
+          <article class="blog-article">
+            <p class="blog-category">Intelligence Artificielle</p>
+            <h3 class="blog-title">Formation Claude Code pour Media Buyer</h3>
+            <p class="blog-excerpt">D&eacute;couvrez comment l'intelligence artificielle peut r&eacute;volutionner votre quotidien de media buyer. Claude Code permet d'automatiser l'analyse de donn&eacute;es, la g&eacute;n&eacute;ration de rapports et l'optimisation de vos campagnes.</p>
+            <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          </article>
+
+          <article class="blog-article">
+            <p class="blog-category">Carri&egrave;re</p>
+            <h3 class="blog-title">Comment Devenir Media Buyer</h3>
+            <p class="blog-excerpt">Le m&eacute;tier de media buyer attire de plus en plus de profils. Comp&eacute;tences requises, parcours de formation, salaire et perspectives d'&eacute;volution&nbsp;: tout ce qu'il faut savoir pour se lancer.</p>
+            <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          </article>
+
+          <article class="blog-article">
+            <p class="blog-category">Formation</p>
+            <h3 class="blog-title">Formation Meta Ads</h3>
+            <p class="blog-excerpt">Ma&icirc;trisez Facebook Ads et Instagram Ads de A &agrave; Z. Structure de campagne, ciblage, cr&eacute;atifs, pixel et API de conversions&nbsp;: une formation compl&egrave;te pour g&eacute;n&eacute;rer des r&eacute;sultats concrets.</p>
+            <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          </article>
+
+          <article class="blog-article">
+            <p class="blog-category">Formation</p>
+            <h3 class="blog-title">Formation Google Ads</h3>
+            <p class="blog-excerpt">Du Search au Shopping en passant par Performance Max, apprenez &agrave; cr&eacute;er et optimiser des campagnes Google Ads rentables. Tracking, strat&eacute;gies d'ench&egrave;res et structure de compte.</p>
+            <a href="#" class="blog-link">Lire la suite &rarr;</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           CTA
+           ===================================================== -->
+      <section id="contact" class="cta-section">
+        <hr class="cta-rule">
+        <p class="cta-headline">Pr&ecirc;t &agrave; d&eacute;velopper votre activit&eacute;&nbsp;?<br>Contactez-nous.</p>
+        <a href="mailto:contact@sebastienrech.com" class="cta-button">Me Contacter</a>
+        <hr class="cta-rule-bottom">
+      </section>
+
+      <!-- =====================================================
+           PAGINATION
+           ===================================================== -->
+      <div class="pagination">
+        <span class="page-arrow">&larr; Pr&eacute;c.</span>
+        <span class="page-active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span class="page-arrow">Suiv. &rarr;</span>
+      </div>
+
+    </div><!-- .newspaper-inner -->
+
+    <!-- =====================================================
+         FOOTER (Colophon)
+         ===================================================== -->
+    <footer class="footer">
+      <hr class="footer-rule">
+      <p class="footer-main">Sebastien Rech &mdash; Media Buyer, Formateur et Expert Google Ads &amp; Meta Ads</p>
+      <p class="footer-social">
+        <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener">YouTube</a>
+        <span class="nav-separator">|</span>
+        <a href="https://www.linkedin.com/in/sebastienrech/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="nav-separator">|</span>
+        <a href="https://www.tiktok.com/@sebastienrech" target="_blank" rel="noopener">TikTok</a>
+      </p>
+      <hr class="footer-rule-bottom">
+      <div class="footer-legal">
+        <p>&copy; 2026 sebastienrech.com &mdash; Tous droits r&eacute;serv&eacute;s</p>
+        <p>Directeur de la publication : S&eacute;bastien Rech</p>
+      </div>
+    </footer>
+
+  </div><!-- .newspaper -->
+
+</body>
+</html>

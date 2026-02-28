@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Brutalist v2 — Le Franc-tireur | Sebastien Rech</title>
+    <meta name="description" content="Sébastien Rech — Media Buyer freelance spécialisé Google Ads & Meta Ads. Stratégie, tracking, création, optimisation et reporting.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* =========================================
+           RESET & BASE
+           ========================================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #F5F5F0;
+            color: #000;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* =========================================
+           UTILITIES
+           ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #000;
+            color: #FFF;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: none;
+            border-radius: 0;
+        }
+
+        .section-label {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 48px;
+        }
+
+        .offset-shadow {
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        .offset-shadow-lg {
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 14px 28px;
+            border: 3px solid #000;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #FFF;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        .btn-primary:hover {
+            background: #000;
+            color: #FFF;
+        }
+
+        .btn-secondary {
+            background: #FFF;
+            color: #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #F5F5F0;
+            border-bottom: 3px solid #000;
+            padding: 0 24px;
+        }
+
+        .nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav__logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            border: 3px solid #000;
+            padding: 6px 14px;
+            background: #FFF;
+            letter-spacing: 0.05em;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .nav__logo:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav__link {
+            font-size: 0.875rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #000;
+            transition: width 0.2s ease;
+        }
+
+        .nav__link:hover::after {
+            width: 100%;
+        }
+
+        .nav__cta {
+            font-size: 0.8rem;
+        }
+
+        .nav__mobile-toggle {
+            display: none;
+            background: none;
+            border: 3px solid #000;
+            padding: 8px 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: #FFF;
+        }
+
+        /* =========================================
+           HERO — v2 with portrait photo
+           ========================================= */
+        .hero {
+            border-bottom: 3px solid #000;
+            padding: 80px 0 100px;
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 0.65fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .hero__headline {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+        }
+
+        .hero__subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 680px;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero__photo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero__photo-frame {
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0 #000;
+            transform: rotate(2deg);
+            overflow: hidden;
+            background: #FFF;
+            padding: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero__photo-frame:hover {
+            transform: rotate(0deg) translate(-2px, -2px);
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        .hero__photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 3px solid #000;
+        }
+
+        /* =========================================
+           STATS
+           ========================================= */
+        .stats {
+            border-bottom: 3px solid #000;
+            padding: 64px 0;
+        }
+
+        .stats__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stats__card {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 36px 28px;
+            box-shadow: 4px 4px 0 #000;
+            text-align: center;
+        }
+
+        .stats__number {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .stats__label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================================
+           SERVICES
+           ========================================= */
+        .services {
+            border-bottom: 3px solid #000;
+            padding: 80px 0;
+        }
+
+        .services__list {
+            display: grid;
+            gap: 24px;
+        }
+
+        .service-card {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 40px 36px;
+            box-shadow: 4px 4px 0 #000;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: start;
+            gap: 28px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .service-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .service-card__number {
+            font-size: 2rem;
+            font-weight: 700;
+            border: 3px solid #000;
+            padding: 8px 16px;
+            background: #F5F5F0;
+            line-height: 1;
+        }
+
+        .service-card__content {
+            min-width: 0;
+        }
+
+        .service-card__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 12px;
+        }
+
+        .service-card__desc {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-card__link {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 2px;
+            transition: gap 0.2s ease;
+        }
+
+        .service-card__link:hover {
+            gap: 12px;
+        }
+
+        .service-card__arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .service-card__arrow-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 3px solid #000;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #F5F5F0;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .service-card:hover .service-card__arrow-icon {
+            background: #000;
+            color: #FFF;
+        }
+
+        /* =========================================
+           ABOUT — v2 with real photo
+           ========================================= */
+        .about {
+            border-bottom: 3px solid #000;
+            padding: 80px 0;
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about__text {
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .about__stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .about__stat {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 24px 20px;
+            box-shadow: 4px 4px 0 #000;
+            text-align: center;
+        }
+
+        .about__stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .about__stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .about__visual {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 12px;
+            box-shadow: 4px 4px 0 #000;
+            transform: rotate(1deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about__visual:hover {
+            transform: rotate(0deg) translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .about__photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 3px solid #000;
+        }
+
+        .about__visual-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            padding: 16px 12px 8px;
+        }
+
+        .about__visual-tag {
+            font-size: 0.625rem;
+        }
+
+        /* =========================================
+           TESTIMONIALS — v2 with Trustpilot
+           ========================================= */
+        .testimonials {
+            border-bottom: 3px solid #000;
+            padding: 80px 0;
+            background: #000;
+            color: #FFF;
+        }
+
+        .testimonials .section-title {
+            color: #FFF;
+        }
+
+        .testimonials .tag {
+            background: #FFF;
+            color: #000;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            border: 3px solid #FFF;
+            background: #F5F5F0;
+            color: #000;
+            padding: 32px 28px;
+            box-shadow: 4px 4px 0 #FFF;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .testimonial-card:nth-child(1) {
+            transform: rotate(-1deg);
+        }
+
+        .testimonial-card:nth-child(2) {
+            transform: rotate(0.5deg);
+        }
+
+        .testimonial-card:nth-child(3) {
+            transform: rotate(1deg);
+        }
+
+        .testimonial-card:hover {
+            transform: rotate(0deg) translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #FFF;
+        }
+
+        .testimonial-card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card__trustpilot {
+            height: 20px;
+            width: auto;
+        }
+
+        .testimonial-card__stars {
+            font-size: 1.25rem;
+            color: #00B67A;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .testimonial-card__text {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-card__divider {
+            width: 40px;
+            height: 3px;
+            background: #000;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card__footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card__avatar {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            background: #000;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card__author {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* =========================================
+           BLOG
+           ========================================= */
+        .blog {
+            border-bottom: 3px solid #000;
+            padding: 80px 0;
+        }
+
+        .blog__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .blog-card {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 32px 28px;
+            box-shadow: 4px 4px 0 #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .blog-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .blog-card:nth-child(1) {
+            transform: rotate(-0.5deg);
+        }
+
+        .blog-card:nth-child(2) {
+            transform: rotate(0.3deg);
+        }
+
+        .blog-card:nth-child(3) {
+            transform: rotate(0.5deg);
+        }
+
+        .blog-card:nth-child(4) {
+            transform: rotate(-0.3deg);
+        }
+
+        .blog-card:nth-child(1):hover,
+        .blog-card:nth-child(2):hover,
+        .blog-card:nth-child(3):hover,
+        .blog-card:nth-child(4):hover {
+            transform: rotate(0deg) translate(-2px, -2px);
+        }
+
+        .blog-card__tag {
+            margin-bottom: 16px;
+        }
+
+        .blog-card__title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
+        }
+
+        .blog-card__link {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 3px solid #000;
+            display: inline-block;
+            padding-bottom: 2px;
+            align-self: flex-start;
+        }
+
+        /* =========================================
+           YOUTUBE — v2 new section
+           ========================================= */
+        .youtube {
+            border-bottom: 3px solid #000;
+            padding: 80px 0;
+        }
+
+        .youtube__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .youtube-card {
+            border: 3px solid #000;
+            background: #FFF;
+            box-shadow: 4px 4px 0 #000;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            overflow: hidden;
+        }
+
+        .youtube-card:nth-child(1) {
+            transform: rotate(-0.5deg);
+        }
+
+        .youtube-card:nth-child(2) {
+            transform: rotate(0.3deg);
+        }
+
+        .youtube-card:nth-child(3) {
+            transform: rotate(-0.7deg);
+        }
+
+        .youtube-card:hover {
+            transform: rotate(0deg) translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .youtube-card__thumbnail {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-bottom: 3px solid #000;
+        }
+
+        .youtube-card__thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .youtube-card__play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 3px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .youtube-card:hover .youtube-card__play {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: #FFF;
+        }
+
+        .youtube-card__play-icon {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #000;
+            margin-left: 3px;
+        }
+
+        .youtube-card__info {
+            padding: 20px 20px 24px;
+        }
+
+        .youtube-card__title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .youtube-card__date {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #666;
+        }
+
+        .youtube__cta {
+            text-align: center;
+        }
+
+        /* =========================================
+           CTA
+           ========================================= */
+        .cta {
+            border-bottom: 3px solid #000;
+            padding: 100px 0;
+        }
+
+        .cta__box {
+            border: 3px solid #000;
+            background: #FFF;
+            padding: 64px 48px;
+            box-shadow: 6px 6px 0 #000;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta__title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .cta__subtitle {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta__btn {
+            font-size: 1rem;
+            padding: 18px 40px;
+            box-shadow: 6px 6px 0 #000;
+        }
+
+        .cta__btn:hover {
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        .footer {
+            border-bottom: 3px solid #000;
+            padding: 64px 0;
+            background: #000;
+            color: #FFF;
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        .footer__logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            border: 3px solid #FFF;
+            padding: 6px 14px;
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #FFF;
+        }
+
+        .footer__tagline {
+            font-size: 0.8125rem;
+            line-height: 1.7;
+            color: #F5F5F0;
+        }
+
+        .footer__heading {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+            color: #FFF;
+        }
+
+        .footer__link {
+            display: block;
+            font-size: 0.8125rem;
+            color: #F5F5F0;
+            padding: 6px 0;
+            transition: padding-left 0.2s ease;
+        }
+
+        .footer__link:hover {
+            padding-left: 8px;
+            color: #FFF;
+        }
+
+        .footer__bottom {
+            border-top: 3px solid #FFF;
+            margin-top: 48px;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer__copy {
+            font-size: 0.75rem;
+            color: #F5F5F0;
+            letter-spacing: 0.05em;
+        }
+
+        .footer__note {
+            font-size: 0.6875rem;
+            color: #F5F5F0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* =========================================
+           MARQUEE DIVIDER
+           ========================================= */
+        .marquee {
+            border-bottom: 3px solid #000;
+            background: #000;
+            color: #FFF;
+            padding: 14px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee__inner {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* =========================================
+           RESPONSIVE — TABLET
+           ========================================= */
+        @media (max-width: 1024px) {
+            .nav__links {
+                gap: 20px;
+            }
+
+            .nav__link {
+                font-size: 0.8rem;
+            }
+
+            .hero__grid {
+                grid-template-columns: 1fr 0.5fr;
+                gap: 32px;
+            }
+
+            .stats__grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .service-card {
+                grid-template-columns: auto 1fr;
+                gap: 20px;
+            }
+
+            .service-card__arrow {
+                display: none;
+            }
+
+            .testimonials__grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .about__grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .about__visual {
+                transform: rotate(0.5deg);
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .youtube__grid {
+                gap: 16px;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE — MOBILE
+           ========================================= */
+        @media (max-width: 768px) {
+            .nav__links {
+                display: none;
+            }
+
+            .nav__mobile-toggle {
+                display: block;
+            }
+
+            .nav__inner {
+                height: 60px;
+            }
+
+            .hero {
+                padding: 48px 0 64px;
+            }
+
+            .hero__grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero__headline {
+                font-size: 2.25rem;
+            }
+
+            .hero__subtitle {
+                font-size: 0.875rem;
+            }
+
+            .hero__actions {
+                flex-direction: column;
+            }
+
+            .hero__actions .btn {
+                text-align: center;
+            }
+
+            .hero__photo-frame {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 32px;
+            }
+
+            .stats__grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .stats__card {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+                padding: 24px 20px;
+            }
+
+            .stats__number {
+                font-size: 2rem;
+                margin-bottom: 0;
+            }
+
+            .services {
+                padding: 48px 0;
+            }
+
+            .service-card {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 28px 24px;
+            }
+
+            .service-card__number {
+                justify-self: start;
+            }
+
+            .about {
+                padding: 48px 0;
+            }
+
+            .about__stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .about__visual {
+                padding: 8px;
+                transform: rotate(0deg);
+                max-width: 100%;
+            }
+
+            .testimonials {
+                padding: 48px 0;
+            }
+
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial-card:nth-child(1),
+            .testimonial-card:nth-child(2),
+            .testimonial-card:nth-child(3) {
+                transform: rotate(0deg);
+            }
+
+            .blog {
+                padding: 48px 0;
+            }
+
+            .blog__grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .blog-card:nth-child(1),
+            .blog-card:nth-child(2),
+            .blog-card:nth-child(3),
+            .blog-card:nth-child(4) {
+                transform: rotate(0deg);
+            }
+
+            .blog-card {
+                min-height: auto;
+                padding: 24px 20px;
+            }
+
+            .youtube {
+                padding: 48px 0;
+            }
+
+            .youtube__grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 32px;
+            }
+
+            .youtube-card:nth-child(1),
+            .youtube-card:nth-child(2),
+            .youtube-card:nth-child(3) {
+                transform: rotate(0deg);
+            }
+
+            .cta {
+                padding: 48px 0;
+            }
+
+            .cta__box {
+                padding: 40px 24px;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =============================================
+         NAVIGATION
+         ============================================= -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">SR</a>
+            <div class="nav__links">
+                <a href="#hero" class="nav__link">Accueil</a>
+                <a href="#services" class="nav__link">Services</a>
+                <a href="#about" class="nav__link">Formation</a>
+                <a href="#blog" class="nav__link">Blog</a>
+                <a href="#youtube" class="nav__link">Vid&eacute;os</a>
+                <a href="#cta" class="btn btn-primary nav__cta">Me contacter</a>
+            </div>
+            <button class="nav__mobile-toggle" aria-label="Menu">///</button>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         HERO — v2 with portrait photo
+         ============================================= -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <div class="hero__content">
+                    <div class="hero__tags">
+                        <span class="tag">Media Buyer</span>
+                        <span class="tag">Google Ads</span>
+                        <span class="tag">Meta Ads</span>
+                    </div>
+                    <h1 class="hero__headline">Attirez plus de clients gr&acirc;ce &agrave; la publicit&eacute;</h1>
+                    <p class="hero__subtitle">Confiez-moi la gestion de vos campagnes publicitaires. Strat&eacute;gie, tracking, cr&eacute;ation, optimisation et reporting &mdash; pour que vous puissiez vous concentrer sur votre activit&eacute;.</p>
+                    <div class="hero__actions">
+                        <a href="#cta" class="btn btn-primary offset-shadow">Me contacter</a>
+                        <a href="#services" class="btn btn-secondary offset-shadow">D&eacute;couvrir mes services</a>
+                    </div>
+                </div>
+                <div class="hero__photo-wrapper">
+                    <div class="hero__photo-frame">
+                        <img src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="S&eacute;bastien Rech — Media Buyer Freelance" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         MARQUEE DIVIDER
+         ============================================= -->
+    <div class="marquee" aria-hidden="true">
+        <span class="marquee__inner">Google Ads &bull; Meta Ads &bull; TikTok Ads &bull; Strat&eacute;gie &bull; Tracking &bull; Cr&eacute;ation &bull; Optimisation &bull; Reporting &bull; Formation &bull; Coaching &bull; Google Ads &bull; Meta Ads &bull; TikTok Ads &bull; Strat&eacute;gie &bull; Tracking &bull; Cr&eacute;ation &bull; Optimisation &bull; Reporting &bull; Formation &bull; Coaching &bull; Google Ads &bull; Meta Ads &bull; TikTok Ads &bull; Strat&eacute;gie &bull; Tracking &bull; Cr&eacute;ation &bull; Optimisation &bull; Reporting &bull; Formation &bull; Coaching &bull; </span>
+    </div>
+
+    <!-- =============================================
+         STATS
+         ============================================= -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stats__card">
+                    <div class="stats__number">9+</div>
+                    <div class="stats__label">Ans d'exp&eacute;rience</div>
+                </div>
+                <div class="stats__card">
+                    <div class="stats__number">200+</div>
+                    <div class="stats__label">Clients</div>
+                </div>
+                <div class="stats__card">
+                    <div class="stats__number">3M&euro;+</div>
+                    <div class="stats__label">Budget g&eacute;r&eacute;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SERVICES
+         ============================================= -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label">
+                <span class="tag">Services</span>
+            </div>
+            <h2 class="section-title">Mes services</h2>
+            <div class="services__list">
+                <div class="service-card">
+                    <div class="service-card__number">01</div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Gestion de campagnes</h3>
+                        <p class="service-card__desc">Prise en charge compl&egrave;te de vos campagnes publicitaires sur Google Ads et Meta Ads. De la strat&eacute;gie au reporting, en passant par la cr&eacute;ation et l'optimisation continue de vos performances.</p>
+                        <a href="#" class="service-card__link">En savoir plus <span>&rarr;</span></a>
+                    </div>
+                    <div class="service-card__arrow">
+                        <span class="service-card__arrow-icon">&rarr;</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__number">02</div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Formation Media Buying</h3>
+                        <p class="service-card__desc">Apprenez &agrave; ma&icirc;triser la publicit&eacute; en ligne de A &agrave; Z. Formation compl&egrave;te sur Google Ads, Meta Ads, tracking, strat&eacute;gie d'acquisition et optimisation des performances.</p>
+                        <a href="#" class="service-card__link">En savoir plus <span>&rarr;</span></a>
+                    </div>
+                    <div class="service-card__arrow">
+                        <span class="service-card__arrow-icon">&rarr;</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__number">03</div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Coaching en publicit&eacute;</h3>
+                        <p class="service-card__desc">Accompagnement personnalis&eacute; pour optimiser vos campagnes existantes. Audits, recommandations strat&eacute;giques et sessions de coaching pour am&eacute;liorer vos r&eacute;sultats publicitaires.</p>
+                        <a href="#" class="service-card__link">En savoir plus <span>&rarr;</span></a>
+                    </div>
+                    <div class="service-card__arrow">
+                        <span class="service-card__arrow-icon">&rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         ABOUT — v2 with real photo
+         ============================================= -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-label">
+                <span class="tag">&Agrave; propos</span>
+            </div>
+            <h2 class="section-title">Qui suis-je ?</h2>
+            <div class="about__grid">
+                <div>
+                    <p class="about__text">Depuis 2015, j'aide les entreprises &agrave; attirer plus de clients en ligne. Mon parcours a d&eacute;but&eacute; dans une startup e-commerce g&eacute;n&eacute;rant 30 millions d'euros de chiffre d'affaires, avant de travailler pour plusieurs marques et agences marketing &agrave; Londres, Paris et &agrave; l'&Icirc;le Maurice.</p>
+                    <p class="about__text">Apr&egrave;s avoir accompagn&eacute; plus de 200 clients (entrepreneurs, artisans, PME et grandes marques), j'ai lanc&eacute; mon activit&eacute; de freelance en janvier 2022.</p>
+                    <div class="about__stats">
+                        <div class="about__stat">
+                            <div class="about__stat-number">9 ans</div>
+                            <div class="about__stat-label">d'exp&eacute;rience</div>
+                        </div>
+                        <div class="about__stat">
+                            <div class="about__stat-number">200</div>
+                            <div class="about__stat-label">entreprises</div>
+                        </div>
+                        <div class="about__stat">
+                            <div class="about__stat-number">500</div>
+                            <div class="about__stat-label">form&eacute;s</div>
+                        </div>
+                        <div class="about__stat">
+                            <div class="about__stat-number">3M&euro;</div>
+                            <div class="about__stat-label">budget</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__visual">
+                    <img class="about__photo" src="https://sebastienrech.com/wp-content/themes/sebastienrech/assets/images/hero-sebastien.jpeg" alt="S&eacute;bastien Rech" loading="lazy">
+                    <div class="about__visual-tags">
+                        <span class="tag about__visual-tag">Google Ads</span>
+                        <span class="tag about__visual-tag">Meta Ads</span>
+                        <span class="tag about__visual-tag">TikTok Ads</span>
+                        <span class="tag about__visual-tag">Tracking</span>
+                        <span class="tag about__visual-tag">Freelance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         TESTIMONIALS — v2 with Trustpilot
+         ============================================= -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-label">
+                <span class="tag">T&eacute;moignages</span>
+            </div>
+            <h2 class="section-title">Ce que disent mes clients</h2>
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__header">
+                        <img class="testimonial-card__trustpilot" src="https://ik.imagekit.io/senja/tr:w-40,f-png/Logos/trustpilot-logo_Hdn_TGo6b.png?updatedAt=1683237856080" alt="Trustpilot" loading="lazy">
+                        <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="testimonial-card__text">Juste parfait. S&eacute;bastien et son &eacute;quipe sont aux petits soins, disponibles, humains et tirent les apprenants vers le haut. Gr&acirc;ce &agrave; Impulsion, j'ai grandement mont&eacute; en comp&eacute;tence.</p>
+                    <div class="testimonial-card__divider"></div>
+                    <div class="testimonial-card__footer">
+                        <div class="testimonial-card__avatar">AB</div>
+                        <div class="testimonial-card__author">Anthony Bizarro</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__header">
+                        <img class="testimonial-card__trustpilot" src="https://ik.imagekit.io/senja/tr:w-40,f-png/Logos/trustpilot-logo_Hdn_TGo6b.png?updatedAt=1683237856080" alt="Trustpilot" loading="lazy">
+                        <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="testimonial-card__text">impulsion.com est LA r&eacute;f&eacute;rence dans le domaine du Media Buying. L'exp&eacute;rience des formateurs est incroyable. Ils sont accessibles et extr&ecirc;mement r&eacute;actifs.</p>
+                    <div class="testimonial-card__divider"></div>
+                    <div class="testimonial-card__footer">
+                        <div class="testimonial-card__avatar">AS</div>
+                        <div class="testimonial-card__author">Alexis Sevrin</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__header">
+                        <img class="testimonial-card__trustpilot" src="https://ik.imagekit.io/senja/tr:w-40,f-png/Logos/trustpilot-logo_Hdn_TGo6b.png?updatedAt=1683237856080" alt="Trustpilot" loading="lazy">
+                        <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <p class="testimonial-card__text">Je ne peux que vous la recommander pour lancer votre carri&egrave;re de media buyer ! Delphine, S&eacute;bastien et Nicolas sont toujours accessibles et r&eacute;actifs.</p>
+                    <div class="testimonial-card__divider"></div>
+                    <div class="testimonial-card__footer">
+                        <div class="testimonial-card__avatar">CB</div>
+                        <div class="testimonial-card__author">Charline Bazin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         BLOG
+         ============================================= -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-label">
+                <span class="tag">Blog</span>
+            </div>
+            <h2 class="section-title">Derniers articles</h2>
+            <div class="blog__grid">
+                <a href="#" class="blog-card">
+                    <div>
+                        <div class="blog-card__tag">
+                            <span class="tag">IA</span>
+                        </div>
+                        <h3 class="blog-card__title">Formation Claude Code pour Media Buyer : Boostez vos Performances avec l'IA</h3>
+                    </div>
+                    <span class="blog-card__link">Lire l'article &rarr;</span>
+                </a>
+                <a href="#" class="blog-card">
+                    <div>
+                        <div class="blog-card__tag">
+                            <span class="tag">Carri&egrave;re</span>
+                        </div>
+                        <h3 class="blog-card__title">Comment Devenir Media Buyer : Le Guide Complet du M&eacute;tier</h3>
+                    </div>
+                    <span class="blog-card__link">Lire l'article &rarr;</span>
+                </a>
+                <a href="#" class="blog-card">
+                    <div>
+                        <div class="blog-card__tag">
+                            <span class="tag">Meta Ads</span>
+                        </div>
+                        <h3 class="blog-card__title">Formation Meta Ads : Guide Complet Facebook et Instagram Ads</h3>
+                    </div>
+                    <span class="blog-card__link">Lire l'article &rarr;</span>
+                </a>
+                <a href="#" class="blog-card">
+                    <div>
+                        <div class="blog-card__tag">
+                            <span class="tag">Google Ads</span>
+                        </div>
+                        <h3 class="blog-card__title">Formation Google Ads : Le Guide Complet pour Ma&icirc;triser vos Campagnes</h3>
+                    </div>
+                    <span class="blog-card__link">Lire l'article &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         YOUTUBE — v2 new section
+         ============================================= -->
+    <section class="youtube" id="youtube">
+        <div class="container">
+            <div class="section-label">
+                <span class="tag">YouTube</span>
+            </div>
+            <h2 class="section-title">Mes derni&egrave;res vid&eacute;os</h2>
+            <div class="youtube__grid">
+                <a href="https://www.youtube.com/watch?v=1pFx0Pc2hOA" target="_blank" rel="noopener" class="youtube-card">
+                    <div class="youtube-card__thumbnail">
+                        <img src="https://img.youtube.com/vi/1pFx0Pc2hOA/maxresdefault.jpg" alt="Formation n8n : Apprendre l'automation n8n" loading="lazy">
+                        <div class="youtube-card__play">
+                            <div class="youtube-card__play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="youtube-card__info">
+                        <div class="youtube-card__title">Formation n8n : Apprendre l'automation n8n</div>
+                        <div class="youtube-card__date">18 F&eacute;v 2026</div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=9ZpY-ulKg-k" target="_blank" rel="noopener" class="youtube-card">
+                    <div class="youtube-card__thumbnail">
+                        <img src="https://img.youtube.com/vi/9ZpY-ulKg-k/maxresdefault.jpg" alt="Comment relancer ses prospects sur WhatsApp ?" loading="lazy">
+                        <div class="youtube-card__play">
+                            <div class="youtube-card__play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="youtube-card__info">
+                        <div class="youtube-card__title">Comment relancer ses prospects sur WhatsApp ?</div>
+                        <div class="youtube-card__date">30 Jan 2026</div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=opJ8cuQzpnY" target="_blank" rel="noopener" class="youtube-card">
+                    <div class="youtube-card__thumbnail">
+                        <img src="https://img.youtube.com/vi/opJ8cuQzpnY/maxresdefault.jpg" alt="Comprendre le m&eacute;tier de Media Buyer" loading="lazy">
+                        <div class="youtube-card__play">
+                            <div class="youtube-card__play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="youtube-card__info">
+                        <div class="youtube-card__title">Comprendre le m&eacute;tier de Media Buyer</div>
+                        <div class="youtube-card__date">21 Jan 2026</div>
+                    </div>
+                </a>
+            </div>
+            <div class="youtube__cta">
+                <a href="https://www.youtube.com/@sebastienrech" target="_blank" rel="noopener" class="btn btn-secondary offset-shadow">Voir toutes mes vid&eacute;os &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         CTA
+         ============================================= -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta__box">
+                <h2 class="cta__title">Pr&ecirc;t &agrave; d&eacute;velopper votre activit&eacute; ?</h2>
+                <p class="cta__subtitle">Discutons de votre projet et de la meilleure strat&eacute;gie pour atteindre vos objectifs publicitaires.</p>
+                <a href="#" class="btn btn-primary cta__btn">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__logo">SR</div>
+                    <p class="footer__tagline">S&eacute;bastien Rech &mdash; Media Buyer freelance sp&eacute;cialis&eacute; Google Ads &amp; Meta Ads. Strat&eacute;gie, gestion et optimisation de campagnes publicitaires.</p>
+                </div>
+                <div>
+                    <div class="footer__heading">Navigation</div>
+                    <a href="#hero" class="footer__link">Accueil</a>
+                    <a href="#services" class="footer__link">Services</a>
+                    <a href="#about" class="footer__link">&Agrave; propos</a>
+                    <a href="#blog" class="footer__link">Blog</a>
+                    <a href="#youtube" class="footer__link">Vid&eacute;os</a>
+                    <a href="#cta" class="footer__link">Contact</a>
+                </div>
+                <div>
+                    <div class="footer__heading">Services</div>
+                    <a href="#" class="footer__link">Gestion de campagnes</a>
+                    <a href="#" class="footer__link">Formation Media Buying</a>
+                    <a href="#" class="footer__link">Coaching publicit&eacute;</a>
+                    <a href="#" class="footer__link">Audit Google Ads</a>
+                    <a href="#" class="footer__link">Audit Meta Ads</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copy">&copy; 2026 sebastienrech.com &mdash; Tous droits r&eacute;serv&eacute;s</div>
+                <div class="footer__note">Neo-Brutalist v2 &mdash; Le Franc-tireur</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
